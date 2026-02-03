@@ -1,0 +1,286 @@
+% Studio, NixOS
+
+# [Flake] 更新 flake.lock（更新所有依赖项）
+sudo nix flake update --flake /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake
+
+# [Flake] 部署 NixOS 系统
+sudo nixos-rebuild <Commands> --flake /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake#$HOSTNAME --show-trace -L -v --option substituters "<Channels>"
+
+# [Flake][Offline] 部署 NixOS 系统
+sudo nixos-rebuild <Commands> --flake /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake#$HOSTNAME --offline --impure --show-trace -L -v
+
+# [Flake][Git] 回滚 NixOS 系统
+```sh
+git checkout HEAD^1
+sudo nixos-rebuild switch --flake /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake#$HOSTNAME --show-trace -L -v --option substituters "<Channels>"
+```
+
+# [Flake] 远程部署 NixOS 系统（系统构建过程将在本机执行）
+sudo nixos-rebuild <Commands> --flake /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake#$HOSTNAME --target-host root@<IP> --build-host localhost --verbose
+
+# [Flake] 远程部署 NixOS 系统（系统构建过程将在远程主机执行）
+sudo nixos-rebuild <Commands> --flake /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake#$HOSTNAME --target-host root@<IP> --build-host root@<IP> --verbose
+
+# [Flake][Auto] 替换硬件信息
+```sh
+echo "---------------------------- 覆写设备硬件信息 ---------------------------"
+echo
+echo "覆写：/home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake/Hosts/Studio/${HOSTNAME%%0*}/$HOSTNAME/Device/hardware-configuration.nix"
+cp -f /etc/nixos/hardware-configuration.nix /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake/Hosts/Studio/${HOSTNAME%%0*}/$HOSTNAME/Device/
+echo "覆写：100% (1/1), 完成."
+```
+
+# [Flake][Auto] 克隆 NixOS 配置 + 替换硬件信息
+```sh
+echo "------------------------ 更新 NixOS 配置 ------------------------"
+echo
+CLONE_DIR="/home/0x0CFF/Solution/Blueprints/NixOS"
+CLONE_DIR_BACKUP="/home/0x0CFF/Solution/Blueprints/NixOS_Backup"
+REPO_URL="https://github.com/0x0CFF/NixOS.git"
+
+if [ -d "$CLONE_DIR" ]; then
+    echo "目录 $CLONE_DIR 已存在，正在备份..."
+    mv -f "$CLONE_DIR" "$CLONE_DIR_BACKUP"
+    echo "备份：100% (1/1), 完成."
+    sleep 1
+fi
+
+MAX_RETRIES=3
+RETRY_COUNT=0
+CLONE_SUCCESS=false
+while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
+    echo
+    echo "尝试克隆 NixOS 配置 (第 $((RETRY_COUNT+1)) 次)..."
+    if git clone "$REPO_URL" "$CLONE_DIR"; then
+        CLONE_SUCCESS=true
+        sleep 1
+        break
+    fi
+    RETRY_COUNT=$((RETRY_COUNT+1))
+    echo "克隆失败，等待 2 秒后重试..."
+    sleep 2
+done
+
+if [ "$CLONE_SUCCESS" = true ]; then
+    rm -rf "$CLONE_DIR_BACKUP"
+    rm -rf /home/0x0CFF/Solution/Blueprints/NixOS/.git
+    rm -rf /home/0x0CFF/Solution/Blueprints/NixOS/.gitignore
+    echo
+    echo "---------------------------- 覆写设备硬件信息 ---------------------------"
+    echo
+    echo "覆写：/home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake/Hosts/Studio/${HOSTNAME%%0*}/$HOSTNAME/Device/hardware-configuration.nix"
+    cp -f /etc/nixos/hardware-configuration.nix /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake/Hosts/Studio/${HOSTNAME%%0*}/$HOSTNAME/Device/
+    echo "覆写：100% (1/1), 完成."
+else
+    echo
+    echo "经过 $MAX_RETRIES 次尝试后仍然克隆失败，正在恢复备份..."
+    rm -rf "$CLONE_DIR"
+    mv -f "$CLONE_DIR_BACKUP" "$CLONE_DIR"
+    echo "恢复：100% (1/1), 完成."
+fi
+```
+
+# [Flake][Auto] 部署 NixOS 系统
+```sh
+echo "--------------- 请选择操作 ---------------"
+echo "1. Test"
+echo "2. Switch"
+echo "-----------------------------------------"
+
+read -p "请输入选择 [1-2]: " choice1
+
+set -e
+
+MIRRORS=(
+  "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
+  "https://mirrors.ustc.edu.cn/nix-channels/store"
+  "https://mirrors.nju.edu.cn/nix-channels/store"
+  "https://mirror.sjtu.edu.cn/nix-channels/store"
+  "https://mirrors.cqupt.edu.cn/nix-channels/store"
+  "https://mirror.nyist.edu.cn/nix-channels/store"
+  "https://mirror.iscas.ac.cn/nix-channels/store"
+)
+
+FASTEST_MIRROR=""
+FASTEST_TIME=99999
+
+echo "正在测试 Nix 镜像源速度..."
+
+for mirror in "${MIRRORS[@]}"; do
+  echo -n "测试 $mirror ... "
+  
+  # 使用 curl 测试连接时间
+  TIME=$(curl -o /dev/null -s -w "%{time_total}" "$mirror/.info" 2>/dev/null || echo 999)
+  
+  # 检查是否有效
+  if (( $(echo "$TIME < 10" | bc -l) )); then
+    echo "${TIME}s"
+    if (( $(echo "$TIME < $FASTEST_TIME" | bc -l) )); then
+      FASTEST_TIME=$TIME
+      FASTEST_MIRROR=$mirror
+    fi
+  else
+    echo "超时"
+  fi
+done
+
+if [[ -n "$FASTEST_MIRROR" ]]; then
+  echo
+  echo "最快的镜像源: $FASTEST_MIRROR (${FASTEST_TIME}s)"
+  echo
+  case $choice1 in
+    1)
+      sudo nixos-rebuild test --flake /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake.Flake/Studio#$HOSTNAME --show-trace -L -v --option substituters "$FASTEST_MIRROR"
+      ;;
+    2)
+      sudo nixos-rebuild switch --flake /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake#$HOSTNAME --show-trace -L -v --option substituters "$FASTEST_MIRROR"
+      ;;
+  esac
+  exit 1
+else
+  echo
+  echo "没有找到可用的镜像源，使用官方源进行构建"
+  case $choice1 in
+    1)
+      sudo nixos-rebuild test --flake /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake#$HOSTNAME --show-trace -L -v
+      ;;
+    2)
+      sudo nixos-rebuild switch --flake /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake#$HOSTNAME --show-trace -L -v
+      ;;
+  esac
+  exit 1
+fi
+```
+
+# 重置 Panel-Studio 配置
+```sh
+rm -rf /home/0x0CFF/Solution/Blueprints/UV/Web-Studio/Panel-Studio/*
+git clone https://github.com/0x0CFF/Panel-Studio.git /home/0x0CFF/Solution/Blueprints/UV/Web-Studio/Panel-Studio
+```
+
+$ Commands: echo "test switch boot" | tr ' ' '\n'
+$ Channels: echo "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store https://mirrors.ustc.edu.cn/nix-channels/store https://mirrors.nju.edu.cn/nix-channels/store https://mirror.sjtu.edu.cn/nix-channels/store https://mirrors.cqupt.edu.cn/nix-channels/store https://mirror.nyist.edu.cn/nix-channels/store https://mirror.iscas.ac.cn/nix-channels/store" | tr ' ' '\n'
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+% Studio, Trash
+
+# 清空挂载点垃圾箱
+sudo find /mnt -type d -name ".Trash-0" -exec sh -c 'rm -rf "$1"/* "$1"/.* 2>/dev/null || true' _ {} \;
+
+# 清空 SMB 回收站 .Trash 目录，包括隐藏文件
+```sh
+for dir in /mnt/*/*/.Trash/; do
+    [ -d "$dir" ] && rm -rf "$dir"/* "$dir"/.* 2>/dev/null || true
+done
+```
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+% Studio, NH
+
+# [Flake] 部署 NixOS 系统，使用官方二进制缓存
+nh os <Commands> /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake --hostname $HOSTNAME --ask
+
+# [Flake] 部署 NixOS 系统，使用且信任非官方二进制缓存
+nh os <Commands> /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake --hostname $HOSTNAME --ask -- --accept-flake-config
+
+# [Flake] 更新 flake.lock 并部署 NixOS 系统，使用官方二进制缓存
+nh os <Commands> /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake --hostname $HOSTNAME --ask --update 
+
+# [Flake] 更新 flake.lock 并部署 NixOS 系统，使用且信任非官方二进制缓存
+nh os <Commands> /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake --hostname $HOSTNAME --ask --update -- --accept-flake-config
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+% Studio, Docker
+
+# [Docker][Auto] 克隆 Selfhosted 项目仓库
+```sh
+# 函数 : 克隆项目仓库
+clone_github_repo() {
+    echo  # 空行
+    local REPO_URL="$1"
+    # 提取出项目名称
+    local REPO_NAME
+    REPO_NAME=$(basename "$REPO_URL" .git)
+    # 首字母大写（支持多单词，如 my-project -> My-Project）
+    if [[ -n "$REPO_NAME" ]]; then
+        # 方法1：使用 sed 处理每个单词首字母大写
+        REPO_NAME=$(echo "$REPO_NAME" | sed 's/\b\(.\)/\u\1/g')
+    fi
+    local CLONE_DIR="/home/0x0CFF/Solution/Selfhosted/$REPO_NAME"
+    
+    local MAX_RETRIES=3
+    local RETRY_COUNT=0
+    local CLONE_SUCCESS=false
+    
+    echo "仓库地址： $REPO_URL"
+    while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
+        echo  # 空行
+        echo "尝试克隆项目仓库 (第 $((RETRY_COUNT+1)) 次)..."
+        if git clone "$REPO_URL" "$CLONE_DIR"; then
+            CLONE_SUCCESS=true
+            sleep 1
+            break
+        fi
+        RETRY_COUNT=$((RETRY_COUNT+1))
+        echo "克隆失败，等待 2 秒后重试..."
+        sleep 2
+    done
+    echo  # 空行
+    echo "-----------------------------------------"
+}
+
+case $HOSTNAME in
+    "DATAGC00")
+        DOCKER_DIR="/home/0x0CFF/Solution/Selfhosted"
+    
+        echo "--------------- 请选择操作 ---------------"
+        echo "1. Dify"
+        echo "2. Drawnix"
+        echo "-----------------------------------------"
+        
+        read -p "请输入选择 [1-2]: " choice1
+        
+        case $choice1 in
+            1)
+                clone_github_repo https://github.com/langgenius/dify.git
+                cp $DOCKER_DIR/Dify/docker/.env.example $DOCKER_DIR/Dify/docker/.env
+                sed -i "s|^EXPOSE_NGINX_PORT=.*|EXPOSE_NGINX_PORT=10080|" $DOCKER_DIR/Dify/docker/.env
+                sed -i "s|^PIP_MIRROR_URL=.*|PIP_MIRROR_URL=https://mirrors.aliyun.com/pypi/simple|" $DOCKER_DIR/Dify/docker/.env
+                cp $DOCKER_DIR/Dify/docker/docker-compose.yaml $DOCKER_DIR/Dify/docker/docker-compose.yaml.example
+                ;;
+            2)
+                clone_github_repo https://github.com/plait-board/drawnix.git
+                ;;
+            *)
+                echo "无效选择!"
+                exit 1
+                ;;
+        esac
+        ;;
+    *)
+        echo "$HOSTNAME 无须克隆 Selfhosted 项目仓库！"
+        exit 1
+        ;;
+esac
+```
+                    
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+% Studio, Eagle
+
+# 设置目录，添加不可变属性
+sudo chattr +i /mnt/Material#<Library><Path>
+
+# 设置目录及其下所有文件，递归添加不可变属性
+sudo chattr -R +i /mnt/Material#<Library><Path>
+
+# 设置目录，移除不可变属性
+sudo chattr -i /mnt/Material#<Library><Path>
+
+# 设置目录及其下所有文件，递归移除不可变属性
+sudo chattr -R -i /mnt/Material#<Library><Path>
+
+$ Library: echo "ANIMATION/动画素材库.library BUSINESS/商务素材库.library DESIGN/设计素材库.library EFFECTS/特效素材库.library MODELING/建模素材库.library PUBLIC/公共素材库.library VIDEO/视频素材库.library" | tr ' ' '\n'
