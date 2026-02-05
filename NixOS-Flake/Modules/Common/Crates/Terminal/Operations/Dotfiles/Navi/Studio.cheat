@@ -63,8 +63,6 @@ done
 
 if [ "$CLONE_SUCCESS" = true ]; then
     rm -rf "$CLONE_DIR_BACKUP"
-    rm -rf /home/0x0CFF/Solution/Blueprints/NixOS/.git
-    rm -rf /home/0x0CFF/Solution/Blueprints/NixOS/.gitignore
     echo
     echo "---------------------------- 覆写设备硬件信息 ---------------------------"
     echo
@@ -89,51 +87,94 @@ echo "-----------------------------------------"
 
 read -p "请输入选择 [1-2]: " choice1
 
-set -e
+echo "--------------- 请选择镜像 ---------------"
+echo "1. Auto"
+echo "2. Nixpkgs"
+echo "3. tuna.tsinghua.edu.cn"
+echo "4. ustc.edu.cn"
+echo "5. nju.edu.cn"
+echo "6. sjtu.edu.cn"
+echo "7. cqupt.edu.cn"
+echo "8. nyist.edu.cn"
+echo "9. iscas.ac.cn"
+echo "-----------------------------------------"
+
+read -p "请输入选择 [1-9]: " choice2
 
 MIRRORS=(
-  "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
-  "https://mirrors.ustc.edu.cn/nix-channels/store"
-  "https://mirrors.nju.edu.cn/nix-channels/store"
-  "https://mirror.sjtu.edu.cn/nix-channels/store"
-  "https://mirrors.cqupt.edu.cn/nix-channels/store"
-  "https://mirror.nyist.edu.cn/nix-channels/store"
-  "https://mirror.iscas.ac.cn/nix-channels/store"
+    "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
+    "https://mirrors.ustc.edu.cn/nix-channels/store"
+    "https://mirrors.nju.edu.cn/nix-channels/store"
+    "https://mirror.sjtu.edu.cn/nix-channels/store"
+    "https://mirrors.cqupt.edu.cn/nix-channels/store"
+    "https://mirror.nyist.edu.cn/nix-channels/store"
+    "https://mirror.iscas.ac.cn/nix-channels/store"
 )
 
-FASTEST_MIRROR=""
+MIRROR=""
 FASTEST_TIME=99999
 
-echo "正在测试 Nix 镜像源速度..."
+set -e
 
-for mirror in "${MIRRORS[@]}"; do
-  echo -n "测试 $mirror ... "
-  
-  # 使用 curl 测试连接时间
-  TIME=$(curl -o /dev/null -s -w "%{time_total}" "$mirror/.info" 2>/dev/null || echo 999)
-  
-  # 检查是否有效
-  if (( $(echo "$TIME < 10" | bc -l) )); then
-    echo "${TIME}s"
-    if (( $(echo "$TIME < $FASTEST_TIME" | bc -l) )); then
-      FASTEST_TIME=$TIME
-      FASTEST_MIRROR=$mirror
-    fi
-  else
-    echo "超时"
-  fi
-done
+case $choice1 in
+    1)
+        echo "正在测试 Nix 镜像源速度..."
 
-if [[ -n "$FASTEST_MIRROR" ]]; then
-  echo
-  echo "最快的镜像源: $FASTEST_MIRROR (${FASTEST_TIME}s)"
-  echo
+        for mirror in "${MIRRORS[@]}"; do
+        echo -n "测试 $mirror ... "
+
+        # 使用 curl 测试连接时间
+        TIME=$(curl -o /dev/null -s -w "%{time_total}" "$mirror/.info" 2>/dev/null || echo 999)
+
+        # 检查是否有效
+        if (( $(echo "$TIME < 10" | bc -l) )); then
+            echo "${TIME}s"
+            if (( $(echo "$TIME < $FASTEST_TIME" | bc -l) )); then
+            FASTEST_TIME=$TIME
+            MIRROR=$mirror
+            echo
+            echo "最快镜像源: $MIRROR (${FASTEST_TIME}s)"
+            echo
+            fi
+        else
+            echo "超时"
+        fi
+        done
+        ;;
+    2)
+        MIRROR=""
+        ;;
+    3)
+        MIRROR="https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
+        ;;
+    4)
+        MIRROR="https://mirrors.ustc.edu.cn/nix-channels/store"
+        ;;
+    5)
+        MIRROR="https://mirrors.nju.edu.cn/nix-channels/store"
+        ;;
+    6)
+        MIRROR="https://mirror.sjtu.edu.cn/nix-channels/store"
+        ;;
+    7)
+        MIRROR="https://mirrors.cqupt.edu.cn/nix-channels/store"
+        ;;
+    8)
+        MIRROR="https://mirror.nyist.edu.cn/nix-channels/store"
+        ;;
+    9)
+        MIRROR="https://mirror.iscas.ac.cn/nix-channels/store"
+        ;;
+esac
+
+
+if [[ -n "$MIRROR" ]]; then
   case $choice1 in
     1)
-      sudo nixos-rebuild test --flake /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake.Flake/Studio#$HOSTNAME --show-trace -L -v --option substituters "$FASTEST_MIRROR"
+      sudo nixos-rebuild test --flake /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake#$HOSTNAME --show-trace -L -v --option substituters "$MIRROR"
       ;;
     2)
-      sudo nixos-rebuild switch --flake /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake#$HOSTNAME --show-trace -L -v --option substituters "$FASTEST_MIRROR"
+      sudo nixos-rebuild switch --flake /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake#$HOSTNAME --show-trace -L -v --option substituters "$MIRROR"
       ;;
   esac
   exit 1
@@ -186,7 +227,7 @@ nh os <Commands> /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake --hostname $
 nh os <Commands> /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake --hostname $HOSTNAME --ask -- --accept-flake-config
 
 # [Flake] 更新 flake.lock 并部署 NixOS 系统，使用官方二进制缓存
-nh os <Commands> /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake --hostname $HOSTNAME --ask --update 
+nh os <Commands> /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake --hostname $HOSTNAME --ask --update
 
 # [Flake] 更新 flake.lock 并部署 NixOS 系统，使用且信任非官方二进制缓存
 nh os <Commands> /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake --hostname $HOSTNAME --ask --update -- --accept-flake-config
@@ -210,11 +251,11 @@ clone_github_repo() {
         REPO_NAME=$(echo "$REPO_NAME" | sed 's/\b\(.\)/\u\1/g')
     fi
     local CLONE_DIR="/home/0x0CFF/Solution/Selfhosted/$REPO_NAME"
-    
+
     local MAX_RETRIES=3
     local RETRY_COUNT=0
     local CLONE_SUCCESS=false
-    
+
     echo "仓库地址： $REPO_URL"
     while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
         echo  # 空行
@@ -235,14 +276,14 @@ clone_github_repo() {
 case $HOSTNAME in
     "DATAGC00")
         DOCKER_DIR="/home/0x0CFF/Solution/Selfhosted"
-    
+
         echo "--------------- 请选择操作 ---------------"
         echo "1. Dify"
         echo "2. Drawnix"
         echo "-----------------------------------------"
-        
+
         read -p "请输入选择 [1-2]: " choice1
-        
+
         case $choice1 in
             1)
                 clone_github_repo https://github.com/langgenius/dify.git
@@ -266,7 +307,7 @@ case $HOSTNAME in
         ;;
 esac
 ```
-                    
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 % Studio, Eagle

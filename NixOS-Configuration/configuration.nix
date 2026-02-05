@@ -146,7 +146,7 @@
       # 初始化交互式 Shell 时应运行的额外命令
       # 设置命令别名方便使用
       shellAliases = {
-        GIT = "git clone https://github.com/0x0CFF/NixOS.git /home/0x0CFF/Solution/Blueprints/NixOS && find /home/0x0CFF/Solution/Blueprints/NixOS/ -type f \( -name '.git' -o -name '.gitignore' \) -exec rm -f {} \;";
+        GIT = "git clone https://github.com/0x0CFF/NixOS.git /home/0x0CFF/Solution/Blueprints/NixOS";
         FLAKE-STUDIO = "sudo sh /home/0x0CFF/Solution/Blueprints/NixOS/Script/Studio/nixos-install.sh";
       };
     };
