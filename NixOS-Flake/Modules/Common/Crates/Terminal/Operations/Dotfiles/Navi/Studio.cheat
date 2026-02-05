@@ -116,7 +116,7 @@ FASTEST_TIME=99999
 
 set -e
 
-case $choice1 in
+case $choice2 in
     1)
         echo "正在测试 Nix 镜像源速度..."
 
