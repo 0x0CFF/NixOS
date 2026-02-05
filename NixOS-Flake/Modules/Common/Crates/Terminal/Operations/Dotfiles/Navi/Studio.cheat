@@ -63,6 +63,8 @@ done
 
 if [ "$CLONE_SUCCESS" = true ]; then
     rm -rf "$CLONE_DIR_BACKUP"
+    rm -rf /home/0x0CFF/Solution/Blueprints/NixOS/.git
+    rm -rf /home/0x0CFF/Solution/Blueprints/NixOS/.gitignore
     echo
     echo "---------------------------- 覆写设备硬件信息 ---------------------------"
     echo
@@ -166,7 +168,6 @@ case $choice2 in
         MIRROR="https://mirror.iscas.ac.cn/nix-channels/store"
         ;;
 esac
-
 
 if [[ -n "$MIRROR" ]]; then
   case $choice1 in
