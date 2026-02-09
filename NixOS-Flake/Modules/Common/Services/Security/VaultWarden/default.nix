@@ -9,9 +9,9 @@ let
   keyFile = "${sslDir}/vaultwarden-key.pem";
 in
 {
-  # 安装 openssl
+
   environment.systemPackages = with pkgs; [
-    mkcert                   # [CLI] [GO] 本地信任开发证书工具
+    mkcert                   # [CLI][GO] 本地信任开发证书工具
   ];
 
   services = {

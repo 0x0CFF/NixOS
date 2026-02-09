@@ -2,8 +2,8 @@
 
 {
   environment.systemPackages = with pkgs; [
-    uv                       # [CLI] [RUST] Python 项目管理工具
-    ruff                     # [CLI] [RUST] Python 代码格式化工具
+    uv                       # [CLI][RUST] Python 项目管理工具
+    ruff                     # [CLI][RUST] Python 代码格式化工具
   ];
   # 使 UV 将二进制文件安装到 ~/.local/bin 目录中
   environment.localBinInPath = true;

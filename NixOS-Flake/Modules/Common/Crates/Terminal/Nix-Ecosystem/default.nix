@@ -1,13 +1,14 @@
-{ config, pkgs, inputs, ... }:
-
+{ config, pkgs, inputs, ... }:let
+  agenix = inputs.agenix.packages."${stdenv.hostPlatform.system}".default
+in
 {
   environment.systemPackages = with pkgs; [
-    git                                                                  # [CLI] [C] 版本控制系统
-    gitui                                                                # [TUI] [RUST] Git 版本管理
-    gitnr                                                                # [TUI] [RUST] .gitignore 文件模板
-    serie                                                                # [TUI] [RUST] Git 分支提交图
-    nh                                                                   # [AUX] [RUST] NixOS 生态辅助工具
-    inputs.agenix.packages."${stdenv.hostPlatform.system}".default       # [CLI] [Nix] 信息加解密工具
+    git                      # [CLI][C] 版本控制系统
+    gitui                    # [TUI][RUST] Git 版本管理
+    gitnr                    # [TUI][RUST] .gitignore 文件模板
+    serie                    # [TUI][RUST] Git 分支提交图
+    nh                       # [AUX][RUST] NixOS 生态辅助工具
+    agenix                   # [CLI][Nix] 信息加解密工具
   ];
   
   programs = {
