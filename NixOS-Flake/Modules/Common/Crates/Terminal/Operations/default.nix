@@ -10,6 +10,7 @@
     fastfetch                # [CLI] [C] 系统信息查看工具
     openssl                  # [CLI] [C] SSL/TLS 协议加密库
     grex                     # [CLI] [RUST] 正则表达式生成器
+    difftastic               # [CLI] [RUST] 内容差异对比工具
     bottom                   # [TUI] [RUST] 资源管理器
     zellij                   # [TUI] [RUST] 终端复用器
     pik                      # [TUI] [RUST] 进程交互式 Kill 工具
