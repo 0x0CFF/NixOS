@@ -959,6 +959,81 @@
       ]
     }
 
+    # 定义 GATEWAY 系统配置
+    nixosConfigurations."GATEWAY" = nixpkgs.lib.nixosSystem {
+      # 系统架构类型
+      system = "x86_64-linux";
+      # 传递非默认参数到子模块系统
+      specialArgs = { inherit inputs; };
+      # 引用子模块
+      modules = [
+        agenix.nixosModules.default                                                                     # 信息加解密工具
+        ./Hosts/Common/configuration.nix                                                                # 基础配置 [ 通用 ]
+        ./Hosts/Common/environment.nix                                                                  # 环境变量 [ 通用 ]
+        ./Hosts/Home/GATEWAY/Device/configuration.nix                                                     # 基础配置
+        ./Hosts/Home/GATEWAY/Device/environment.nix                                                       # 环境变量
+        ./Hosts/Home/GATEWAY/Device/hardware-configuration.nix                                            # 硬件信息
+        # 服务专项配置
+        ./Hosts/Home/GATEWAY/Services/samba.nix                                                           # Samba 专项配置
+        # 定时服务
+
+        # 程序集合
+        ./Modules/Common/Crates/Development/Python/default.nix                                          # Python 开发工具集合
+        # ./Modules/Common/Crates/Terminal/Automation/default.nix                                         # 终端自动化程序集合
+        ./Modules/Common/Crates/Terminal/Explorer/default.nix                                           # 终端文件管理器程序集合
+        ./Modules/Common/Crates/Terminal/Hardware/default.nix                                           # 终端硬件管理程序集合
+        ./Modules/Common/Crates/Terminal/Multimedia/default.nix                                         # 终端多媒体处理程序集合
+        ./Modules/Common/Crates/Terminal/Network/default.nix                                            # 终端网络程序集合
+        ./Modules/Common/Crates/Terminal/Nix-Ecosystem/default.nix                                      # 终端 Nix 生态程序集合
+        ./Modules/Common/Crates/Terminal/Operations/default.nix                                         # 终端运维程序集合
+
+        # 硬件驱动
+        ./Modules/Common/Driver/Audio/default.nix                                                       # 声音驱动
+        # ./Modules/Common/Driver/Bluetooth/default.nix                                                   # 蓝牙驱动
+        # ./Modules/Common/Driver/Printer/default.nix                                                     # 打印机驱动
+        # ./Modules/Common/Driver/Touchpad/default.nix                                                    # 触控板驱动
+        # ./Modules/Common/Driver/USB/default.nix                                                         # USB 驱动
+        # ./Modules/Common/Driver/Xserver/default.nix                                                     # Xserver 驱动
+
+        # 后台服务
+        ./Modules/Common/Services/Automation/HomeAssistant/default.nix                                  # 智能家居平台
+        # ./Modules/Common/Services/Automation/Restic/default.nix                                         # 数据备份服务
+        ./Modules/Common/Services/Network/AdguardHome/default.nix                                       # 网络拦截平台
+        ./Modules/Common/Services/Network/OpenSSH/default.nix                                           # 远程通信服务
+        # ./Modules/Common/Services/Network/Samba/default.nix                                             # 文件共享服务
+        ./Modules/Common/Services/Network/Syncthing/default.nix                                         # 文件同步服务
+        ./Modules/Common/Services/Network/V2raya/default.nix                                            # 网络代理服务
+        # ./Modules/Common/Services/Produce/Ollama/default.nix                                            # 本地 LLM 运行框架
+        # ./Modules/Common/Services/Produce/OpenWebUI/default.nix                                         # AI 应用平台
+        # ./Modules/Common/Services/Security/Frigate/default.nix                                          # 网络录像服务
+        # ./Modules/Common/Services/Security/VaultWarden/default.nix                                      # 密码管理服务
+
+        # 容器引擎
+        # ./Modules/Common/Virtualisation/Docker/default.nix                                              # Docker 引擎
+        # ./Modules/Common/Virtualisation/Selfhosted/Dify/default.nix                                     # Dify
+
+        # 用户成员
+        ./Users/Common/0x0CFF/default.nix                                                               # 0x0CFF
+        ./Users/Home/0x0CFF/default.nix                                                                 # 0x0CFF
+
+        # 用户 home-manager（执行 nixos-rebuild switch 时，home-manager 配置会被自动部署）
+        home-manager.nixosModules.home-manager {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users."0x0CFF" = {
+            imports = [
+              # 基础配置
+              ./Hosts/Common/homemanager.nix
+              ./Modules/Common/Crates/Terminal/Explorer/Dotfiles/dotfiles.nix
+              ./Modules/Common/Crates/Terminal/Operations/Dotfiles/dotfiles.nix
+            ];
+          };
+          # 将所有 inputs 输入函数中所有的变量设为 home-manager 模块的特殊参数，这样 home-manager 子模块中可进行调用
+          home-manager.extraSpecialArgs = { inherit inputs; };
+        }
+      ]
+    }
+    
     # 定义 NAS 系统配置
     nixosConfigurations."NAS" = nixpkgs.lib.nixosSystem {
       # 系统架构类型
