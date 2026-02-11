@@ -975,7 +975,6 @@
         ./Hosts/Home/GATEWAY/Device/environment.nix                                                       # 环境变量
         ./Hosts/Home/GATEWAY/Device/hardware-configuration.nix                                            # 硬件信息
         # 服务专项配置
-        ./Hosts/Home/GATEWAY/Services/samba.nix                                                           # Samba 专项配置
         # 定时服务
         ./Hosts/Home/NAS/Timers/backup-local-syncthing-folder.nix                                       # Syncthing 文件夹备份
         
@@ -1053,9 +1052,10 @@
         # 服务专项配置
         ./Hosts/Home/NAS/Services/samba.nix                                                             # Samba 专项配置
         # 定时服务
+        ./Hosts/Home/NAS/Timers/gc-mount-point.nix                                                      # 挂载点垃圾回收
 
         # 程序集合
-        ./Modules/Common/Crates/Development/Python/default.nix                                          # Python 开发工具集合
+        # ./Modules/Common/Crates/Development/Python/default.nix                                          # Python 开发工具集合
         # ./Modules/Common/Crates/Terminal/Automation/default.nix                                         # 终端自动化程序集合
         ./Modules/Common/Crates/Terminal/Explorer/default.nix                                           # 终端文件管理器程序集合
         ./Modules/Common/Crates/Terminal/Hardware/default.nix                                           # 终端硬件管理程序集合
