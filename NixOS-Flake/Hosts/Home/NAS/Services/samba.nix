@@ -56,6 +56,15 @@
         # 强制用户或者组所有权，如果设置此项，则所有文件都将以此用户、用户组身份写入
         "force user" = "0x0CFF";
         "force group" = "users";
+        # 以下参数用于配置回收站（空目录被删除不会放入回收站）
+        "vfs object" = "recycle";                                # 载入 Samba 用于回收站功能的模块 recycle.so
+        "recycle:repository" = ".Trash";                         # 回收站的相对于共享资源目录的路径（删除文件位于共享资源目录下的 ".Trash" 目录）
+        # "recycle:repository" = ".Trash/%U";                    # 回收站的相对于共享资源目录的路径（%U 变量表示当前浏览共享用户的用户名，所配置的目录其他用户必须有写权限，每个用户删除的文件都会存放在以他用户名命名的目录下）
+        "recycle:versions" = "Yes";                              # 如果在回收站所在目录中存在同名文件，则以 "Copy #x of" 文件名的形式加以区分
+        "recycle:keeptree" = "Yes";                              # 在将文件移入回收站时，要建立相对应的目录结构
+        "recycle:maxsixe" = "0";                                 # 回收站的最大使用空间，单位为字节，"0" 表示没有最大使用空间的限制
+        "recycle:exclude_dir" = ".Trash";                        # 排除文件夹（绝对路径，使用逗号隔开，支持通配符 * 和 ?）
+        "recycle:touch_mtime" = "No";                            # 删除文件时，是否应更新文件的上次修改日期
       };
       "NAS#02·生活资料" = {
         "path" = "/mnt/生活资料";                                 # 共享目录
@@ -73,6 +82,15 @@
         # 强制用户或者组所有权，如果设置此项，则所有文件都将以此用户、用户组身份写入
         "force user" = "0x0CFF";
         "force group" = "users";
+        # 以下参数用于配置回收站（空目录被删除不会放入回收站）
+        "vfs object" = "recycle";                                # 载入 Samba 用于回收站功能的模块 recycle.so
+        "recycle:repository" = ".Trash";                         # 回收站的相对于共享资源目录的路径（删除文件位于共享资源目录下的 ".Trash" 目录）
+        # "recycle:repository" = ".Trash/%U";                    # 回收站的相对于共享资源目录的路径（%U 变量表示当前浏览共享用户的用户名，所配置的目录其他用户必须有写权限，每个用户删除的文件都会存放在以他用户名命名的目录下）
+        "recycle:versions" = "Yes";                              # 如果在回收站所在目录中存在同名文件，则以 "Copy #x of" 文件名的形式加以区分
+        "recycle:keeptree" = "Yes";                              # 在将文件移入回收站时，要建立相对应的目录结构
+        "recycle:maxsixe" = "0";                                 # 回收站的最大使用空间，单位为字节，"0" 表示没有最大使用空间的限制
+        "recycle:exclude_dir" = ".Trash";                        # 排除文件夹（绝对路径，使用逗号隔开，支持通配符 * 和 ?）
+        "recycle:touch_mtime" = "No";                            # 删除文件时，是否应更新文件的上次修改日期
       };
       "NAS#03·媒体仓库" = {
         "path" = "/mnt/媒体仓库";                                 # 共享目录
@@ -90,6 +108,15 @@
         # 强制用户或者组所有权，如果设置此项，则所有文件都将以此用户、用户组身份写入
         "force user" = "0x0CFF";
         "force group" = "users";
+        # 以下参数用于配置回收站（空目录被删除不会放入回收站）
+        "vfs object" = "recycle";                                # 载入 Samba 用于回收站功能的模块 recycle.so
+        "recycle:repository" = ".Trash";                         # 回收站的相对于共享资源目录的路径（删除文件位于共享资源目录下的 ".Trash" 目录）
+        # "recycle:repository" = ".Trash/%U";                    # 回收站的相对于共享资源目录的路径（%U 变量表示当前浏览共享用户的用户名，所配置的目录其他用户必须有写权限，每个用户删除的文件都会存放在以他用户名命名的目录下）
+        "recycle:versions" = "Yes";                              # 如果在回收站所在目录中存在同名文件，则以 "Copy #x of" 文件名的形式加以区分
+        "recycle:keeptree" = "Yes";                              # 在将文件移入回收站时，要建立相对应的目录结构
+        "recycle:maxsixe" = "0";                                 # 回收站的最大使用空间，单位为字节，"0" 表示没有最大使用空间的限制
+        "recycle:exclude_dir" = ".Trash";                        # 排除文件夹（绝对路径，使用逗号隔开，支持通配符 * 和 ?）
+        "recycle:touch_mtime" = "No";                            # 删除文件时，是否应更新文件的上次修改日期
       };
       "NAS#04·临时数据" = {
         "path" = "/mnt/临时数据";                                 # 共享目录
@@ -107,6 +134,15 @@
         # 强制用户或者组所有权，如果设置此项，则所有文件都将以此用户、用户组身份写入
         "force user" = "0x0CFF";
         "force group" = "users";
+        # 以下参数用于配置回收站（空目录被删除不会放入回收站）
+        "vfs object" = "recycle";                                # 载入 Samba 用于回收站功能的模块 recycle.so
+        "recycle:repository" = ".Trash";                         # 回收站的相对于共享资源目录的路径（删除文件位于共享资源目录下的 ".Trash" 目录）
+        # "recycle:repository" = ".Trash/%U";                    # 回收站的相对于共享资源目录的路径（%U 变量表示当前浏览共享用户的用户名，所配置的目录其他用户必须有写权限，每个用户删除的文件都会存放在以他用户名命名的目录下）
+        "recycle:versions" = "Yes";                              # 如果在回收站所在目录中存在同名文件，则以 "Copy #x of" 文件名的形式加以区分
+        "recycle:keeptree" = "Yes";                              # 在将文件移入回收站时，要建立相对应的目录结构
+        "recycle:maxsixe" = "0";                                 # 回收站的最大使用空间，单位为字节，"0" 表示没有最大使用空间的限制
+        "recycle:exclude_dir" = ".Trash";                        # 排除文件夹（绝对路径，使用逗号隔开，支持通配符 * 和 ?）
+        "recycle:touch_mtime" = "No";                            # 删除文件时，是否应更新文件的上次修改日期
       };
     };
   };
