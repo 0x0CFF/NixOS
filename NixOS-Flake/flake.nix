@@ -74,6 +74,7 @@
         # 服务专项配置
         # ./Hosts/Studio/DATAGC/DATAGC00/Services/beszel.nix                                              # Beszel 专项配置
         # 定时服务
+        ./Hosts/Studio/DATAGC/DATAGC00/Timers/backup-local-syncthing-folder.nix                           # Syncthing 文件夹备份
 
         # 程序集合
         ./Modules/Common/Crates/Development/Python/default.nix                                          # Python 开发工具集合
@@ -976,7 +977,8 @@
         # 服务专项配置
         ./Hosts/Home/GATEWAY/Services/samba.nix                                                           # Samba 专项配置
         # 定时服务
-
+        ./Hosts/Home/NAS/Timers/backup-local-syncthing-folder.nix                                       # Syncthing 文件夹备份
+        
         # 程序集合
         ./Modules/Common/Crates/Development/Python/default.nix                                          # Python 开发工具集合
         # ./Modules/Common/Crates/Terminal/Automation/default.nix                                         # 终端自动化程序集合
@@ -1051,7 +1053,6 @@
         # 服务专项配置
         ./Hosts/Home/NAS/Services/samba.nix                                                             # Samba 专项配置
         # 定时服务
-        ./Hosts/Home/NAS/Timers/backup-local-syncthing-folder.nix                                       # Syncthing 文件夹备份
 
         # 程序集合
         ./Modules/Common/Crates/Development/Python/default.nix                                          # Python 开发工具集合
