@@ -23,13 +23,13 @@
       # -p：保留文件权限
       # -X：在归档模式基础上，额外保留扩展属性（例如 chattr 修改后的属性）
 
-      # 镜像备份，NAS [ ~/Solution/Syncthing/ ] --> NAS [ /mnt/BACKUP/Syncthing ]
-      ${pkgs.rsync}/bin/rsync -avPX --delete -e "/run/current-system/sw/bin/ssh" /home/0x0CFF/Solution/Syncthing/ /mnt/BACKUP/Syncthing/
+      # 镜像备份，GATEWAY [ ~/Solution/Syncthing/ ] --> GATEWAY [ ~/Solution/Syncthing-Backup/ ]
+      ${pkgs.rsync}/bin/rsync -avp --delete /home/0x0CFF/Solution/Syncthing/ /home/0x0CFF/Solution/Syncthing-Backup/
     '';
     # 单元配置
     serviceConfig = {
       Type = "oneshot";
-      User = "root";
+      User = "0x0CFF";
     };
   };
 }
