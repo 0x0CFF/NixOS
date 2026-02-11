@@ -24,12 +24,12 @@
       # -X：在归档模式基础上，额外保留扩展属性（例如 chattr 修改后的属性）
 
       # 镜像备份，DATASC00 [ /mnt/Material#*/ ] --> DATASC00-BACKUP [ /mnt/Material#*/ ]
-      ${pkgs.rsync}/bin/rsync -avPX --delete -e "/run/current-system/sw/bin/ssh" /mnt/Material#ANIMATION 0x0CFF@192.168.31.121:/mnt/Material#ANIMATION
-      ${pkgs.rsync}/bin/rsync -avPX --delete -e "/run/current-system/sw/bin/ssh" /mnt/Material#BUSINESS 0x0CFF@192.168.31.121:/mnt/Material#BUSINESS
-      ${pkgs.rsync}/bin/rsync -avPX --delete -e "/run/current-system/sw/bin/ssh" /mnt/Material#DESIGN 0x0CFF@192.168.31.121:/mnt/Material#DESIGN
-      ${pkgs.rsync}/bin/rsync -avPX --delete -e "/run/current-system/sw/bin/ssh" /mnt/Material#FINANCE 0x0CFF@192.168.31.121:/mnt/Material#FINANCE
-      ${pkgs.rsync}/bin/rsync -avPX --delete -e "/run/current-system/sw/bin/ssh" /mnt/Material#PUBLIC 0x0CFF@192.168.31.121:/mnt/Material#PUBLIC
-      ${pkgs.rsync}/bin/rsync -avPX --delete -e "/run/current-system/sw/bin/ssh" /mnt/Material#VIDEO 0x0CFF@192.168.31.121:/mnt/Material#VIDEO
+      ${pkgs.rsync}/bin/rsync -avpX --delete -e "/run/current-system/sw/bin/ssh" /mnt/Material#ANIMATION 0x0CFF@192.168.31.121:/mnt/Material#ANIMATION
+      ${pkgs.rsync}/bin/rsync -avpX --delete -e "/run/current-system/sw/bin/ssh" /mnt/Material#BUSINESS 0x0CFF@192.168.31.121:/mnt/Material#BUSINESS
+      ${pkgs.rsync}/bin/rsync -avpX --delete -e "/run/current-system/sw/bin/ssh" /mnt/Material#DESIGN 0x0CFF@192.168.31.121:/mnt/Material#DESIGN
+      ${pkgs.rsync}/bin/rsync -avpX --delete -e "/run/current-system/sw/bin/ssh" /mnt/Material#FINANCE 0x0CFF@192.168.31.121:/mnt/Material#FINANCE
+      ${pkgs.rsync}/bin/rsync -avpX --delete -e "/run/current-system/sw/bin/ssh" /mnt/Material#PUBLIC 0x0CFF@192.168.31.121:/mnt/Material#PUBLIC
+      ${pkgs.rsync}/bin/rsync -avpX --delete -e "/run/current-system/sw/bin/ssh" /mnt/Material#VIDEO 0x0CFF@192.168.31.121:/mnt/Material#VIDEO
     '';
     # 单元配置
     serviceConfig = {
