@@ -3,7 +3,7 @@
 {
   services.samba-wsdd = {
     # Samba 服务器名称
-    hostname = "DATASC00-BACKUP-BACKUP";
+    hostname = "DATASC00-BACKUP";
   };
   services.samba = {
     settings = {
