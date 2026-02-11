@@ -40,6 +40,74 @@
       #   "recycle:noversions = *.doc";               # 如果在回收站所在目录中存在同名文件，覆盖原有文件的文件类型
       #   "recycle:touch_mtime" = "No";               # 删除文件时，是否应更新文件的上次修改日期
       # };
+      "NAS#01·生产归档" = {
+        "path" = "/mnt/生产归档";                                 # 共享目录
+        "read only" = "no";                                      # 是否只读
+        "browseable" = "yes";                                    # 指定该共享是否可以浏览
+        "writable" = "yes";                                      # 指定该共享路径是否可写
+        "public" = "no";                                         # 指定该共享是否允许 Guest 账户访问
+        "create mask" = "0775";                                  # 创建文件权限
+        "directory mask" = "0775";                               # 创建目录权限
+        # 设置用户、用户组权限（用户组使用 @ 符号表示），多个用户或用户组中间用逗号隔开
+        # valid users 指定允许访问该共享资源的用户，如果不指定则所有用户都可访问
+        "vaild users" = "0x0CFF";
+        # 设置可对文件进行写操作的用户、用户组
+        "write list" = "0x0CFF";
+        # 强制用户或者组所有权，如果设置此项，则所有文件都将以此用户、用户组身份写入
+        "force user" = "0x0CFF";
+        "force group" = "users";
+      };
+      "NAS#02·生活资料" = {
+        "path" = "/mnt/生活资料";                                 # 共享目录
+        "read only" = "no";                                      # 是否只读
+        "browseable" = "yes";                                    # 指定该共享是否可以浏览
+        "writable" = "yes";                                      # 指定该共享路径是否可写
+        "public" = "no";                                         # 指定该共享是否允许 Guest 账户访问
+        "create mask" = "0775";                                  # 创建文件权限
+        "directory mask" = "0775";                               # 创建目录权限
+        # 设置用户、用户组权限（用户组使用 @ 符号表示），多个用户或用户组中间用逗号隔开
+        # valid users 指定允许访问该共享资源的用户，如果不指定则所有用户都可访问
+        "vaild users" = "0x0CFF";
+        # 设置可对文件进行写操作的用户、用户组
+        "write list" = "0x0CFF";
+        # 强制用户或者组所有权，如果设置此项，则所有文件都将以此用户、用户组身份写入
+        "force user" = "0x0CFF";
+        "force group" = "users";
+      };
+      "NAS#03·媒体仓库" = {
+        "path" = "/mnt/媒体仓库";                                 # 共享目录
+        "read only" = "no";                                      # 是否只读
+        "browseable" = "yes";                                    # 指定该共享是否可以浏览
+        "writable" = "yes";                                      # 指定该共享路径是否可写
+        "public" = "no";                                         # 指定该共享是否允许 Guest 账户访问
+        "create mask" = "0775";                                  # 创建文件权限
+        "directory mask" = "0775";                               # 创建目录权限
+        # 设置用户、用户组权限（用户组使用 @ 符号表示），多个用户或用户组中间用逗号隔开
+        # valid users 指定允许访问该共享资源的用户，如果不指定则所有用户都可访问
+        "vaild users" = "0x0CFF";
+        # 设置可对文件进行写操作的用户、用户组
+        "write list" = "0x0CFF";
+        # 强制用户或者组所有权，如果设置此项，则所有文件都将以此用户、用户组身份写入
+        "force user" = "0x0CFF";
+        "force group" = "users";
+      };
+      "NAS#04·临时数据" = {
+        "path" = "/mnt/临时数据";                                 # 共享目录
+        "read only" = "no";                                      # 是否只读
+        "browseable" = "yes";                                    # 指定该共享是否可以浏览
+        "writable" = "yes";                                      # 指定该共享路径是否可写
+        "public" = "no";                                         # 指定该共享是否允许 Guest 账户访问
+        "create mask" = "0775";                                  # 创建文件权限
+        "directory mask" = "0775";                               # 创建目录权限
+        # 设置用户、用户组权限（用户组使用 @ 符号表示），多个用户或用户组中间用逗号隔开
+        # valid users 指定允许访问该共享资源的用户，如果不指定则所有用户都可访问
+        "vaild users" = "0x0CFF";
+        # 设置可对文件进行写操作的用户、用户组
+        "write list" = "0x0CFF";
+        # 强制用户或者组所有权，如果设置此项，则所有文件都将以此用户、用户组身份写入
+        "force user" = "0x0CFF";
+        "force group" = "users";
+      };
     };
   };
 }
