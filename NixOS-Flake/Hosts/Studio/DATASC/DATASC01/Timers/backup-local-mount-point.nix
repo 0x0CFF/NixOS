@@ -24,12 +24,12 @@
       # -X：在归档模式基础上，额外保留扩展属性（例如 chattr 修改后的属性）
 
       # 镜像备份，DATASC01 [ /mnt/Archive#*/ ] --> DATASC01-BACKUP [ /mnt/Archive#*/ ]
-      ${pkgs.rsync}/bin/rsync -avPX --delete -e "/run/current-system/sw/bin/ssh" /mnt/Archive#01 0x0CFF@192.168.31.123:/mnt/Archive#01
-      ${pkgs.rsync}/bin/rsync -avPX --delete -e "/run/current-system/sw/bin/ssh" /mnt/Archive#02 0x0CFF@192.168.31.123:/mnt/Archive#02
-      ${pkgs.rsync}/bin/rsync -avPX --delete -e "/run/current-system/sw/bin/ssh" /mnt/Archive#03 0x0CFF@192.168.31.123:/mnt/Archive#03
-      ${pkgs.rsync}/bin/rsync -avPX --delete -e "/run/current-system/sw/bin/ssh" /mnt/Archive#04 0x0CFF@192.168.31.123:/mnt/Archive#04
-      ${pkgs.rsync}/bin/rsync -avPX --delete -e "/run/current-system/sw/bin/ssh" /mnt/Archive#05 0x0CFF@192.168.31.123:/mnt/Archive#05
-      ${pkgs.rsync}/bin/rsync -avPX --delete -e "/run/current-system/sw/bin/ssh" /mnt/Archive#06 0x0CFF@192.168.31.123:/mnt/Archive#06
+      ${pkgs.rsync}/bin/rsync -avpX --delete -e "/run/current-system/sw/bin/ssh" /mnt/Archive#01 0x0CFF@192.168.31.123:/mnt/Archive#01
+      ${pkgs.rsync}/bin/rsync -avpX --delete -e "/run/current-system/sw/bin/ssh" /mnt/Archive#02 0x0CFF@192.168.31.123:/mnt/Archive#02
+      ${pkgs.rsync}/bin/rsync -avpX --delete -e "/run/current-system/sw/bin/ssh" /mnt/Archive#03 0x0CFF@192.168.31.123:/mnt/Archive#03
+      ${pkgs.rsync}/bin/rsync -avpX --delete -e "/run/current-system/sw/bin/ssh" /mnt/Archive#04 0x0CFF@192.168.31.123:/mnt/Archive#04
+      ${pkgs.rsync}/bin/rsync -avpX --delete -e "/run/current-system/sw/bin/ssh" /mnt/Archive#05 0x0CFF@192.168.31.123:/mnt/Archive#05
+      ${pkgs.rsync}/bin/rsync -avpX --delete -e "/run/current-system/sw/bin/ssh" /mnt/Archive#06 0x0CFF@192.168.31.123:/mnt/Archive#06
     '';
     # 单元配置
     serviceConfig = {
