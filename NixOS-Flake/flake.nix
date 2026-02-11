@@ -957,8 +957,8 @@
           # 将所有 inputs 输入函数中所有的变量设为 home-manager 模块的特殊参数，这样 home-manager 子模块中可进行调用
           home-manager.extraSpecialArgs = { inherit inputs; };
         }
-      ]
-    }
+      ];
+    };
 
     # 定义 GATEWAY 系统配置
     nixosConfigurations."GATEWAY" = nixpkgs.lib.nixosSystem {
@@ -1032,8 +1032,8 @@
           # 将所有 inputs 输入函数中所有的变量设为 home-manager 模块的特殊参数，这样 home-manager 子模块中可进行调用
           home-manager.extraSpecialArgs = { inherit inputs; };
         }
-      ]
-    }
+      ];
+    };
     
     # 定义 NAS 系统配置
     nixosConfigurations."NAS" = nixpkgs.lib.nixosSystem {
@@ -1108,7 +1108,7 @@
           # 将所有 inputs 输入函数中所有的变量设为 home-manager 模块的特殊参数，这样 home-manager 子模块中可进行调用
           home-manager.extraSpecialArgs = { inherit inputs; };
         }
-      ]
-    }
+      ];
+    };
   };
 }
