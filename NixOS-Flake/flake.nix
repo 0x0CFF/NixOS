@@ -912,6 +912,13 @@
         ./Modules/Common/Crates/Terminal/Network/default.nix                                            # 终端网络程序集合
         ./Modules/Common/Crates/Terminal/Nix-Ecosystem/default.nix                                      # 终端 Nix 生态程序集合
         ./Modules/Common/Crates/Terminal/Operations/default.nix                                         # 终端运维程序集合
+        ./Modules/Home/Crates/Desktop/DE/default.nix                                                    # 桌面程序集合
+        ./Modules/Home/Crates/Desktop/Hardware/default.nix                                              # 硬件管理程序集合
+        ./Modules/Home/Crates/Desktop/Produce/default.nix                                               # 生产应用程序集合
+        # ./Modules/Home/Crates/Desktop/Recreation/default.nix                                            # 娱乐程序集合
+        ./Modules/Home/Crates/Desktop/Security/default.nix                                              # 安全管理程序集合
+        # ./Modules/Home/Crates/Desktop/Tool/default.nix                                                  # 工具程序集合
+        ./Modules/Home/Crates/Desktop/Viewer/default.nix                                                # 文件预览程序集合
 
         # 硬件驱动
         ./Modules/Common/Driver/Audio/default.nix                                                       # 声音驱动
@@ -952,6 +959,7 @@
               ./Hosts/Common/homemanager.nix
               ./Modules/Common/Crates/Terminal/Explorer/Dotfiles/dotfiles.nix
               ./Modules/Common/Crates/Terminal/Operations/Dotfiles/dotfiles.nix
+              ./Modules/Home/Crates/Desktop/DE/Dotfiles/dotfiles.nix
             ];
           };
           # 将所有 inputs 输入函数中所有的变量设为 home-manager 模块的特殊参数，这样 home-manager 子模块中可进行调用
@@ -977,7 +985,7 @@
         # 服务专项配置
         # 定时服务
         ./Hosts/Home/NAS/Timers/backup-local-syncthing-folder.nix                                       # Syncthing 文件夹备份
-        
+
         # 程序集合
         ./Modules/Common/Crates/Development/Python/default.nix                                          # Python 开发工具集合
         # ./Modules/Common/Crates/Terminal/Automation/default.nix                                         # 终端自动化程序集合
@@ -1034,7 +1042,7 @@
         }
       ];
     };
-    
+
     # 定义 NAS 系统配置
     nixosConfigurations."NAS" = nixpkgs.lib.nixosSystem {
       # 系统架构类型

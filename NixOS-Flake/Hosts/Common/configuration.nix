@@ -9,9 +9,9 @@
     fontDir.enable = true;
     # 字体包
     packages = with pkgs; [
-      noto-fonts-cjk-sans         # Google CJK 无衬线字体
-      noto-fonts-cjk-serif        # Google CJK 衬线字体
-      noto-fonts-color-emoji      # Google Emoji
+      noto-fonts-cjk-sans           # Google CJK 无衬线字体
+      noto-fonts-cjk-serif          # Google CJK 衬线字体
+      noto-fonts-color-emoji        # Google Emoji
 
       # Nerd Fonts
       nerd-fonts.jetbrains-mono     # 编程字体
@@ -22,6 +22,41 @@
 
   # 国际化与输入法
   i18n.defaultLocale = "zh_CN.UTF-8";
+  i18n.inputMethod = {
+    enable = true;
+    type = "fcitx5";
+    fcitx5 = {
+      addons = with pkgs; [                       # fcitx5 插件
+        fcitx5-gtk                                # GTK 支持
+        qt6Packages.fcitx5-chinese-addons         # 中文模块
+        fcitx5-nord                               # 主题
+        fcitx5-pinyin-zhwiki                      # 字典
+      ];
+      ignoreUserConfig = true;                    # 如果不使用 Home Manager，忽略 ~/.config/fcitx5 中的配置
+      settings = {
+        addons = {
+          pinyin.globalSection = {
+            PageSize = 9;
+            CloudPinyinEnabled = "True";
+            CloudPinyinIndex = 2;
+          };
+          cloudpinyin.globalSection = {
+            Backend = "Baidu";
+          };
+        };
+        inputMethod = {
+          "Groups/0" = {
+            Name = "Default";
+            "Default Layout" = "us";
+            DefaultIM = "keyboard-us";
+          };
+          "Groups/0/Items/0".Name = "keyboard-us";
+          "Groups/0/Items/1".Name = "pinyin";
+          GroupOrder."0" = "Default";
+        };
+      };
+    };
+  };
   # console = {
   #   font = "Lat2-Terminus16";
   #   keyMap = "us";
@@ -55,10 +90,13 @@
   nixpkgs.config.allowUnfree = true;
 
   # 系统程序
-  # programs = {
-  #   # 一些程序需要 SUID 包装器，可以进一步配置或在用户会话中启动
-  #   mtr.enable = true;
-  #   gnupg.agent = {
+
+  # programs.mtr = {      # 一些程序需要 SUID 包装器，可以进一步配置或在用户会话中启动
+  #   enable = true;
+  # };
+
+  # programs.gnupg = {
+  #   agent = {
   #     enable = true;
   #     enableSSHSupport = true;
   #   };
