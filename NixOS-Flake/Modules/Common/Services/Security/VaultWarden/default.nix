@@ -14,41 +14,39 @@ in
     mkcert                   # [CLI][GO] 本地信任开发证书工具
   ];
 
-  services = {
-    vaultwarden = {
-      enable = true;
-      # 数据库配置（sqlite、mySQL、postgresql）
-      dbBackend = "sqlite";
-      # backupDir = "/var/backup/vaultwarden";
-      # 环境变量文件（用于敏感信息）
-      environmentFile = "/var/lib/vaultwarden/vaultwarden.env";
-      config = {
-        # 域名设置，使用 IP 地址作为域名
-        DOMAIN = "https://${serverIp}";
-        # 开启管理员页面，设置完成后可通过 /admin 子目录访问管理页面
-        ADMIN_TOKEN = "U6b74hfy+";
-        # Rocket 服务器配置
-        ROCKET_ADDRESS = "0.0.0.0";
-        ROCKET_PORT = 8222;
-        # WebSocket 配置（用于实时同步）
-        WEBSOCKET_ENABLED = true;
-        WEBSOCKET_ADDRESS = "0.0.0.0";
-        WEBSOCKET_PORT = 3012;
-        # 邮件设置（可选）
-        # SMTP_HOST = "smtp.example.com";
-        # SMTP_FROM = "vaultwarden@studio.com";
-        # SMTP_PORT = 587;
-        # SMTP_SSL = true;
-        # SMTP_USERNAME = "username";
-        # SMTP_PASSWORD = "password";
-        # 日志级别
-        LOG_LEVEL = "warn";
-        EXTENDED_LOGGING = false;
-        # 其他安全设置
-        # SHOW_PASSWORD_HINT = false;
-        PASSWORD_ITERATIONS = 100000;       # 增加密码迭代次数提高安全性
-        SIGNUPS_ALLOWED = false;            # 是否允许注册，生产环境建议关闭注册
-      };
+  services.vaultwarden = {
+    enable = true;
+    # 数据库配置（sqlite、mySQL、postgresql）
+    dbBackend = "sqlite";
+    # backupDir = "/var/backup/vaultwarden";
+    # 环境变量文件（用于敏感信息）
+    environmentFile = "/var/lib/vaultwarden/vaultwarden.env";
+    config = {
+      # 域名设置，使用 IP 地址作为域名
+      DOMAIN = "https://${serverIp}";
+      # 开启管理员页面，设置完成后可通过 /admin 子目录访问管理页面
+      ADMIN_TOKEN = "U6b74hfy+";
+      # Rocket 服务器配置
+      ROCKET_ADDRESS = "0.0.0.0";
+      ROCKET_PORT = 8222;
+      # WebSocket 配置（用于实时同步）
+      WEBSOCKET_ENABLED = true;
+      WEBSOCKET_ADDRESS = "0.0.0.0";
+      WEBSOCKET_PORT = 3012;
+      # 邮件设置（可选）
+      # SMTP_HOST = "smtp.example.com";
+      # SMTP_FROM = "vaultwarden@studio.com";
+      # SMTP_PORT = 587;
+      # SMTP_SSL = true;
+      # SMTP_USERNAME = "username";
+      # SMTP_PASSWORD = "password";
+      # 日志级别
+      LOG_LEVEL = "warn";
+      EXTENDED_LOGGING = false;
+      # 其他安全设置
+      # SHOW_PASSWORD_HINT = false;
+      PASSWORD_ITERATIONS = 100000;       # 增加密码迭代次数提高安全性
+      SIGNUPS_ALLOWED = false;            # 是否允许注册，生产环境建议关闭注册
     };
   };
 

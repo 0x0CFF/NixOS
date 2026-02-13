@@ -1,8 +1,8 @@
 { config, pkgs, inputs, ... }:
 
 {
-  services = {
-    restic.backups = {
+  services.restic = {
+    backups = {
       DATABC00 = {
         # 备份路径
         paths = [

@@ -76,79 +76,58 @@
   };
 
   # 系统服务
-  services = {
-    # X 图形显示服务器
-    # xserver = {
-    #   enable = true;
-    #   xkb.layout = "us";                       # X11 键盘布局
-    #   xkb.options = "eurosign:e,caps:escape";  # X11 键盘映射
-    # };
-    # 启用 CUPS 以打印文档
-    # printing = {
-    #   enable = true;
-    # };
-    # 启用触摸板支持（在大多数桌面管理器中默认启用）
-    # libinput = {
-    #   enable = true;
-    # }
-    # 启用声音（pulseaudio 与 pipewire 服务互斥，仅选择以下选项之一）
-    # pulseaudio = {
-    #   enable = true;
-    # }
-    # pipewire = {
-    #   enable = true;
-    #   pulse.enable = true;
-    # };
-    # OpenSSH 服务
-    openssh = {
-      enable = true;
-    };
-    # Samba 服务
-    samba = {
-      enable = true;
-      openFirewall = true;    # 开放防火墙端口
-      settings = {
-        # 全局配置
-        global = {
-          # 设定安全级别，共有 6 种
-          # share  : 不需要提供用户名和密码
-          # user   : 需要提供用户名和密码，身份验证由 Samba 负责
-          # server : 需要提供用户名和密码，可指定其他机器作身份验证
-          # domain : 需要提供用户名和密码，指定域服务器作身份验证
-          security = "user";
-          # 用户登录黑名单
-          "invalid users" = [
-            "root"
-            "0x0CFF"
-          ];
-        };
+  services.openssh = {      # OpenSSH 服务
+    enable = true;
+  };
+  
+  services.samba = {              # Samba 服务
+    enable = true;
+    openFirewall = true;    # 开放防火墙端口
+    settings = {
+      # 全局配置
+      global = {
+        # 设定安全级别，共有 6 种
+        # share  : 不需要提供用户名和密码
+        # user   : 需要提供用户名和密码，身份验证由 Samba 负责
+        # server : 需要提供用户名和密码，可指定其他机器作身份验证
+        # domain : 需要提供用户名和密码，指定域服务器作身份验证
+        security = "user";
+        # 用户登录黑名单
+        "invalid users" = [
+          "root"
+          "0x0CFF"
+        ];
       };
     };
+  };
+  
+  services.samba-wsdd  = {
     # Web 服务动态发现主机守护程序，使共享对 Windows 10 客户端可见
     # 这使 Samba 主机（如本地 NAS 设备）能够被 Windows 等 Web 服务发现客户端找到
-    samba-wsdd = {
-      enable = true;                                  # 启用服务
-      workgroup = "WORKGROUP";                        # Samba 工作组
-    };
+    enable = true;                                  # 启用服务
+    workgroup = "WORKGROUP";                        # Samba 工作组
   };
 
   # 系统程序
-  programs = {
-    # 一些程序需要 SUID 包装器，可以进一步配置或在用户会话中启动
-    # mtr.enable = true;
-    # gnupg.agent = {
-    #   enable = true;
-    #   enableSSHSupport = true;
-    # };
-    # 配置 Bash
-    bash = {
-      completion.enable = true;    # Tab 补全功能
-      # 初始化交互式 Shell 时应运行的额外命令
-      # 设置命令别名方便使用
-      shellAliases = {
-        GIT = "git clone https://github.com/0x0CFF/NixOS.git /home/0x0CFF/Solution/Blueprints/NixOS && find /home/0x0CFF/Solution/Blueprints/NixOS/ -type f \( -name '.git' -o -name '.gitignore' \) -exec rm -f {} \;";
-        FLAKE-STUDIO = "sudo sh /home/0x0CFF/Solution/Blueprints/NixOS/Script/Studio/nixos-install.sh";
-      };
+  
+  # programs.mtr = {      # 一些程序需要 SUID 包装器，可以进一步配置或在用户会话中启动
+  #   enable = true;
+  # };
+  # programs.gnupg = {
+  #   agent = {
+  #     enable = true;
+  #     enableSSHSupport = true;
+  #   };
+  # };
+  # 
+
+  programs.bash = {
+    completion.enable = true;    # Tab 补全功能
+    # 初始化交互式 Shell 时应运行的额外命令
+    # 设置命令别名方便使用
+    shellAliases = {
+      GIT = "git clone https://github.com/0x0CFF/NixOS.git /home/0x0CFF/Solution/Blueprints/NixOS && find /home/0x0CFF/Solution/Blueprints/NixOS/ -type f \( -name '.git' -o -name '.gitignore' \) -exec rm -f {} \;";
+      FLAKE-STUDIO = "sudo sh /home/0x0CFF/Solution/Blueprints/NixOS/Script/Studio/nixos-install.sh";
     };
   };
 

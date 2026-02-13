@@ -13,13 +13,10 @@
     yazi                     # [TUI][RUST] 文件管理器
   ];
 
-  programs = {
-    # 配置 Bash
-    bash = {
-      # 在 Bash Shell 初始化期间调用的 Shell 脚本代码
-      interactiveShellInit = ''
-        bind '"\ee": "yazi\n"'
-      '';
-    };
+  programs.bash = {
+    # 在 Bash Shell 初始化期间调用的 Shell 脚本代码
+    interactiveShellInit = ''
+      bind '"\ee": "yazi\n"'
+    '';
   };
 }
