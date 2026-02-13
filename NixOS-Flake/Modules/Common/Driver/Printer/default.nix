@@ -1,10 +1,8 @@
 { config, lib, pkgs, ... }:
 
 {
-  services = {
+  services.printing = {
     # 启用 CUPS 以打印文档
-    printing = {
-      enable = true;
-    };
+    enable = true;
   };
 }

@@ -1,8 +1,10 @@
 { config, lib, pkgs, inputs, ... }:
 
 {
-  # 启用 Home Manager 并自引用
-  programs.home-manager.enable = true;
+  programs.home-manager = {
+    enable = true;           # 启用 Home Manager 并自引用
+  };
+  
   home = {
     username = "0x0CFF";
     homeDirectory = "/home/0x0CFF";

@@ -10,20 +10,17 @@
     nh                       # [AUX][RUST] NixOS 生态辅助工具               
   ];
   
-  programs = {
-    # 配置 Bash
-    bash = {
-      # Tab 补全功能
-      completion.enable = true;
-      # 在 Bash Shell 初始化期间调用的 Shell 脚本代码
-      interactiveShellInit = ''
-        bind '"\eg": "gitui\n"'
-      '';
-      # 设置命令别名
-      shellAliases = {
-        GIT = "git clone https://github.com/0x0CFF/NixOS.git /home/0x0CFF/Solution/Blueprints/NixOS && find /home/0x0CFF/Solution/Blueprints/NixOS/ -type f \( -name '.git' -o -name '.gitignore' \) -exec rm -f {} \;";
-        FLAKE-STUDIO = "sudo sh /home/0x0CFF/Solution/Blueprints/NixOS/Script/Studio/nixos-install.sh";
-      };
+  programs.bash = {
+    # Tab 补全功能
+    completion.enable = true;
+    # 在 Bash Shell 初始化期间调用的 Shell 脚本代码
+    interactiveShellInit = ''
+      bind '"\eg": "gitui\n"'
+    '';
+    # 设置命令别名
+    shellAliases = {
+      GIT = "git clone https://github.com/0x0CFF/NixOS.git /home/0x0CFF/Solution/Blueprints/NixOS && find /home/0x0CFF/Solution/Blueprints/NixOS/ -type f \( -name '.git' -o -name '.gitignore' \) -exec rm -f {} \;";
+      FLAKE-STUDIO = "sudo sh /home/0x0CFF/Solution/Blueprints/NixOS/Script/Studio/nixos-install.sh";
     };
   };
 }

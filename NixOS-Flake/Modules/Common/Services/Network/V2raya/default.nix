@@ -1,10 +1,8 @@
 { config, pkgs, inputs, ... }:
 
 {
-  services = {
-    v2raya = {
-      enable = true;
-    };
+  services.v2raya = {
+    enable = true;
   };
 
   # 防火墙端口配置

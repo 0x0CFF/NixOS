@@ -18,27 +18,24 @@
     systemctl-tui            # [TUI][RUST] Systemd 服务管理工具
   ];
   
-  programs = {
-    # 配置 Bash
-    bash = {
-      # Tab 补全功能
-      completion.enable = true;
-      # 在 Bash Shell 初始化期间调用的 Shell 脚本代码
-      interactiveShellInit = ''
-        eval "$(starship init bash)"
-        eval "$(navi widget bash)"
-        eval "$(zellij setup --generate-auto-start bash)"
-        bind '"\eq": "navi --path ~/.config/navi\n"'
-        bind '"\ec": clear-screen'
-        bind '"\en": "fastfetch\n"'
-        bind '"\em": "btm\n"'
-        bind '"\ek": "pik\n"'
-        bind '"\es": "systemctl-tui\n"'
-      '';
-      # 设置命令别名
-      shellAliases = {
-        NAVI = "navi --path '~/.config/navi'";
-      };
+  programs.bash = {
+    # Tab 补全功能
+    completion.enable = true;
+    # 在 Bash Shell 初始化期间调用的 Shell 脚本代码
+    interactiveShellInit = ''
+      eval "$(starship init bash)"
+      eval "$(navi widget bash)"
+      eval "$(zellij setup --generate-auto-start bash)"
+      bind '"\eq": "navi --path ~/.config/navi\n"'
+      bind '"\ec": clear-screen'
+      bind '"\en": "fastfetch\n"'
+      bind '"\em": "btm\n"'
+      bind '"\ek": "pik\n"'
+      bind '"\es": "systemctl-tui\n"'
+    '';
+    # 设置命令别名
+    shellAliases = {
+      NAVI = "navi --path '~/.config/navi'";
     };
   };
 }
