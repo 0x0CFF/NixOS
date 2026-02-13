@@ -47,4 +47,28 @@
       # allowedUDPPorts = [ ... ];    # 防火墙 UPD 放行端口
     };
   };
+
+  environment.systemPackages = with pkgs; [
+    rocmPackages.clr         # [AUX][C++] AMD 通用语言运行时，用于 hipamd、opencl 和 rocclr
+  ];
+  
+  # 配置 X 桌面驱动模式
+  services.xserver.videoDrivers = [ "modesetting" ];
+
+  # 启用 CPU 微码
+  # hardware.cpu.amd.updateMicrocode = true;
+  # 启用可再分发固件（加载包含专有固件的软件包）
+  hardware.enableRedistributableFirmware = true;
+  # 开启 OpenGL
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+        rocmPackages.clr.icd
+      ];
+  };
+  
+  # 启用 HIP 支持
+  systemd.tmpfiles.rules = [
+    "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
+  ];
 }
