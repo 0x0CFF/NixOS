@@ -30,14 +30,14 @@
 
   # 防火墙端口配置
   networking.firewall = {
-      allowedTCPPorts = [
-          5000
-      ];
-      allowedUDPPorts = [
-          #
-      ];
-      allowedUDPPortRanges = [
-          #
-      ];
+    allowedTCPPorts = [
+      5000
+    ];
+    allowedUDPPorts = [
+      #
+    ];
+    allowedUDPPortRanges = [
+      #
+    ];
   };
 }
