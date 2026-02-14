@@ -6,11 +6,13 @@
     tailspin                 # [AUX][RUST] 日志文件高亮工具
     starship                 # [AUX][RUST] 命令行提示符
     eza                      # [AUX][RUST] 文件列表命令行
+    wl-clipboard-rs          # [AUX][RUST] 剪贴板
     curl                     # [CLI][C] URL 传输数据
     fastfetch                # [CLI][C] 系统信息查看工具
     openssl                  # [CLI][C] SSL/TLS 协议加密库
     grex                     # [CLI][RUST] 正则表达式生成器
     difftastic               # [CLI][RUST] 内容差异对比工具
+    clipse                   # [TUI][GO] 剪贴板管理器
     bottom                   # [TUI][RUST] 资源管理器
     zellij                   # [TUI][RUST] 终端复用器
     pik                      # [TUI][RUST] 进程交互式 Kill 工具

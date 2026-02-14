@@ -917,7 +917,7 @@
         ./Modules/Home/Crates/Desktop/Produce/default.nix                                               # 生产应用程序集合
         # ./Modules/Home/Crates/Desktop/Recreation/default.nix                                            # 娱乐程序集合
         ./Modules/Home/Crates/Desktop/Security/default.nix                                              # 安全管理程序集合
-        # ./Modules/Home/Crates/Desktop/Tool/default.nix                                                  # 工具程序集合
+        ./Modules/Home/Crates/Desktop/Tool/default.nix                                                  # 工具程序集合
         ./Modules/Home/Crates/Desktop/Viewer/default.nix                                                # 文件预览程序集合
 
         # 硬件驱动
@@ -926,7 +926,7 @@
         # ./Modules/Common/Driver/Printer/default.nix                                                     # 打印机驱动
         # ./Modules/Common/Driver/Touchpad/default.nix                                                    # 触控板驱动
         # ./Modules/Common/Driver/USB/default.nix                                                         # USB 驱动
-        # ./Modules/Common/Driver/Xserver/default.nix                                                     # Xserver 驱动
+        ./Modules/Common/Driver/Xserver/default.nix                                                     # Xserver 驱动
 
         # 后台服务
         # ./Modules/Common/Services/Automation/HomeAssistant/default.nix                                  # 智能家居平台
