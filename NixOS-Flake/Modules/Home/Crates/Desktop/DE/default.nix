@@ -5,6 +5,8 @@
     playerctl                # [CLI][C] 媒体播放器控制
     wev                      # [CLI][C] Wayland 事件查看器
     fuzzel                   # [GUI][C] 应用启动器
+    rofi                     # [GUI][C] 应用启动器
+    libnotify                # [GUI][C] 通知守护进程
     mako                     # [GUI][C] 通知管理器             
     hyprpaper                # [GUI][C++] 壁纸
     hyprpicker               # [GUI][C++] 取色器

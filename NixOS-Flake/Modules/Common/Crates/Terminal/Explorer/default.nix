@@ -2,7 +2,6 @@
 
 {
   environment.systemPackages = with pkgs; [
-    wl-clipboard-rs          # [AUX][RUST] 剪贴板
     zoxide                   # [AUX][RUST] 快速 cd 命令
     fd                       # [CLI][RUST] 文件查找工具
     trashy                   # [CLI][RUST] 命令行回收站工具

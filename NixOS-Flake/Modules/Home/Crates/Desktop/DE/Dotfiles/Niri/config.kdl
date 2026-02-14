@@ -3,6 +3,26 @@
 // 请查阅维基百科获取配置的完整说明：
 // https://niri-wm.github.io/niri/Configuration:-Introduction
 
+environment {
+    // 设置界面语言
+    LC_MESSAGES "zh_CN.UTF-8"
+    
+    // 必须的输入法环境变量
+    GTK_IM_MODULE "fcitx"
+    QT_IM_MODULE "fcitx"
+    XMODIFIERS "@im=fcitx"
+    
+    // Wayland 特定的输入法变量
+    WAYLAND_IM_MODULE "fcitx"
+    CLUTTER_IM_MODULE "fcitx"
+    
+    // 其他输入法相关变量
+    SDL_IM_MODULE "fcitx"
+    GLFW_IM_MODULE "ibus"
+    INPUT_METHOD "fcitx"
+    IMSETTINGS_MODULE "fcitx"
+}
+
 // 输入设备配置
 // 完整选项列表请参见维基页面：
 // https://niri-wm.github.io/niri/Configuration:-Input
@@ -66,7 +86,7 @@ input {
 
     // 将鼠标移动到窗口中时，会自动聚焦窗口和输出
     // 设置 max-scroll-amount="0%" 使其仅适用于已完全显示在屏幕上的窗口
-    // focus-follows-mouse max-scroll-amount="0%"
+    focus-follows-mouse max-scroll-amount="0%"
 }
 
 // 您可以通过名称配置输出，可以在 niri 实例中运行 `niri msg outputs` 来找到它们
@@ -249,6 +269,9 @@ layout {
 // 启动 niri 时自动启动的软件
 spawn-at-startup "hyprpaper"
 spawn-at-startup "fcitx5"
+spawn-at-startup "mako"
+spawn-at-startup "waybar"
+spawn-at-startup "clipse --listen"
 
 // 要运行 shell 命令（包括变量、管道等），使用 spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -637,13 +660,13 @@ binds {
     Mod+F5 { spawn "keepassxc"; }           // 密码管理器
     Mod+L { spawn "hyprlock"; }             // 锁屏
     Mod+E { spawn "nautilus"; }             // 
-    Mod+Space { spawn "fuzzel"; }
+    Mod+D { spawn "fuzzel"; }
+    Mod+Space { spawn "rofi"; }
 }
 
 cursor {
-    xcursor-theme "breeze_cursors"
+    xcursor-theme "breeze"
     xcursor-size 32
-
     hide-when-typing
-    hide-after-inactive-ms 1000
+    hide-after-inactive-ms 15000
 }
