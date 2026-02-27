@@ -36,13 +36,13 @@
   #   autoLogin.enable = true;
   #   autoLogin.user = "0x0CFF";
   # };
-  
+
   # 登录管理器守护进程
   services.greetd = {
     enable = true;
     settings = {
      default_session.command = ''
-      ${pkgs.greetd.tuigreet}/bin/tuigreet \
+      ${pkgs.tuigreet}/bin/tuigreet \
         --time \
         --asterisks \
         --user-menu \
