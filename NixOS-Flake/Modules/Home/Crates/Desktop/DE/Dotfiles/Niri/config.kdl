@@ -271,7 +271,8 @@ spawn-at-startup "hyprpaper"
 spawn-at-startup "fcitx5"
 spawn-at-startup "mako"
 spawn-at-startup "waybar"
-spawn-at-startup "clipse --listen"
+spawn-sh-at-startup "swaybg -i /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake/Modules/Home/Crates/Desktop/DE/Dotfiles/Swaybg/Assets/Wallpaper-01-Blurred.jpg -m fit"
+spawn-sh-at-startup "clipse --listen"
 
 // 要运行 shell 命令（包括变量、管道等），使用 spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -394,10 +395,9 @@ window-rule {
     clip-to-geometry true
 }
 
+// Put swaybg inside the overview backdrop.
 layer-rule {
-    // This is for swaybg; change for other wallpaper tools.
-    // Find the right namespace by running niri msg layers.
-    match namespace="^hyprpaper$"
+    match namespace="^wallpaper$"
     place-within-backdrop true
 }
 
@@ -653,15 +653,14 @@ binds {
     Mod+Shift+P { power-off-monitors; }
     
     // 自定义快捷键
-    Mod+F1 { spawn "firefox"; }             // 浏览器
-    Mod+F2 { spawn "obsidian"; }            // Obdidian
-    Mod+F3 { spawn "zeditor"; }             // Zed
-    Mod+F4 { spawn "localsend_app"; }       // Localsend
-    Mod+F5 { spawn "keepassxc"; }           // 密码管理器
-    Mod+L { spawn "hyprlock"; }             // 锁屏
-    Mod+E { spawn "nautilus"; }             // 
-    Mod+D { spawn "fuzzel"; }
-    Mod+Space { spawn "rofi"; }
+    Mod+F1 { spawn "firefox"; }                 // 浏览器
+    Mod+F2 { spawn "obsidian"; }                // Obdidian
+    Mod+F3 { spawn "zeditor"; }                 // Zed
+    Mod+F4 { spawn "localsend_app"; }           // Localsend
+    Mod+F5 { spawn "keepassxc"; }               // 密码管理器
+    Mod+L { spawn "hyprlock"; }                 // 锁屏
+    Mod+E { spawn "nautilus"; }                 // 文件管理器
+    Mod+Space { spawn-sh "rofi -show drun"; }   // 应用启动器
 }
 
 cursor {
