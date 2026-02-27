@@ -15,7 +15,6 @@
     cliphist                 # [CLI][GO] 剪贴板管理
     clipse                   # [TUI][GO] 剪贴板管理器
     bottom                   # [TUI][RUST] 资源管理器
-    zellij                   # [TUI][RUST] 终端复用器
     pik                      # [TUI][RUST] 进程交互式 Kill 工具
     navi                     # [TUI][RUST] 命令行交互式备忘单工具
     systemctl-tui            # [TUI][RUST] Systemd 服务管理工具
@@ -28,7 +27,6 @@
     interactiveShellInit = ''
       eval "$(starship init bash)"
       eval "$(navi widget bash)"
-      eval "$(zellij setup --generate-auto-start bash)"
       bind '"\eq": "navi --path ~/.config/navi\n"'
       bind '"\ec": clear-screen'
       bind '"\en": "fastfetch\n"'
