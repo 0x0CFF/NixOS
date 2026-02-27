@@ -5,14 +5,15 @@
     playerctl                # [CLI][C] 媒体播放器控制
     wev                      # [CLI][C] Wayland 事件查看器
     tuigreet                 # [TUI][RUST] 登录屏幕
-    fuzzel                   # [GUI][C] 应用启动器
     rofi                     # [GUI][C] 应用启动器
     libnotify                # [GUI][C] 通知守护进程
-    mako                     # [GUI][C] 通知管理器             
-    hyprpaper                # [GUI][C++] 壁纸
+    mako                     # [GUI][C] 通知管理器       
+    swaybg                   # [GUI][C] 壁纸管理器       
+    hyprpaper                # [GUI][C++] 壁纸管理器
     hyprpicker               # [GUI][C++] 取色器
     hypridle                 # [GUI][C++] 空闲守护进程
     waybar                   # [GUI][C++] Wayland 桌面栏
+    quickshell               # [GUI][C++] 桌面组件开发工具
     xdg-desktop-portal-gtk   # [GUI][GTK+] 桌面门户
     xdg-desktop-portal-gnome # [GUI][GTK+] 桌面门户
     alacritty                # [GUI][RUST] 终端
@@ -36,6 +37,7 @@
   #   autoLogin.user = "0x0CFF";
   # };
   
+  # 登录管理器守护进程
   services.greetd = {
     enable = true;
     settings = {
