@@ -1,6 +1,7 @@
 { config, pkgs, inputs, ... }:let
   # 配置目录路径
   # ${config.home.homeDirectory} 表示 Home-Manager 管理的用户家目录
+  alacrittyConfigPath = "${config.home.homeDirectory}/Solution/Blueprints/NixOS/NixOS-Flake/Modules/Home/Crates/Desktop/DE/Dotfiles/Alacritty";
   cursorThemePath = "${config.home.homeDirectory}/Solution/Blueprints/NixOS/NixOS-Flake/Modules/Home/Crates/Desktop/DE/Dotfiles/Cursor";
   rofiThemePath = "${config.home.homeDirectory}/Solution/Blueprints/NixOS/NixOS-Flake/Modules/Home/Crates/Desktop/DE/Dotfiles/Rofi/Themes";
   rofiConfigPath = "${config.home.homeDirectory}/Solution/Blueprints/NixOS/NixOS-Flake/Modules/Home/Crates/Desktop/DE/Dotfiles/Rofi/Config";
@@ -16,8 +17,9 @@ in
   # xdg.dataFile -> ~/.local/share/
   # xdg.dataFile -> ~/.config/
   # 拓展：https://wiki.archlinux.org/title/XDG_Base_Directory
+  xdg.configFile."alacritty".source = config.lib.file.mkOutOfStoreSymlink alacrittyConfigPath;
   xdg.dataFile."icons".source = config.lib.file.mkOutOfStoreSymlink cursorThemePath;
-  xdg.dataFile."rofi".source = config.lib.file.mkOutOfStoreSymlink rofiThemePath;
+  xdg.dataFile."rofi/themes".source = config.lib.file.mkOutOfStoreSymlink rofiThemePath;
   xdg.configFile."rofi".source = config.lib.file.mkOutOfStoreSymlink rofiConfigPath;
   xdg.configFile."hypr".source = config.lib.file.mkOutOfStoreSymlink hyprConfigPath;
   xdg.configFile."mako".source = config.lib.file.mkOutOfStoreSymlink makoConfigPath;

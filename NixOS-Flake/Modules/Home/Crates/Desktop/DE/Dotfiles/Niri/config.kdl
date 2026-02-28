@@ -6,16 +6,16 @@
 environment {
     // 设置界面语言
     LC_MESSAGES "zh_CN.UTF-8"
-    
+
     // 必须的输入法环境变量
     GTK_IM_MODULE "fcitx"
     QT_IM_MODULE "fcitx"
     XMODIFIERS "@im=fcitx"
-    
+
     // Wayland 特定的输入法变量
     WAYLAND_IM_MODULE "fcitx"
     CLUTTER_IM_MODULE "fcitx"
-    
+
     // 其他输入法相关变量
     SDL_IM_MODULE "fcitx"
     GLFW_IM_MODULE "ibus"
@@ -238,16 +238,16 @@ layout {
         // 您可以更改阴影的外观，以下值以逻辑像素为单位，与CSS框阴影属性匹配
 
         // 柔和度控制阴影模糊半径
-        softness 30
+        softness 12
 
         // 扩散会扩大阴影
-        spread 5
+        spread 4
 
         // 偏移使阴影相对于窗口移动
-        offset x=0 y=5
+        offset x=0 y=4
 
         // 您还可以更改阴影颜色和不透明度
-        color "#0007"
+        color "#00000066"
     }
 
     // Struts 缩小了窗户所占的面积，类似于层壳面板
@@ -306,7 +306,7 @@ animations {
 
     // 按此因素减慢所有动画的速度，低于 1 的值反而会加快速度
     // slowdown 3.0
-    
+
     workspace-switch {
         spring damping-ratio=1.0 stiffness=1000 epsilon=0.0001
     }
@@ -402,6 +402,26 @@ layer-rule {
     place-within-backdrop true
 }
 
+// 为 rofi 启动器添加阴影
+layer-rule {
+    // 匹配窗口的命名空间或应用 ID 为 "rofi"
+    match namespace="^rofi$"
+
+    // 开启阴影
+    shadow {
+        on
+        // 可选的阴影样式调整，你可以根据自己的喜好修改这些数值
+        softness 40      // 阴影的模糊程度，数值越大越模糊
+        spread 5         // 阴影的扩散大小
+        offset x=0 y=5   // 阴影的偏移量 (x偏移, y偏移)
+        color "#00000070" // 阴影颜色和透明度 (这里是带透明度的黑色)
+    }
+
+    // 为了让阴影更好地贴合 Rofi 可能存在的圆角，可以设置圆角半径
+    // 你需要根据 rofi 自身的圆角配置来调整这个数值
+    geometry-corner-radius 8
+}
+
 binds {
     // Keys 由 + 号分隔的修饰符组成，最后是 XKB 键名
     // 要查找特定密钥的 XKB 名称，可以使用 wev 等程序
@@ -415,7 +435,7 @@ binds {
 
     // 运行程序的建议绑定：终端、应用程序启动器、屏幕锁
     Mod+T hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
-    
+
     // 使用 spawn-sh 运行 shell 命令，如果需要管道、多个命令等，请执行此操作
     // 注意：整个命令作为一个参数，它被逐字传递给了 `sh-c`
     // 例如，这是一个切换屏幕阅读器（orca）的标准绑定
@@ -652,7 +672,7 @@ binds {
     // 关闭显示器电源，要重新打开它们，请执行以下任何输入
     // 移动鼠标或按下任何其他键
     Mod+Shift+P { power-off-monitors; }
-    
+
     // 自定义快捷键
     Mod+F1 { spawn "firefox"; }                                                                              // 浏览器
     Mod+F2 { spawn "obsidian"; }                                                                             // Obdidian
