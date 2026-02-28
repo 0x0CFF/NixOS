@@ -1,0 +1,46 @@
+[window]
+# 内部边缘填充
+padding = { x = 8, y = 8 }
+# 在终端内容周围均匀地铺上额外的填充物
+dynamic_padding = true
+# 外观
+# - Full: 有边界 + 有标题栏
+# - None: 无边界 + 无标题栏
+# - Transparent: 透明
+# - Buttonless: 无按钮
+decorations = "None"
+# 在终端内容周围均匀地铺上额外的填充物
+# dynamic_padding = true
+# 背景不透明度（以 0.0 到 1.0 之间的浮点数表示），0.0 是完全透明的，1.0 是不透明的
+opacity = 1.0
+
+[colors.primary]
+# 背景颜色
+background = "#2E3440"
+
+[scrolling]
+# 历史记录
+history = 50000
+# 每个输入滚动增量滚动的行数
+multiplier = 3
+
+[terminal]
+# 使用 OSC 52 转义序列写入系统剪贴板的能力
+# osc52 = "CopyPaste"
+
+[selection]
+save_to_clipboard = true
+
+[mouse]
+# 如果此值为 true，则在键入时光标会暂时隐藏
+hide_when_typing = true
+bindings = [
+  # { mouse = "Middle", mods = "Control", action = "Paste" },
+]
+
+[hints]
+
+[keyboard]
+bindings =  [
+  { key = "V", mods = "Control", action = "Paste" },
+]

@@ -2,14 +2,14 @@
 /* Author: Newman Sanchez (https://github.com/newmanls) */
 
 * {
-    bg0:    #2E3440F2;
-    bg1:    #3B4252;
-    bg2:    #4C566A80;
-    bg3:    #88C0D0F2;
-    fg0:    #D8DEE9;
+    bg0:    #1C1B22;
+    bg1:    #2B2A33;
+    bg2:    #FFFFFF;
+    bg3:    #FFFFFF0F;
+    fg0:    #FFFFFF;
     fg1:    #ECEFF4;
     fg2:    #D8DEE9;
-    fg3:    #4C566A;
+    fg3:    #3E3E48;
 }
 
 @import "template/rounded-template.rasi"
