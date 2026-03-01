@@ -1,0 +1,31 @@
+% Backup
+
+# 镜像备份 Solution 文件夹到 U 盘
+```sh
+echo "挂载设备 2E2D-0C03"
+udisksctl mount -b /dev/disk/by-uuid/2E2D-0C03
+echo
+echo "镜像备份 /home/0x0CFF/Solution/"
+rsync -avp --delete --exclude='/home/0x0CFF/Solution/.config' /home/0x0CFF/Solution/ /run/media/0x0CFF/2E2D-0C03/
+echo
+echo "--------------- 是否移除设备 ---------------"
+echo "1. YES"
+echo "2. NO"
+echo "------------------------------------------"
+
+read -p "请输入选择 [1-2]: " choice1
+
+case $choice1 in
+    1)
+        udisksctl unmount -b /dev/disk/by-uuid/2E2D-0C03
+        udisksctl power-off -b /dev/disk/by-uuid/2E2D-0C03
+        ;;
+    2)
+        exit 1
+        ;;
+    *)
+        echo "无效选择!"
+        exit 1
+        ;;
+esac
+```

@@ -11,7 +11,7 @@ nix profile history --profile /nix/var/nix/profiles/system
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-% NixOS, HDD
+% NixOS, HDC
 
 # 更新硬件信息
 sudo nixos-generate-config
