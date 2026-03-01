@@ -892,6 +892,7 @@
         ./Hosts/Home/WORKSTATION/Device/environment.nix                                                 # 环境变量
         ./Hosts/Home/WORKSTATION/Device/hardware-configuration.nix                                      # 硬件信息
         # 服务专项配置
+        ./Hosts/Home/WORKSTATION/Services/cifs.nix                                                      # CIFS 专项配置
         # 定时服务
 
         # 程序集合

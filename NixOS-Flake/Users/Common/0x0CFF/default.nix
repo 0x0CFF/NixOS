@@ -4,7 +4,8 @@
   # 定义用户，首次构建系统不要忘记使用「passwd」命令设置密码
   users.users."0x0CFF" = {
     isNormalUser = true;
-    extraGroups = [                    # 辅助用户组
+    uid = 1000;
+    extraGroups = [     # 辅助用户组
       "wheel"           # 为该用户启用 sudo 权限
     ];
     # packages = with pkgs; [
