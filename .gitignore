@@ -1,5 +1,9 @@
 # NixOS
 flake.lock
+hardware-configuration.nix
 
 # Zed
 .ropeproject
+
+# Navi
+navi.log
