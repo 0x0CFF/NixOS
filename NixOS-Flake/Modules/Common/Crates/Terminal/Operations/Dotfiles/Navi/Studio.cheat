@@ -43,7 +43,7 @@ case $HOSTNAME in
 esac
 ```
 
-# [Flake][Github][Clone] 克隆 NixOS 远程配置 + 替换硬件信息
+# [Flake][Github][Clone] 克隆 NixOS 远程配置
 ```sh
 echo "------------------------ 更新 NixOS 配置 ------------------------"
 echo
@@ -85,7 +85,7 @@ else
 fi
 ```
 
-# [Flake][Auto][Rebuild] 部署 NixOS 系统
+# [Flake][Auto][Rebuild] 替换硬件信息 + 部署 NixOS 系统
 ```sh
 echo "--------------- 请选择操作 ---------------"
 echo "1. Test"
