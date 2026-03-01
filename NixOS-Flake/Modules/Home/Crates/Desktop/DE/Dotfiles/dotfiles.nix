@@ -15,7 +15,7 @@ in
   # 该函数能够绕过 Home Manager 自身，对 Dotfiles 的修改就能立即生效
   # 注意：仅支持原生配置，由 Nix 生成的配置不支持
   # xdg.dataFile -> ~/.local/share/
-  # xdg.dataFile -> ~/.config/
+  # xdg.configFile -> ~/.config/
   # 拓展：https://wiki.archlinux.org/title/XDG_Base_Directory
   xdg.configFile."alacritty".source = config.lib.file.mkOutOfStoreSymlink alacrittyConfigPath;
   xdg.dataFile."icons".source = config.lib.file.mkOutOfStoreSymlink cursorThemePath;
