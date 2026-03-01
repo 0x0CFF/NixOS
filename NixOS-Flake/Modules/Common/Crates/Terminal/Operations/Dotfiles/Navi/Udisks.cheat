@@ -6,8 +6,19 @@ udisksctl status
 # 挂载移动设备（自动选择挂载点）
 udisksctl mount -b /dev/<udisk>
 
+# 挂载移动设备（根据设备 UUID，查看命令：lsblk -f）
+udisksctl mount -b /dev/disk/by-uuid/<UUID>
+
 # 卸载移动设备
 udisksctl unmount -b /dev/<udisk>
 
+# 卸载移动设备（根据设备 UUID，查看命令：lsblk -f）
+udisksctl unmount -b /dev/disk/by-uuid/<UUID>
+
 # 断电并卸载移动设备（安全移除）
 udisksctl power-off -b /dev/<udisk>
+
+# 断电并卸载移动设备（安全移除）（根据设备 UUID，查看命令：lsblk -f）
+udisksctl power-off -b /dev/disk/by-uuid/<UUID>
+
+$ UUID: echo "2E2D-0C03" | tr ' ' '\n'

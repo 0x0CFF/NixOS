@@ -21,16 +21,29 @@ sudo nixos-rebuild <Commands> --flake /home/0x0CFF/Solution/Blueprints/NixOS/Nix
 # [Flake] 远程部署 NixOS 系统（系统构建过程将在远程主机执行）
 sudo nixos-rebuild <Commands> --flake /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake#$HOSTNAME --target-host root@<IP> --build-host root@<IP> --verbose
 
-# [Flake][Auto] 替换硬件信息
+# [Flake][Auto][HDC] 替换硬件信息
 ```sh
 echo "---------------------------- 覆写设备硬件信息 ---------------------------"
 echo
-echo "覆写：/home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake/Hosts/Studio/${HOSTNAME%%0*}/$HOSTNAME/Device/hardware-configuration.nix"
-cp -f /etc/nixos/hardware-configuration.nix /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake/Hosts/Studio/${HOSTNAME%%0*}/$HOSTNAME/Device/
-echo "覆写：100% (1/1), 完成."
+case $HOSTNAME in
+    "DATABC00"|"DATABC00-BACKUP"|"DATAGC00"|"DATAGC01"|"DATAHC00"|"DATAHC01"|"DATASC00"|"DATASC00-BACKUP"|"DATASC01"|"DATASC01-BACKUP")
+        echo "覆写：/home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake/Hosts/Studio/${HOSTNAME%%0*}/$HOSTNAME/Device/hardware-configuration.nix"
+        cp -f /etc/nixos/hardware-configuration.nix /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake/Hosts/Studio/${HOSTNAME%%0*}/$HOSTNAME/Device/
+        echo "覆写：100% (1/1), 完成."
+        ;;
+    "GATEWAY"|"NAS"|"WORKSTATION")
+        echo "覆写：/home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake/Hosts/Home/$HOSTNAME/Device/hardware-configuration.nix"
+        cp -f /etc/nixos/hardware-configuration.nix /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake/Hosts/Home/$HOSTNAME/Device/    
+        echo "覆写：100% (1/1), 完成."
+        ;;
+    *)
+        echo "未知主机名: $HOSTNAME，退出脚本"
+        exit 1
+        ;;
+esac
 ```
 
-# [Flake][Auto] 克隆 NixOS 配置 + 替换硬件信息
+# [Flake][Github][Clone] 克隆 NixOS 远程配置 + 替换硬件信息
 ```sh
 echo "------------------------ 更新 NixOS 配置 ------------------------"
 echo
@@ -63,14 +76,6 @@ done
 
 if [ "$CLONE_SUCCESS" = true ]; then
     rm -rf "$CLONE_DIR_BACKUP"
-    rm -rf /home/0x0CFF/Solution/Blueprints/NixOS/.git
-    rm -rf /home/0x0CFF/Solution/Blueprints/NixOS/.gitignore
-    echo
-    echo "---------------------------- 覆写设备硬件信息 ---------------------------"
-    echo
-    echo "覆写：/home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake/Hosts/Studio/${HOSTNAME%%0*}/$HOSTNAME/Device/hardware-configuration.nix"
-    cp -f /etc/nixos/hardware-configuration.nix /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake/Hosts/Studio/${HOSTNAME%%0*}/$HOSTNAME/Device/
-    echo "覆写：100% (1/1), 完成."
 else
     echo
     echo "经过 $MAX_RETRIES 次尝试后仍然克隆失败，正在恢复备份..."
@@ -80,7 +85,7 @@ else
 fi
 ```
 
-# [Flake][Auto] 部署 NixOS 系统
+# [Flake][Auto][Rebuild] 部署 NixOS 系统
 ```sh
 echo "--------------- 请选择操作 ---------------"
 echo "1. Test"
@@ -139,7 +144,8 @@ case $choice2 in
             echo
             fi
         else
-            echo "超时"
+            MIRROR=""
+            echo "超时，没有找到可用的镜像源，使用官方源进行构建"
         fi
         done
         ;;
@@ -169,29 +175,45 @@ case $choice2 in
         ;;
 esac
 
-if [[ -n "$MIRROR" ]]; then
-  case $choice1 in
+echo
+echo "备份 Git 仓库配置文件..."
+mkdir -p /home/0x0CFF/Solution/Blueprints/NixOS-Gitfile/.git/
+mv -f /home/0x0CFF/Solution/Blueprints/NixOS/.gitignore /home/0x0CFF/Solution/Blueprints/NixOS-Gitfile/
+mv -f /home/0x0CFF/Solution/Blueprints/NixOS/.git/ /home/0x0CFF/Solution/Blueprints/NixOS-Gitfile/
+echo
+echo "---------------------------- 覆写设备硬件信息 ---------------------------"
+echo
+case $HOSTNAME in
+    "DATABC00"|"DATABC00-BACKUP"|"DATAGC00"|"DATAGC01"|"DATAHC00"|"DATAHC01"|"DATASC00"|"DATASC00-BACKUP"|"DATASC01"|"DATASC01-BACKUP")
+        echo "覆写：/home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake/Hosts/Studio/${HOSTNAME%%0*}/$HOSTNAME/Device/hardware-configuration.nix"
+        cp -f /etc/nixos/hardware-configuration.nix /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake/Hosts/Studio/${HOSTNAME%%0*}/$HOSTNAME/Device/
+        echo "覆写：100% (1/1), 完成."
+        ;;
+    "GATEWAY"|"NAS"|"WORKSTATION")
+        echo "覆写：/home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake/Hosts/Home/$HOSTNAME/Device/hardware-configuration.nix"
+        cp -f /etc/nixos/hardware-configuration.nix /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake/Hosts/Home/$HOSTNAME/Device/   
+        echo "覆写：100% (1/1), 完成."
+        ;;
+    *)
+        echo "未知主机名: $HOSTNAME，退出脚本"
+        exit 1
+        ;;
+esac
+
+case $choice1 in
     1)
-      sudo nixos-rebuild test --flake /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake#$HOSTNAME --show-trace -L -v --option substituters "$MIRROR"
-      ;;
+        sudo nixos-rebuild test --flake /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake#$HOSTNAME --show-trace -L -v --option substituters "$MIRROR"
+        ;;
     2)
-      sudo nixos-rebuild switch --flake /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake#$HOSTNAME --show-trace -L -v --option substituters "$MIRROR"
-      ;;
-  esac
-  exit 1
-else
-  echo
-  echo "没有找到可用的镜像源，使用官方源进行构建"
-  case $choice1 in
-    1)
-      sudo nixos-rebuild test --flake /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake#$HOSTNAME --show-trace -L -v
-      ;;
-    2)
-      sudo nixos-rebuild switch --flake /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake#$HOSTNAME --show-trace -L -v
-      ;;
-  esac
-  exit 1
-fi
+        sudo nixos-rebuild switch --flake /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake#$HOSTNAME --show-trace -L -v --option substituters "$MIRROR"
+        ;;
+esac
+
+echo "恢复 Git 仓库配置文件..."
+mv -f /home/0x0CFF/Solution/Blueprints/NixOS-Gitfile/.gitignore /home/0x0CFF/Solution/Blueprints/NixOS/
+mv -f /home/0x0CFF/Solution/Blueprints/NixOS-Gitfile/.git/ /home/0x0CFF/Solution/Blueprints/NixOS/
+rm -r /home/0x0CFF/Solution/Blueprints/NixOS-Gitfile
+echo "恢复：100% (1/1), 完成."
 ```
 
 # 重置 Panel-Studio 配置
@@ -232,6 +254,8 @@ nh os <Commands> /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake --hostname $
 
 # [Flake] 更新 flake.lock 并部署 NixOS 系统，使用且信任非官方二进制缓存
 nh os <Commands> /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake --hostname $HOSTNAME --ask --update -- --accept-flake-config
+
+$ Commands: echo "test switch boot" | tr ' ' '\n'
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
