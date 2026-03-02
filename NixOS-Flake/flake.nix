@@ -163,9 +163,9 @@
         ./Hosts/Studio/DATABC/DATABC00/Device/environment.nix                                           # 环境变量
         ./Hosts/Studio/DATABC/DATABC00/Device/hardware-configuration.nix                                # 硬件信息
         # 服务专项配置
-        # ./Hosts/Studio/DATAGC/DATAGC00/Services/beszel.nix                                              # Beszel 专项配置
+        # ./Hosts/Studio/DATABC/DATABC00/Services/beszel.nix                                              # Beszel 专项配置
         ./Hosts/Studio/DATABC/DATABC00/Services/openssh.nix                                             # Openssh 专项配置
-        # ./Hosts/Studio/DATAGC/DATAGC00/Services/restic.nix                                              # Restic 专项配置
+        # ./Hosts/Studio/DATABC/DATABC00/Services/restic.nix                                              # Restic 专项配置
         ./Hosts/Studio/DATABC/DATABC00/Services/samba.nix                                               # Samba 专项配置
         # 定时服务
         ./Hosts/Studio/DATABC/DATABC00/Timers/backup-local-mount-point.nix                              # 挂载点数据备份
@@ -259,7 +259,7 @@
         ./Hosts/Studio/DATABC/DATABC00-BACKUP/Device/environment.nix                                    # 环境变量
         ./Hosts/Studio/DATABC/DATABC00-BACKUP/Device/hardware-configuration.nix                         # 硬件信息
         # 服务专项配置
-        # ./Hosts/Studio/DATAGC/DATAGC00/Services/beszel.nix                                              # Beszel 专项配置
+        # ./Hosts/Studio/DATABC/DATABC00-BACKUP/Services/beszel.nix                                       # Beszel 专项配置
         ./Hosts/Studio/DATABC/DATABC00-BACKUP/Services/openssh.nix                                      # Openssh 专项配置
         ./Hosts/Studio/DATABC/DATABC00-BACKUP/Services/samba.nix                                        # Samba 专项配置
         # 定时服务
@@ -352,9 +352,9 @@
         ./Hosts/Studio/DATASC/DATASC00/Device/environment.nix                                           # 环境变量
         ./Hosts/Studio/DATASC/DATASC00/Device/hardware-configuration.nix                                # 硬件信息
         # 服务专项配置
-        # ./Hosts/Studio/DATAGC/DATAGC00/Services/beszel.nix                                              # Beszel 专项配置
+        # ./Hosts/Studio/DATASC/DATASC00/Services/beszel.nix                                              # Beszel 专项配置
         ./Hosts/Studio/DATASC/DATASC00/Services/openssh.nix                                             # Openssh 专项配置
-        # ./Hosts/Studio/DATAGC/DATAGC00/Services/restic.nix                                              # Restic 专项配置
+        # ./Hosts/Studio/DATASC/DATASC00/Services/restic.nix                                              # Restic 专项配置
         ./Hosts/Studio/DATASC/DATASC00/Services/samba.nix                                               # Samba 专项配置
         # 定时服务
         ./Hosts/Studio/DATASC/DATASC00/Timers/backup-local-mount-point.nix                              # 挂载点数据备份
@@ -445,7 +445,7 @@
         ./Hosts/Studio/DATASC/DATASC00-BACKUP/Device/environment.nix                                    # 环境变量
         ./Hosts/Studio/DATASC/DATASC00-BACKUP/Device/hardware-configuration.nix                         # 硬件信息
         # 服务专项配置
-        # ./Hosts/Studio/DATAGC/DATAGC00/Services/beszel.nix                                              # Beszel 专项配置
+        # ./Hosts/Studio/DATASC/DATASC00-BACKUP/Services/beszel.nix                                       # Beszel 专项配置
         ./Hosts/Studio/DATASC/DATASC00-BACKUP/Services/openssh.nix                                      # Openssh 专项配置
         ./Hosts/Studio/DATASC/DATASC00-BACKUP/Services/samba.nix                                        # Samba 专项配置
         # 定时服务
@@ -536,9 +536,9 @@
         ./Hosts/Studio/DATASC/DATASC01/Device/environment.nix                                           # 环境变量
         ./Hosts/Studio/DATASC/DATASC01/Device/hardware-configuration.nix                                # 硬件信息
         # 服务专项配置
-        # ./Hosts/Studio/DATAGC/DATAGC00/Services/beszel.nix                                              # Beszel 专项配置
+        # ./Hosts/Studio/DATASC/DATASC01/Services/beszel.nix                                              # Beszel 专项配置
         ./Hosts/Studio/DATASC/DATASC01/Services/openssh.nix                                             # Openssh 专项配置
-        # ./Hosts/Studio/DATAGC/DATAGC00/Services/restic.nix                                              # Restic 专项配置
+        # ./Hosts/Studio/DATASC/DATASC01/Services/restic.nix                                              # Restic 专项配置
         ./Hosts/Studio/DATASC/DATASC01/Services/samba.nix                                               # Samba 专项配置
         # 定时服务
         ./Hosts/Studio/DATASC/DATASC01/Timers/backup-local-mount-point.nix                              # 挂载点数据备份
@@ -630,7 +630,7 @@
         ./Hosts/Studio/DATASC/DATASC01-BACKUP/Device/environment.nix                                    # 环境变量
         ./Hosts/Studio/DATASC/DATASC01-BACKUP/Device/hardware-configuration.nix                         # 硬件信息
         # 服务专项配置
-        # ./Hosts/Studio/DATAGC/DATAGC00/Services/beszel.nix                                              # Beszel 专项配置
+        # ./Hosts/Studio/DATASC/DATASC01-BACKUP/Services/beszel.nix                                       # Beszel 专项配置
         ./Hosts/Studio/DATASC/DATASC01-BACKUP/Services/openssh.nix                                      # Openssh 专项配置
         # ./Hosts/Studio/DATASC/DATASC01-BACKUP/Services/samba.nix                                        # Samba 专项配置
         # 定时服务
@@ -724,7 +724,7 @@
         ./Hosts/Studio/DATAHC/DATAHC00/Device/environment.nix                                           # 环境变量
         ./Hosts/Studio/DATAHC/DATAHC00/Device/hardware-configuration.nix                                # 硬件信息
         # 服务专项配置
-        # ./Hosts/Studio/DATAGC/DATAGC00/Services/beszel.nix                                              # Beszel 专项配置
+        # ./Hosts/Studio/DATAHC/DATAHC00/Services/beszel.nix                                              # Beszel 专项配置
         ./Hosts/Studio/DATAHC/DATAHC00/Services/openssh.nix                                             # Openssh 专项配置
         # 定时服务
 
@@ -812,7 +812,7 @@
         ./Hosts/Studio/DATAHC/DATAHC01/Device/environment.nix                                           # 环境变量
         ./Hosts/Studio/DATAHC/DATAHC01/Device/hardware-configuration.nix                                # 硬件信息
         # 服务专项配置
-        # ./Hosts/Studio/DATAGC/DATAGC00/Services/beszel.nix                                              # Beszel 专项配置
+        # ./Hosts/Studio/DATAHC/DATAHC01/Services/beszel.nix                                              # Beszel 专项配置
         ./Hosts/Studio/DATAHC/DATAHC01/Services/openssh.nix                                             # Openssh 专项配置
         # 定时服务
 
@@ -984,7 +984,7 @@
         ./Hosts/Home/GATEWAY/Device/hardware-configuration.nix                                            # 硬件信息
         # 服务专项配置
         # 定时服务
-        ./Hosts/Home/NAS/Timers/backup-local-syncthing-folder.nix                                       # Syncthing 文件夹备份
+        ./Hosts/Home/GATEWAY/Timers/backup-local-syncthing-folder.nix                                   # Syncthing 文件夹备份
 
         # 程序集合
         ./Modules/Common/Crates/Development/Python/default.nix                                          # Python 开发工具集合
