@@ -73,6 +73,7 @@
         ./Hosts/Studio/DATAGC/DATAGC00/Device/hardware-configuration.nix                                # 硬件信息
         # 服务专项配置
         # ./Hosts/Studio/DATAGC/DATAGC00/Services/beszel.nix                                              # Beszel 专项配置
+        ./Hosts/Studio/DATAGC/DATAGC00/Services/openssh.nix                                             # Openssh 专项配置
         # 定时服务
         ./Hosts/Studio/DATAGC/DATAGC00/Timers/backup-local-syncthing-folder.nix                           # Syncthing 文件夹备份
 
@@ -163,6 +164,7 @@
         ./Hosts/Studio/DATABC/DATABC00/Device/hardware-configuration.nix                                # 硬件信息
         # 服务专项配置
         # ./Hosts/Studio/DATAGC/DATAGC00/Services/beszel.nix                                              # Beszel 专项配置
+        ./Hosts/Studio/DATABC/DATABC00/Services/openssh.nix                                             # Openssh 专项配置
         # ./Hosts/Studio/DATAGC/DATAGC00/Services/restic.nix                                              # Restic 专项配置
         ./Hosts/Studio/DATABC/DATABC00/Services/samba.nix                                               # Samba 专项配置
         # 定时服务
@@ -258,6 +260,7 @@
         ./Hosts/Studio/DATABC/DATABC00-BACKUP/Device/hardware-configuration.nix                         # 硬件信息
         # 服务专项配置
         # ./Hosts/Studio/DATAGC/DATAGC00/Services/beszel.nix                                              # Beszel 专项配置
+        ./Hosts/Studio/DATABC/DATABC00-BACKUP/Services/openssh.nix                                      # Openssh 专项配置
         ./Hosts/Studio/DATABC/DATABC00-BACKUP/Services/samba.nix                                        # Samba 专项配置
         # 定时服务
         ./Hosts/Studio/DATABC/DATABC00-BACKUP/Timers/gc-mount-point.nix                                 # 挂载点垃圾回收
@@ -350,6 +353,7 @@
         ./Hosts/Studio/DATASC/DATASC00/Device/hardware-configuration.nix                                # 硬件信息
         # 服务专项配置
         # ./Hosts/Studio/DATAGC/DATAGC00/Services/beszel.nix                                              # Beszel 专项配置
+        ./Hosts/Studio/DATASC/DATASC00/Services/openssh.nix                                             # Openssh 专项配置
         # ./Hosts/Studio/DATAGC/DATAGC00/Services/restic.nix                                              # Restic 专项配置
         ./Hosts/Studio/DATASC/DATASC00/Services/samba.nix                                               # Samba 专项配置
         # 定时服务
@@ -442,6 +446,7 @@
         ./Hosts/Studio/DATASC/DATASC00-BACKUP/Device/hardware-configuration.nix                         # 硬件信息
         # 服务专项配置
         # ./Hosts/Studio/DATAGC/DATAGC00/Services/beszel.nix                                              # Beszel 专项配置
+        ./Hosts/Studio/DATASC/DATASC00-BACKUP/Services/openssh.nix                                      # Openssh 专项配置
         ./Hosts/Studio/DATASC/DATASC00-BACKUP/Services/samba.nix                                        # Samba 专项配置
         # 定时服务
         ./Hosts/Studio/DATASC/DATASC00-BACKUP/Timers/gc-mount-point.nix                                 # 挂载点垃圾回收
@@ -532,6 +537,7 @@
         ./Hosts/Studio/DATASC/DATASC01/Device/hardware-configuration.nix                                # 硬件信息
         # 服务专项配置
         # ./Hosts/Studio/DATAGC/DATAGC00/Services/beszel.nix                                              # Beszel 专项配置
+        ./Hosts/Studio/DATASC/DATASC01/Services/openssh.nix                                             # Openssh 专项配置
         # ./Hosts/Studio/DATAGC/DATAGC00/Services/restic.nix                                              # Restic 专项配置
         ./Hosts/Studio/DATASC/DATASC01/Services/samba.nix                                               # Samba 专项配置
         # 定时服务
@@ -625,6 +631,7 @@
         ./Hosts/Studio/DATASC/DATASC01-BACKUP/Device/hardware-configuration.nix                         # 硬件信息
         # 服务专项配置
         # ./Hosts/Studio/DATAGC/DATAGC00/Services/beszel.nix                                              # Beszel 专项配置
+        ./Hosts/Studio/DATASC/DATASC01-BACKUP/Services/openssh.nix                                      # Openssh 专项配置
         # ./Hosts/Studio/DATASC/DATASC01-BACKUP/Services/samba.nix                                        # Samba 专项配置
         # 定时服务
         ./Hosts/Studio/DATASC/DATASC01-BACKUP/Timers/gc-mount-point.nix                                 # 挂载点垃圾回收
@@ -718,6 +725,7 @@
         ./Hosts/Studio/DATAHC/DATAHC00/Device/hardware-configuration.nix                                # 硬件信息
         # 服务专项配置
         # ./Hosts/Studio/DATAGC/DATAGC00/Services/beszel.nix                                              # Beszel 专项配置
+        ./Hosts/Studio/DATAHC/DATAHC00/Services/openssh.nix                                             # Openssh 专项配置
         # 定时服务
 
         # 程序集合
@@ -805,6 +813,7 @@
         ./Hosts/Studio/DATAHC/DATAHC01/Device/hardware-configuration.nix                                # 硬件信息
         # 服务专项配置
         # ./Hosts/Studio/DATAGC/DATAGC00/Services/beszel.nix                                              # Beszel 专项配置
+        ./Hosts/Studio/DATAHC/DATAHC01/Services/openssh.nix                                             # Openssh 专项配置
         # 定时服务
 
         # 程序集合
