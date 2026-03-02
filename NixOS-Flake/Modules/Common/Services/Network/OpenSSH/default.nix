@@ -7,7 +7,7 @@
     settings = {
       # 访问控制，用户登录白名单
       AllowUsers = [
-        "0x0CFF@192.168.31.*"
+        "0x0CFF"
       ];
       # Root 用户是否可以登录，共有 6 种
       # null                   : 无
