@@ -5,6 +5,7 @@
   cursorThemePath = "${config.home.homeDirectory}/Solution/Blueprints/NixOS/NixOS-Flake/Modules/Home/Crates/Desktop/DE/Dotfiles/Cursor";
   rofiThemePath = "${config.home.homeDirectory}/Solution/Blueprints/NixOS/NixOS-Flake/Modules/Home/Crates/Desktop/DE/Dotfiles/Rofi/Themes";
   rofiConfigPath = "${config.home.homeDirectory}/Solution/Blueprints/NixOS/NixOS-Flake/Modules/Home/Crates/Desktop/DE/Dotfiles/Rofi/Config";
+  sattyConfigPath = "${config.home.homeDirectory}/Solution/Blueprints/NixOS/NixOS-Flake/Modules/Home/Crates/Desktop/DE/Dotfiles/Satty";
   hyprConfigPath = "${config.home.homeDirectory}/Solution/Blueprints/NixOS/NixOS-Flake/Modules/Home/Crates/Desktop/DE/Dotfiles/Hypr";
   makoConfigPath = "${config.home.homeDirectory}/Solution/Blueprints/NixOS/NixOS-Flake/Modules/Home/Crates/Desktop/DE/Dotfiles/Mako";
   niriConfigPath = "${config.home.homeDirectory}/Solution/Blueprints/NixOS/NixOS-Flake/Modules/Home/Crates/Desktop/DE/Dotfiles/Niri";
@@ -21,6 +22,7 @@ in
   xdg.dataFile."icons".source = config.lib.file.mkOutOfStoreSymlink cursorThemePath;
   xdg.dataFile."rofi/themes".source = config.lib.file.mkOutOfStoreSymlink rofiThemePath;
   xdg.configFile."rofi".source = config.lib.file.mkOutOfStoreSymlink rofiConfigPath;
+  xdg.configFile."satty".source = config.lib.file.mkOutOfStoreSymlink sattyConfigPath;
   xdg.configFile."hypr".source = config.lib.file.mkOutOfStoreSymlink hyprConfigPath;
   xdg.configFile."mako".source = config.lib.file.mkOutOfStoreSymlink makoConfigPath;
   xdg.configFile."niri".source = config.lib.file.mkOutOfStoreSymlink niriConfigPath;
