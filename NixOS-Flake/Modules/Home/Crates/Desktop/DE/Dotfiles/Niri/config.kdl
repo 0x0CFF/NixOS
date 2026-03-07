@@ -293,7 +293,7 @@ prefer-no-csd
 // 您可以更改保存屏幕截图的路径
 // ~ 将扩展到主目录
 // 路径使用 strftime（3）格式化，以提供截图日期和时间
-screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+screenshot-path "~/Multimedia/Pictures/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 // 您还可以将其设置为 null 以禁用将屏幕截图保存到磁盘
 // screenshot-path null
