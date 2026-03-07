@@ -115,7 +115,7 @@
         ./Users/Studio/0x0CFF/default.nix                                                               # 0x0CFF
         ./Users/Studio/ADMINISTRATION/default.nix                                                       # 行政部门
         ./Users/Studio/ANIMATION/default.nix                                                            # 动画部门
-        ./Users/Studio/BOARD/default.nix                                                                # 董事会
+        ./Users/Studio/BOARD/default.nix                                                                # 董事部门
         ./Users/Studio/BUSINESS/default.nix                                                             # 商务部门
         ./Users/Studio/DESIGN/default.nix                                                               # 设计部门
         ./Users/Studio/DEVELOPMENT/default.nix                                                          # 开发部门
@@ -212,7 +212,7 @@
         ./Users/Studio/0x0CFF/default.nix                                                               # 0x0CFF
         ./Users/Studio/ADMINISTRATION/default.nix                                                       # 行政部门
         ./Users/Studio/ANIMATION/default.nix                                                            # 动画部门
-        ./Users/Studio/BOARD/default.nix                                                                # 董事会
+        ./Users/Studio/BOARD/default.nix                                                                # 董事部门
         ./Users/Studio/BUSINESS/default.nix                                                             # 商务部门
         ./Users/Studio/DESIGN/default.nix                                                               # 设计部门
         ./Users/Studio/DEVELOPMENT/default.nix                                                          # 开发部门
@@ -302,7 +302,7 @@
         ./Users/Studio/0x0CFF/default.nix                                                               # 0x0CFF
         ./Users/Studio/ADMINISTRATION/default.nix                                                       # 行政部门
         ./Users/Studio/ANIMATION/default.nix                                                            # 动画部门
-        ./Users/Studio/BOARD/default.nix                                                                # 董事会
+        ./Users/Studio/BOARD/default.nix                                                                # 董事部门
         ./Users/Studio/BUSINESS/default.nix                                                             # 商务部门
         ./Users/Studio/DESIGN/default.nix                                                               # 设计部门
         ./Users/Studio/DEVELOPMENT/default.nix                                                          # 开发部门
@@ -396,7 +396,7 @@
         ./Users/Studio/0x0CFF/default.nix                                                               # 0x0CFF
         ./Users/Studio/ADMINISTRATION/default.nix                                                       # 行政部门
         ./Users/Studio/ANIMATION/default.nix                                                            # 动画部门
-        ./Users/Studio/BOARD/default.nix                                                                # 董事会
+        ./Users/Studio/BOARD/default.nix                                                                # 董事部门
         ./Users/Studio/BUSINESS/default.nix                                                             # 商务部门
         ./Users/Studio/DESIGN/default.nix                                                               # 设计部门
         ./Users/Studio/DEVELOPMENT/default.nix                                                          # 开发部门
@@ -486,7 +486,7 @@
         ./Users/Studio/0x0CFF/default.nix                                                               # 0x0CFF
         ./Users/Studio/ADMINISTRATION/default.nix                                                       # 行政部门
         ./Users/Studio/ANIMATION/default.nix                                                            # 动画部门
-        ./Users/Studio/BOARD/default.nix                                                                # 董事会
+        ./Users/Studio/BOARD/default.nix                                                                # 董事部门
         ./Users/Studio/BUSINESS/default.nix                                                             # 商务部门
         ./Users/Studio/DESIGN/default.nix                                                               # 设计部门
         ./Users/Studio/DEVELOPMENT/default.nix                                                          # 开发部门
@@ -579,7 +579,7 @@
         ./Users/Studio/0x0CFF/default.nix                                                               # 0x0CFF
         ./Users/Studio/ADMINISTRATION/default.nix                                                       # 行政部门
         ./Users/Studio/ANIMATION/default.nix                                                            # 动画部门
-        ./Users/Studio/BOARD/default.nix                                                                # 董事会
+        ./Users/Studio/BOARD/default.nix                                                                # 董事部门
         ./Users/Studio/BUSINESS/default.nix                                                             # 商务部门
         ./Users/Studio/DESIGN/default.nix                                                               # 设计部门
         ./Users/Studio/DEVELOPMENT/default.nix                                                          # 开发部门
@@ -670,7 +670,7 @@
         ./Users/Studio/0x0CFF/default.nix                                                               # 0x0CFF
         ./Users/Studio/ADMINISTRATION/default.nix                                                       # 行政部门
         ./Users/Studio/ANIMATION/default.nix                                                            # 动画部门
-        ./Users/Studio/BOARD/default.nix                                                                # 董事会
+        ./Users/Studio/BOARD/default.nix                                                                # 董事部门
         ./Users/Studio/BUSINESS/default.nix                                                             # 商务部门
         ./Users/Studio/DESIGN/default.nix                                                               # 设计部门
         ./Users/Studio/DEVELOPMENT/default.nix                                                          # 开发部门
@@ -759,7 +759,7 @@
         ./Users/Studio/0x0CFF/default.nix                                                               # 0x0CFF
         ./Users/Studio/ADMINISTRATION/default.nix                                                       # 行政部门
         ./Users/Studio/ANIMATION/default.nix                                                            # 动画部门
-        ./Users/Studio/BOARD/default.nix                                                                # 董事会
+        ./Users/Studio/BOARD/default.nix                                                                # 董事部门
         ./Users/Studio/BUSINESS/default.nix                                                             # 商务部门
         ./Users/Studio/DESIGN/default.nix                                                               # 设计部门
         ./Users/Studio/DEVELOPMENT/default.nix                                                          # 开发部门
@@ -846,7 +846,7 @@
         ./Users/Studio/0x0CFF/default.nix                                                               # 0x0CFF
         ./Users/Studio/ADMINISTRATION/default.nix                                                       # 行政部门
         ./Users/Studio/ANIMATION/default.nix                                                            # 动画部门
-        ./Users/Studio/BOARD/default.nix                                                                # 董事会
+        ./Users/Studio/BOARD/default.nix                                                                # 董事部门
         ./Users/Studio/BUSINESS/default.nix                                                             # 商务部门
         ./Users/Studio/DESIGN/default.nix                                                               # 设计部门
         ./Users/Studio/DEVELOPMENT/default.nix                                                          # 开发部门
