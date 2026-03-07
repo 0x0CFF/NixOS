@@ -907,7 +907,7 @@
         ./Modules/Home/Crates/Desktop/DE/default.nix                                                    # 桌面程序集合
         ./Modules/Home/Crates/Desktop/Hardware/default.nix                                              # 硬件管理程序集合
         ./Modules/Home/Crates/Desktop/Produce/default.nix                                               # 生产应用程序集合
-        # ./Modules/Home/Crates/Desktop/Recreation/default.nix                                            # 娱乐程序集合
+        ./Modules/Home/Crates/Desktop/Recreation/default.nix                                            # 娱乐程序集合
         ./Modules/Home/Crates/Desktop/Security/default.nix                                              # 安全管理程序集合
         ./Modules/Home/Crates/Desktop/Tool/default.nix                                                  # 工具程序集合
         ./Modules/Home/Crates/Desktop/Viewer/default.nix                                                # 文件预览程序集合

@@ -293,7 +293,7 @@ prefer-no-csd
 // 您可以更改保存屏幕截图的路径
 // ~ 将扩展到主目录
 // 路径使用 strftime（3）格式化，以提供截图日期和时间
-screenshot-path "~/Multimedia/Pictures/Screenshot from %Y-%m-%d %H-%M-%S.png"
+screenshot-path "~/Multimedia/Pictures/Screenshot/%Y-%m-%d_%H-%M-%S.png"
 
 // 您还可以将其设置为 null 以禁用将屏幕截图保存到磁盘
 // screenshot-path null
@@ -656,8 +656,9 @@ binds {
     // Mod+Space       { switch-layout "next"; }
     // Mod+Shift+Space { switch-layout "prev"; }
 
-    Print { screenshot; }
-    Ctrl+Print { screenshot-screen; }
+    // Print { screenshot-screen; }
+    Print { spawn-sh "grim -t ppm - | satty --filename -"; }                                     // 截屏标注
+    Ctrl+Print { screenshot; }
     Alt+Print { screenshot-window; }
 
     // 远程桌面客户端和软件 KVM 交换机等应用程序可能会请求 niri 停止处理此处定义的键盘快捷键，以便他们可以将按键按原样转发到远程机器

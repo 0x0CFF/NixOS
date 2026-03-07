@@ -1,0 +1,108 @@
+[general]
+# 使用全屏模式启动 satty
+fullscreen = true
+# 最初调整大小
+# resize = { mode="smart" }
+# 尝试让窗口浮动
+# floating-hack = true
+# 复制/保存操作后直接退出
+early-exit = true
+# 保存后直接退出
+# early-exit-save-as = true
+# 如果值大于0，则绘制矩形圆角（0表示禁用圆角）
+corner-roundness = 12
+# 启动时选择工具 [可能值: pointer, crop, line, arrow, rectangle, text, marker, blur, brush]
+initial-tool = "brush"
+# 配置命令以在复制时调用，例如 `wl-copy`
+copy-command = "wl-copy"
+# 增加或减少注释的大小
+annotation-size-factor = 2
+# 图片保存路径
+output-filename = "~/Multimedia/Pictures/Screenshot/%Y-%m-%d_%H-%M-%S.png"
+# 保存图片时，抄送到剪贴板
+save-after-copy = true
+# 默认隐藏工具栏
+default-hide-toolbars = false
+# 窗口聚焦时是否显示/隐藏工具栏
+focus-toggles-toolbars = false
+# 默认填充形状
+default-fill-shapes = false
+# 主要使用的荧光笔，另一个可以通过在开始标记时按住CTRL来访问 [可能值: block, freehand]
+primary-highlighter = "block"
+# 禁用通知
+disable-notifications = false
+# 右键点击时触发的操作（顺序很重要）[可能值: save-to-clipboard, save-to-file, save-to-file-as, copy-filepath-to-clipboard, exit]
+actions-on-right-click = []
+# 在按下回车键时触发的操作（顺序很重要）[可能值: save-to-clipboard, save-to-file, save-to-file-as, copy-filepath-to-clipboard, exit]
+actions-on-enter = ["save-to-clipboard"]
+# 在按下 Esc 键时触发的操作（顺序很重要）[可能值: save-to-clipboard, save-to-file, save-to-file-as, copy-filepath-to-clipboard, exit]
+actions-on-escape = ["exit"]
+# 请求无窗口装饰，请注意合成器对此拥有最终决定权，在这一点上需要 xdg-decoration-unstable-v1
+no-window-decoration = true
+# 调整画笔输入平滑的历史大小 (0: disabled, default: 0, try e.g. 5 or 10)
+brush-smooth-history-size = 10
+# 使用箭头键平移时的平移步长
+# pan-step-size = 50.0
+# 用于图像的缩放因子，1.0 表示不进行缩放
+# zoom-factor = 1.1
+# 使用箭头键移动文本的长度，默认值为 50.0
+# text-move-length = 50.0
+# 拍摄时输入图像的缩放因子（例如，从记录它的显示器上的DPI缩放）
+# 这可能更适合通过命令行设置
+# 请注意，如果进行了显式调整大小，则会忽略此项
+# input-scale = 2.0
+
+# 工具选择快捷键
+[keybinds]
+pointer = "p"
+crop = "c"
+brush = "b"
+line = "i"
+arrow = "z"
+rectangle = "r"
+ellipse = "e"
+text = "t"
+marker = "m"
+blur = "u"
+highlight = "g"
+
+# 用于文本注释的字体
+[font]
+family = "Roboto"
+style = "Regular"
+# 指定回退字体
+# 请注意，这些没有默认设置，下面列出的字体不是随 Satty 一起提供的，需要在系统中可用
+# fallback = [
+#     "Noto Sans CJK JP",
+#     "Noto Sans CJK SC",
+#     "Noto Sans CJK TC",
+#     "Noto Sans CJK KR",
+#     "Noto Serif CJK JP",
+#     "Noto Serif JP",
+#    "IPAGothic",
+#     "IPAexGothic",
+#     "Source Han Sans"
+# ]
+
+# 色板的自定义颜色
+[color-palette]
+# 这些将显示在工具栏中以便快速选择
+palette = [
+    "#00ffff",
+    "#a52a2a",
+    "#dc143c",
+    "#ff1493",
+    "#ffd700",
+    "#008000",
+]
+
+# 这些将在颜色选择器中作为预设提供
+# 留空以使用 GTK 的默认值
+custom = [
+    "#00ffff",
+    "#a52a2a",
+    "#dc143c",
+    "#ff1493",
+    "#ffd700",
+    "#008000",
+]
