@@ -22,4 +22,6 @@
     # 阻止 uv 在需要时自动下载 Python 二进制文件
     UV_PYTHON_DOWNLOADS = "never";
   };
+  # 启用 nix-ld，使 UV 能够运行为通用 Linux 环境设计的动态链接可执行文件
+  programs.nix-ld.enable = true;
 }
