@@ -12,6 +12,7 @@
     openssl                  # [CLI][C] SSL/TLS 协议加密库
     grex                     # [CLI][RUST] 正则表达式生成器
     difftastic               # [CLI][RUST] 内容差异对比工具
+    nomino                   # [CLI][RUST] 批量重命名工具
     cliphist                 # [CLI][GO] 剪贴板管理
     clipse                   # [TUI][GO] 剪贴板管理器
     bottom                   # [TUI][RUST] 资源管理器
