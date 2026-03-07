@@ -20,13 +20,13 @@ USERS=(
     "ANIMATION_R3:H9HVFY6N"          # 动画部门-高级
     "ANIMATION_R4:CDF7VG4X"          # 动画部门-主管
     "ANIMATION_R5:AUS38NTL"          # 动画部门-总监
-    # 董事会
-    "BOARD_R0:EN35TSUX"              # 董事秘书-实习
-    "BOARD_R1:TN4F8YLH"              # 董事秘书-正式
-    "BOARD_R2:GBNE26R7"              # 董事成员
-    "BOARD_R3:F7EY6KJM"              # 执行董事
-    "BOARD_R4:M5LF7M65"              # 副董事长
-    "BOARD_R5:A8HFKF8M"              # 董事长
+    # 董事部门
+    "BOARD_R0:EN35TSUX"              # 董事部门-实习
+    "BOARD_R1:TN4F8YLH"              # 董事部门-正式
+    "BOARD_R2:GBNE26R7"              # 董事部门-董事
+    "BOARD_R3:F7EY6KJM"              # 董事部门-执行董事
+    "BOARD_R4:M5LF7M65"              # 董事部门-副董事长
+    "BOARD_R5:A8HFKF8M"              # 董事部门-董事长
     # 商务部门
     "BUSINESS_R0:WF457FQ7"           # 商务部门-实习
     "BUSINESS_R1:QPH3T2AS"           # 商务部门-初级
