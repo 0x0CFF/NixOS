@@ -19,8 +19,8 @@
     # 官方     : https://github.com/astral-sh/python-build-standalone/releases/download
     # 南京大学  : https://mirror.nju.edu.cn/github-release/indygreg/python-build-standalone/
     UV_PYTHON_INSTALL_MIRROR = "https://mirror.nju.edu.cn/github-release/indygreg/python-build-standalone/";
-    # 阻止 uv 在需要时自动下载 Python 二进制文件
-    UV_PYTHON_DOWNLOADS = "never";
+    # 阻止 UV 在需要时自动下载 Python 二进制文件（如果所有项目都使用系统自带 Python 可以开启，否则注释掉）
+    # UV_PYTHON_DOWNLOADS = "never";
   };
   # 启用 nix-ld，使 UV 能够运行为通用 Linux 环境设计的动态链接可执行文件
   programs.nix-ld.enable = true;
