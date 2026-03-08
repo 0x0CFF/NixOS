@@ -2,7 +2,7 @@
 
 {
   # 在 timers 服务中启用 systemd 单元
-  systemd.timers."web-panel" = {
+  systemd.timers."panel-studio" = {
     wantedBy = [ "timers.target" ];
     timerConfig = {
       # 系统启动 30 秒后启动
@@ -13,12 +13,12 @@
   };
 
   # 定义 systemd 单元
-  systemd.services."web-panel" = {
+  systemd.services."panel-studio" = {
     # 运行脚本
     # 查找程序所在位置 echo $(which ssh)
     script = ''
       set -eu
-      cd /home/0x0CFF/Solution/Blueprints/UV/Web-Studio/Panel-Studio/
+      cd /home/0x0CFF/Solution/Blueprints/UV/Studio/Panel-Studio/
       ${pkgs.uv}/bin/uv run ./main.py
     '';
     # 单元配置

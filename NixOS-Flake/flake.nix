@@ -74,7 +74,10 @@
         # 服务专项配置
         # ./Hosts/Studio/DATAGC/DATAGC00/Services/beszel.nix                                              # Beszel 专项配置
         # 定时服务
-        ./Hosts/Studio/DATAGC/DATAGC00/Timers/backup-local-syncthing-folder.nix                           # Syncthing 文件夹备份
+        ./Hosts/Studio/DATAGC/DATAGC00/Timers/backup-local-syncthing-folder.nix                         # Syncthing 文件夹备份
+        ./Hosts/Studio/DATAGC/DATAGC00/Timers/web-panel.nix                                             # 导航面板
+        # ./Hosts/Studio/DATAGC/DATAGC00/Timers/web-toolbox-backend.nix                                   # 工具箱面板-后端
+        # ./Hosts/Studio/DATAGC/DATAGC00/Timers/web-toolbox-frontend.nix                                  # 工具箱面板-前端
 
         # 程序集合
         ./Modules/Common/Crates/Development/Python/default.nix                                          # Python 开发工具集合
@@ -169,9 +172,6 @@
         ./Hosts/Studio/DATABC/DATABC00/Timers/backup-local-mount-point.nix                              # 挂载点数据备份
         ./Hosts/Studio/DATABC/DATABC00/Timers/gc-mount-point.nix                                        # 挂载点垃圾回收
         ./Hosts/Studio/DATABC/DATABC00/Timers/gc-samba.nix                                              # Samba 垃圾回收
-        # ./Hosts/Studio/DATABC/DATABC00/Timers/web-panel.nix                                             # 导航面板
-        # ./Hosts/Studio/DATABC/DATABC00/Timers/web-toolbox-backend.nix                                   # 工具箱面板-后端
-        # ./Hosts/Studio/DATABC/DATABC00/Timers/web-toolbox-frontend.nix                                  # 工具箱面板-前端
 
         # 程序集合
         ./Modules/Common/Crates/Development/Python/default.nix                                          # Python 开发工具集合
