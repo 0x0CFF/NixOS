@@ -75,7 +75,7 @@
         # ./Hosts/Studio/DATAGC/DATAGC00/Services/beszel.nix                                              # Beszel 专项配置
         # 定时服务
         ./Hosts/Studio/DATAGC/DATAGC00/Timers/backup-local-syncthing-folder.nix                         # Syncthing 文件夹备份
-        ./Hosts/Studio/DATAGC/DATAGC00/Timers/web-panel.nix                                             # 导航面板
+        ./Hosts/Studio/DATAGC/DATAGC00/Timers/panel-studio.nix                                            # 导航面板
         # ./Hosts/Studio/DATAGC/DATAGC00/Timers/web-toolbox-backend.nix                                   # 工具箱面板-后端
         # ./Hosts/Studio/DATAGC/DATAGC00/Timers/web-toolbox-frontend.nix                                  # 工具箱面板-前端
 
