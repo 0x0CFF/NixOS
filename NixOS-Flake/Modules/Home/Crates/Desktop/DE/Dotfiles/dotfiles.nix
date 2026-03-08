@@ -9,6 +9,7 @@
   hyprConfigPath = "${config.home.homeDirectory}/Solution/Blueprints/NixOS/NixOS-Flake/Modules/Home/Crates/Desktop/DE/Dotfiles/Hypr";
   makoConfigPath = "${config.home.homeDirectory}/Solution/Blueprints/NixOS/NixOS-Flake/Modules/Home/Crates/Desktop/DE/Dotfiles/Mako";
   niriConfigPath = "${config.home.homeDirectory}/Solution/Blueprints/NixOS/NixOS-Flake/Modules/Home/Crates/Desktop/DE/Dotfiles/Niri";
+  quickshellConfigPath = "${config.home.homeDirectory}/Solution/Blueprints/NixOS/NixOS-Flake/Modules/Home/Crates/Desktop/DE/Dotfiles/Quickshell";
   waybarConfigPath = "${config.home.homeDirectory}/Solution/Blueprints/NixOS/NixOS-Flake/Modules/Home/Crates/Desktop/DE/Dotfiles/Waybar";
 in
 {
@@ -26,5 +27,6 @@ in
   xdg.configFile."hypr".source = config.lib.file.mkOutOfStoreSymlink hyprConfigPath;
   xdg.configFile."mako".source = config.lib.file.mkOutOfStoreSymlink makoConfigPath;
   xdg.configFile."niri".source = config.lib.file.mkOutOfStoreSymlink niriConfigPath;
+  xdg.configFile."quickshell".source = config.lib.file.mkOutOfStoreSymlink quickshellConfigPath;
   xdg.configFile."waybar".source = config.lib.file.mkOutOfStoreSymlink waybarConfigPath;
 }

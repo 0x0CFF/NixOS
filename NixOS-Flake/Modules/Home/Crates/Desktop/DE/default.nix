@@ -13,7 +13,6 @@
     slurp                    # [GUI][C] Wayland 合成器屏幕区域选择工具
     hyprpicker               # [GUI][C++] 取色器
     hypridle                 # [GUI][C++] 空闲守护进程
-    waybar                   # [GUI][C++] Wayland 桌面栏
     quickshell               # [GUI][C++] 桌面组件开发工具
     xdg-desktop-portal-gtk   # [GUI][GTK+] 桌面门户
     xdg-desktop-portal-gnome # [GUI][GTK+] 桌面门户

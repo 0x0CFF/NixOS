@@ -238,7 +238,7 @@ layout {
         // 您可以更改阴影的外观，以下值以逻辑像素为单位，与CSS框阴影属性匹配
 
         // 柔和度控制阴影模糊半径
-        softness 12
+        softness 4
 
         // 扩散会扩大阴影
         spread 4
@@ -268,9 +268,9 @@ layout {
 
 // 启动 niri 时自动启动的软件
 spawn-at-startup "hyprpaper"
-spawn-at-startup "fcitx5"
+spawn-at-startup "quickshell"
 spawn-at-startup "mako"
-spawn-at-startup "waybar"
+spawn-at-startup "fcitx5"
 spawn-sh-at-startup "swaybg -i /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake/Modules/Home/Crates/Desktop/DE/Dotfiles/Swaybg/Assets/Wallpaper-01-Blurred.jpg -m fit"
 spawn-sh-at-startup "wl-paste --type text --watch cliphist store"           // 监听文本复制
 spawn-sh-at-startup "wl-paste --type image --watch cliphist store"          // 监听图片复制
