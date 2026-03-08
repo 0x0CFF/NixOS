@@ -13,6 +13,7 @@
     grex                     # [CLI][RUST] 正则表达式生成器
     difftastic               # [CLI][RUST] 内容差异对比工具
     nomino                   # [CLI][RUST] 批量重命名工具
+    tldr                     # [CLI][Python] 命令行手册
     cliphist                 # [CLI][GO] 剪贴板管理
     clipse                   # [TUI][GO] 剪贴板管理器
     bottom                   # [TUI][RUST] 资源管理器
@@ -20,7 +21,7 @@
     navi                     # [TUI][RUST] 命令行交互式备忘单工具
     systemctl-tui            # [TUI][RUST] Systemd 服务管理工具
   ];
-  
+
   programs.bash = {
     # Tab 补全功能
     completion.enable = true;
