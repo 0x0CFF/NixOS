@@ -7,7 +7,7 @@ QtObject {
 
     // ========== 核心颜色 ==========
     // 背景色
-    readonly property color background: darkMode ? "#000000" : "#f5f5f5"
+    readonly property color background: darkMode ? "#17181A" : "#f5f5f5"
 
     // 表面色（卡片、面板背景）
     readonly property color surface: darkMode ? "#2a2a3a" : "#ffffff"
