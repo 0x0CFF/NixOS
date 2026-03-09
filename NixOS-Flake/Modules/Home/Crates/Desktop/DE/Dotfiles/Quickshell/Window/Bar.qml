@@ -14,7 +14,7 @@ Scope {
             required property var modelData     // 注入屏幕列表中的数据模型
             screen: modelData                   // 然后可以将窗口的屏幕设置为注入的属性
             color: Theme.background
-            
+
             anchors {
                 top: true
                 left: true
@@ -36,11 +36,17 @@ Scope {
                 }
 
                 // 左侧布局
-                ClockWidget {
+                Row {
+                    spacing: 4      // 子项之间的间距
                     // 将组件的垂直中心对齐到父项的垂直中心
                     anchors.verticalCenter: parent.verticalCenter
+                    // 将组件的左边缘对齐到父组件的左边缘
+                    anchors.left: parent.left
+
+                    ClockWidget {}
+                    StatusWidget {}
                 }
-                
+
                 // // 中间布局
                 // WorkspaceWidget {
                 //     // 将组件的垂直中心对齐到父项的垂直中心
@@ -48,7 +54,7 @@ Scope {
                 //     // 将组件的水平中心对齐到父项的水平中心
                 //     anchors.horizontalCenter: parent.horizontalCenter
                 // }
-                
+
                 // 右侧布局
                 Row {
                     spacing: 4      // 子项之间的间距
@@ -56,12 +62,12 @@ Scope {
                     anchors.verticalCenter: parent.verticalCenter
                     // 将组件的右边缘对齐到父组件的右边缘
                     anchors.right: parent.right
-                    
+
                     ToolWidget {}
                     UserWidget {}
                 }
             }
-            
+
 
         }
     }

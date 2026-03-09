@@ -1,28 +1,155 @@
-import Quickshell
+import QtQuick
 
-import qs.Theme         // 导入 Theme 目录
-import qs.Widge         // 导入 Widge 目录
+Item {
 
-Scope {
-    Variants {
-        // 获取显示器列表（数据模型）
-        model: Quickshell.screens
+    property real margin: 4
+    
+    // 宽度和高度由内部的 Row 决定
+    width: row.width + margin * 2
+    height: 30
 
-        PanelWindow {
-            required property var modelData     // 注入屏幕列表中的数据模型
-            screen: modelData                   // 然后可以将窗口的屏幕设置为注入的属性
-            color: Theme.background
+    // 背景矩形
+    Rectangle {
+        anchors.fill: parent
+        color: "#27282C"
+        radius: 6
+    }
+        
+    Row {
+        id:row
+        spacing: 4      // 子项之间的间距
+        height: 30      // 固定高度，比文字高
+        // 将组件的垂直中心对齐到父项的垂直中心
+        anchors.verticalCenter: parent.verticalCenter
+        // 将组件的水平中心对齐到父项的水平中心
+        anchors.horizontalCenter: parent.horizontalCenter
 
-            anchors {
-                top: true
-                left: true
-                right: true
+        Item {
+            // 宽度和高度由内部的 Row 决定
+            width: child0.width + margin * 2
+            height: 22
+
+            // 将项目的垂直中心对齐到父项的垂直中心
+            anchors.verticalCenter: parent.verticalCenter
+
+
+            // 背景矩形
+            Rectangle {
+                anchors.fill: parent
+                color: "#46474E"
+                radius: 6
             }
 
-            implicitHeight: 42                    // 高度
+            Row {
+                id: child0
+                height: 22
+                spacing: 4                          // 子项之间的间距
+                // 将组件的垂直中心对齐到父项的垂直中心
+                anchors.verticalCenter: parent.verticalCenter
+                // 将组件的水平中心对齐到父项的水平中心
+                anchors.horizontalCenter: parent.horizontalCenter
+                
+                Text {
+                    text: "●"
+                    font.pixelSize: 8
+                    color: "#40C98A"
+                    height: parent.height                 // 填充整个 Row 的高度
+                    verticalAlignment: Text.AlignVCenter  // 文字内容垂直居中
+                }
+                
+                Text {
+                    text: "同步"
+                    font.pixelSize: 11
+                    color: "#FFFFFF"
+                    height: parent.height                 // 填充整个 Row 的高度
+                    verticalAlignment: Text.AlignVCenter  // 文字内容垂直居中
+                }
+            }
+        }
+        
+        Item {
+            // 宽度和高度由内部的 Row 决定
+            width: child1.width + margin * 2
+            height: 22
 
-            ClockWidget {
-                anchors.centerIn: parent
+            // 将项目的垂直中心对齐到父项的垂直中心
+            anchors.verticalCenter: parent.verticalCenter
+
+
+            // 背景矩形
+            Rectangle {
+                anchors.fill: parent
+                color: "#46474E"
+                radius: 6
+            }
+
+            Row {
+                id: child1
+                height: 22
+                spacing: 4                          // 子项之间的间距
+                // 将组件的垂直中心对齐到父项的垂直中心
+                anchors.verticalCenter: parent.verticalCenter
+                // 将组件的水平中心对齐到父项的水平中心
+                anchors.horizontalCenter: parent.horizontalCenter
+                
+                Image {
+                    source: "../Assets/SVG/APP-Lobehub.svg"
+                    width: 14
+                    height: 14
+                    // 将项目的垂直中心对齐到父项的垂直中心
+                    anchors.verticalCenter: parent.verticalCenter
+                }
+                
+                Text {
+                    text: "32B"
+                    font.pixelSize: 11
+                    color: "#FFFFFF"
+                    height: parent.height                 // 填充整个 Row 的高度
+                    verticalAlignment: Text.AlignVCenter  // 文字内容垂直居中
+                }
+            }
+        }
+        
+        Item {
+            // 宽度和高度由内部的 Row 决定
+            width: child2.width + margin * 2
+            height: 22
+
+            // 将项目的垂直中心对齐到父项的垂直中心
+            anchors.verticalCenter: parent.verticalCenter
+
+
+            // 背景矩形
+            Rectangle {
+                anchors.fill: parent
+                color: "#46474E"
+                radius: 6
+            }
+
+            Row {
+                id: child2
+                height: 22
+                spacing: 4                          // 子项之间的间距
+                // 将组件的垂直中心对齐到父项的垂直中心
+                anchors.verticalCenter: parent.verticalCenter
+                // 将组件的水平中心对齐到父项的水平中心
+                anchors.horizontalCenter: parent.horizontalCenter
+                
+                Image {
+                    source: "../Assets/SVG/APP-Spotify.svg"
+                    width: 14
+                    height: 14
+                    // 将项目的垂直中心对齐到父项的垂直中心
+                    anchors.verticalCenter: parent.verticalCenter
+                }
+                
+                Text {
+                    text: "五月天 - 知足"
+                    font.pixelSize: 11
+                    color: "#FFFFFF"
+                    height: parent.height                 // 填充整个 Row 的高度
+                    verticalAlignment: Text.AlignVCenter  // 文字内容垂直居中
+                }
             }
         }
     }
