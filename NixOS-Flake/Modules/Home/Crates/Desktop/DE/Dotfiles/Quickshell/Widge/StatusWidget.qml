@@ -1,4 +1,7 @@
 import QtQuick
+import QtQuick.VectorImage
+
+import qs.Theme         // 导入 Theme 目录
 
 Item {
 
@@ -11,7 +14,7 @@ Item {
     // 背景矩形
     Rectangle {
         anchors.fill: parent
-        color: "#27282C"
+        color: Theme.wrapper
         radius: 6
     }
         
@@ -24,11 +27,12 @@ Item {
         // 将组件的水平中心对齐到父项的水平中心
         anchors.horizontalCenter: parent.horizontalCenter
 
-        Item {
+        Rectangle {
             // 宽度和高度由内部的 Row 决定
             width: child0.width + margin * 2
             height: 22
-
+            color: "transparent"
+            
             // 将项目的垂直中心对齐到父项的垂直中心
             anchors.verticalCenter: parent.verticalCenter
 
@@ -60,17 +64,18 @@ Item {
                 Text {
                     text: "同步"
                     font.pixelSize: 11
-                    color: "#FFFFFF"
+                    color: Theme.text
                     height: parent.height                 // 填充整个 Row 的高度
                     verticalAlignment: Text.AlignVCenter  // 文字内容垂直居中
                 }
             }
         }
         
-        Item {
+        Rectangle {
             // 宽度和高度由内部的 Row 决定
             width: child1.width + margin * 2
             height: 22
+            color: "transparent"
 
             // 将项目的垂直中心对齐到父项的垂直中心
             anchors.verticalCenter: parent.verticalCenter
@@ -92,10 +97,12 @@ Item {
                 // 将组件的水平中心对齐到父项的水平中心
                 anchors.horizontalCenter: parent.horizontalCenter
                 
-                Image {
+                VectorImage {
                     source: "../Assets/SVG/APP-Lobehub.svg"
                     width: 14
                     height: 14
+                    // 使用 VectorImage.CurveRenderer 渲染器类型，对于需要变换和抗锯齿的场景建议使用此渲染器
+                    preferredRendererType: VectorImage.CurveRenderer
                     // 将项目的垂直中心对齐到父项的垂直中心
                     anchors.verticalCenter: parent.verticalCenter
                 }
@@ -103,17 +110,18 @@ Item {
                 Text {
                     text: "32B"
                     font.pixelSize: 11
-                    color: "#FFFFFF"
+                    color: Theme.text
                     height: parent.height                 // 填充整个 Row 的高度
                     verticalAlignment: Text.AlignVCenter  // 文字内容垂直居中
                 }
             }
         }
         
-        Item {
+        Rectangle {
             // 宽度和高度由内部的 Row 决定
             width: child2.width + margin * 2
             height: 22
+            color: "transparent"
 
             // 将项目的垂直中心对齐到父项的垂直中心
             anchors.verticalCenter: parent.verticalCenter
@@ -135,10 +143,12 @@ Item {
                 // 将组件的水平中心对齐到父项的水平中心
                 anchors.horizontalCenter: parent.horizontalCenter
                 
-                Image {
+                VectorImage {
                     source: "../Assets/SVG/APP-Spotify.svg"
                     width: 14
                     height: 14
+                    // 使用 VectorImage.CurveRenderer 渲染器类型，对于需要变换和抗锯齿的场景建议使用此渲染器
+                    preferredRendererType: VectorImage.CurveRenderer
                     // 将项目的垂直中心对齐到父项的垂直中心
                     anchors.verticalCenter: parent.verticalCenter
                 }
@@ -146,7 +156,7 @@ Item {
                 Text {
                     text: "五月天 - 知足"
                     font.pixelSize: 11
-                    color: "#FFFFFF"
+                    color: Theme.text
                     height: parent.height                 // 填充整个 Row 的高度
                     verticalAlignment: Text.AlignVCenter  // 文字内容垂直居中
                 }

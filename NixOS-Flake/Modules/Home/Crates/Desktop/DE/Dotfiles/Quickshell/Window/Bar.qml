@@ -63,6 +63,7 @@ Scope {
                     // 将组件的右边缘对齐到父组件的右边缘
                     anchors.right: parent.right
 
+                    HardwareWidget {}
                     ToolWidget {}
                     UserWidget {}
                 }

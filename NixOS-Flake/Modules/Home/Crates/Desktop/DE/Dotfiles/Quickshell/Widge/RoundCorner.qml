@@ -1,6 +1,8 @@
 import QtQuick
 import QtQuick.Shapes
 
+import qs.Theme         // 导入 Theme 目录
+
 Shape {
     id: root
     

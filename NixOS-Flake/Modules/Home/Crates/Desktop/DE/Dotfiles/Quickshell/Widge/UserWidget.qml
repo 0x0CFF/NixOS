@@ -1,6 +1,8 @@
 import QtQuick
 import Quickshell.Widgets
 
+import qs.Theme         // 导入 Theme 目录
+
 Item {
 
     property real margin: 4
@@ -12,7 +14,7 @@ Item {
     // 背景矩形
     Rectangle {
         anchors.fill: parent
-        color: "#27282C"
+        color: Theme.wrapper
         radius: 6
     }
         
