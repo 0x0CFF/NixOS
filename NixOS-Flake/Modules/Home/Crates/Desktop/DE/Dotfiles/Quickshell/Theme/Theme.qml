@@ -9,14 +9,17 @@ QtObject {
     // 背景色
     readonly property color background: darkMode ? "#17181A" : "#f5f5f5"
 
+    // 包装色
+    readonly property color wrapper: darkMode ? "#27282C" : "#ffffff"
+
     // 表面色（卡片、面板背景）
-    readonly property color surface: darkMode ? "#2a2a3a" : "#ffffff"
+    readonly property color surface: darkMode ? "#46474E" : "#ffffff"
 
     // 主色调（按钮、选中项）
     readonly property color primary: darkMode ? "#89b4fa" : "#1e88e5"
 
     // 文字颜色
-    readonly property color text: darkMode ? "#cdd6f4" : "#2c3e50"
+    readonly property color text: darkMode ? "#FFFFFF" : "#2c3e50"
     readonly property color textSecondary: darkMode ? "#9399b2" : "#546e7a"
 
     // 边框颜色

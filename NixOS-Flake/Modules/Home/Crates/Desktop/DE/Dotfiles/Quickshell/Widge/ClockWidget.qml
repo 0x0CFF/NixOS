@@ -14,7 +14,7 @@ Item {
     // 背景矩形
     Rectangle {
         anchors.fill: parent
-        color: "#27282C"
+        color: Theme.wrapper
         radius: 6
     }
 
@@ -46,7 +46,7 @@ Item {
                     // 直接访问时间单例的时间属性
                     text: Time.value
                     font.pixelSize: 13
-                    color: "#FFFFFF"
+                    color: Theme.text
                     height: parent.height                 // 填充整个 Row 的高度
                     verticalAlignment: Text.AlignVCenter  // 文字内容垂直居中
                 }
@@ -54,7 +54,7 @@ Item {
                 Text {
                     text: "•"
                     font.pixelSize: 13
-                    color: "#FFFFFF"
+                    color: Theme.text
                     height: parent.height                 // 填充整个 Row 的高度
                     verticalAlignment: Text.AlignVCenter  // 文字内容垂直居中
                 }
@@ -63,7 +63,7 @@ Item {
                     // 直接访问时间单例的时间属性
                     text: Data.value
                     font.pixelSize: 10
-                    color: "#FFFFFF"
+                    color: Theme.text
                     height: parent.height                 // 填充整个 Row 的高度
                     verticalAlignment: Text.AlignVCenter  // 文字内容垂直居中
                 }
@@ -81,7 +81,7 @@ Item {
             // 背景矩形
             Rectangle {
                 anchors.fill: parent
-                color: "#46474E"
+                color: Theme.surface
                 radius: 6
             }
 
@@ -93,7 +93,7 @@ Item {
                 anchors.horizontalCenter: parent.horizontalCenter
                 text: "⛅ +26°C"
                 font.pixelSize: 11
-                color: "#FFFFFF"
+                color: Theme.text
                 height: 22
                 verticalAlignment: Text.AlignVCenter  // 文字内容垂直居中
             }
