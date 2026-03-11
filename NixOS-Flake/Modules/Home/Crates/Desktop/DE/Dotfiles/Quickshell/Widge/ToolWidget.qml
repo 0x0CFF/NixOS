@@ -103,7 +103,7 @@ Item {
             }
 
             VectorImage {
-                source: "../Assets/SVG/HugeiconsNotificationOff01.svg"
+                source: "../Assets/SVG/HugeiconsMoon02.svg"
                 width: 14
                 height: 14
                 // 使用 VectorImage.CurveRenderer 渲染器类型，对于需要变换和抗锯齿的场景建议使用此渲染器
@@ -121,7 +121,7 @@ Item {
                 }
             }
         }
-
+        
         Rectangle {
             // 宽度和高度由内部的 Row 决定
             width: 22
@@ -139,7 +139,7 @@ Item {
             }
 
             VectorImage {
-                source: "../Assets/SVG/HugeiconsMoon02.svg"
+                source: "../Assets/SVG/HugeiconsNotificationOff01.svg"
                 width: 14
                 height: 14
                 // 使用 VectorImage.CurveRenderer 渲染器类型，对于需要变换和抗锯齿的场景建议使用此渲染器

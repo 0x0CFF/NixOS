@@ -260,6 +260,17 @@ layout {
         // top 64
         // bottom 64
     }
+    
+    
+    // 标签指示器
+    tab-indicator {
+        width 4
+        gap 4
+        corner-radius 2
+        gaps-between-tabs 2
+        length total-proportion=0.5
+        place-within-column
+    }
 }
 
 // 添加这样的行以在启动时生成进程
@@ -357,6 +368,16 @@ animations {
 
 // 窗口规则允许您调整单个窗口的行为
 // 在 wiki 上查找更多信息： https://niri-wm.github.io/niri/Configuration:-Window-Rules
+
+// 为所有窗口设置 open-maximized 为 true
+window-rule {
+    open-maximized true
+}
+// 然后，对于 Alacritty，将 open-maximized 设置回 false
+window-rule {
+    match app-id="Alacritty"
+    open-maximized false
+}
 
 // 通过设置一个空的 default-column-width 来解决 WezTerm 的初始配置错误
 window-rule {
@@ -691,4 +712,11 @@ cursor {
     xcursor-size 32
     hide-when-typing
     hide-after-inactive-ms 15000
+}
+
+recent-windows {
+    // 让高亮具有圆角
+    highlight {
+        corner-radius 12
+    }
 }
