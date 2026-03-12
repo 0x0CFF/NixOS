@@ -232,8 +232,9 @@ echo "恢复：100% (1/1), 完成."
 
 # 更新 Panel-Studio 配置
 ```sh
-rm -rf /home/0x0CFF/Solution/Blueprints/UV/Studio/Panel-Studio/*
-git clone https://github.com/0x0CFF/Panel-Studio.git /home/0x0CFF/Solution/Blueprints/UV/Studio/Panel-Studio
+git clone https://github.com/0x0CFF/Panel-Studio.git /home/0x0CFF/Solution/Blueprints/UV/Studio/Panel-Studio-New
+cp -rf /home/0x0CFF/Solution/Blueprints/UV/Studio/Panel-Studio-New/. /home/0x0CFF/Solution/Blueprints/UV/Studio/Panel-Studio/
+rm -rf /home/0x0CFF/Solution/Blueprints/UV/Studio/Panel-Studio-New
 ```
 
 $ Commands: echo "test switch boot" | tr ' ' '\n'
