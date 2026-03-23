@@ -2,7 +2,7 @@
 
 let
   # 服务器 IP 地址
-  serverIp = "192.168.31.96";
+  serverIp = "192.168.31.97";
   # SSL 证书路径
   sslDir = "/var/lib/vaultwarden";
   certFile = "${sslDir}/vaultwarden-cert.pem";

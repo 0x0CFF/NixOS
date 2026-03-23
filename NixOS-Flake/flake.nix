@@ -74,10 +74,97 @@
         # 服务专项配置
         # ./Hosts/Studio/DATAGC/DATAGC00/Services/beszel.nix                                              # Beszel 专项配置
         # 定时服务
-        ./Hosts/Studio/DATAGC/DATAGC00/Timers/backup-local-syncthing-folder.nix                         # Syncthing 文件夹备份
-        ./Hosts/Studio/DATAGC/DATAGC00/Timers/panel-studio.nix                                            # 导航面板
-        # ./Hosts/Studio/DATAGC/DATAGC00/Timers/web-toolbox-backend.nix                                   # 工具箱面板-后端
-        # ./Hosts/Studio/DATAGC/DATAGC00/Timers/web-toolbox-frontend.nix                                  # 工具箱面板-前端
+
+        # 程序集合
+        ./Modules/Common/Crates/Development/Python/default.nix                                          # Python 开发工具集合
+        # ./Modules/Common/Crates/Terminal/Automation/default.nix                                         # 终端自动化程序集合
+        ./Modules/Common/Crates/Terminal/Explorer/default.nix                                           # 终端文件管理器程序集合
+        ./Modules/Common/Crates/Terminal/Hardware/default.nix                                           # 终端硬件管理程序集合
+        # ./Modules/Common/Crates/Terminal/Multimedia/default.nix                                         # 终端多媒体处理程序集合
+        ./Modules/Common/Crates/Terminal/Network/default.nix                                            # 终端网络程序集合
+        ./Modules/Common/Crates/Terminal/Nix-Ecosystem/default.nix                                      # 终端 Nix 生态程序集合
+        ./Modules/Common/Crates/Terminal/Operations/default.nix                                         # 终端运维程序集合
+
+        # 硬件驱动
+        ./Modules/Common/Driver/Audio/default.nix                                                       # 声音驱动
+        # ./Modules/Common/Driver/Bluetooth/default.nix                                                   # 蓝牙驱动
+        # ./Modules/Common/Driver/Printer/default.nix                                                     # 打印机驱动
+        # ./Modules/Common/Driver/Touchpad/default.nix                                                    # 触控板驱动
+        # ./Modules/Common/Driver/USB/default.nix                                                         # USB 驱动
+
+        # 后台服务
+        ./Modules/Common/Services/Automation/HomeAssistant/default.nix                                  # 智能家居平台
+        # ./Modules/Common/Services/Automation/Restic/default.nix                                         # 数据备份服务
+        ./Modules/Common/Services/Network/AdguardHome/default.nix                                       # 网络拦截平台
+        ./Modules/Common/Services/Network/OpenSSH/default.nix                                           # 远程通信服务
+        # ./Modules/Common/Services/Network/Samba/default.nix                                             # 文件共享服务
+        ./Modules/Common/Services/Network/Syncthing/default.nix                                         # 文件同步服务
+        ./Modules/Common/Services/Network/V2raya/default.nix                                            # 网络代理服务
+        # ./Modules/Common/Services/Produce/Ollama/default.nix                                            # 本地 LLM 运行框架
+        # ./Modules/Common/Services/Produce/OpenWebUI/default.nix                                         # AI 应用平台
+        # ./Modules/Common/Services/Security/Frigate/default.nix                                          # 网络录像服务
+        # ./Modules/Common/Services/Security/VaultWarden/default.nix                                      # 密码管理服务
+
+        # 容器引擎
+        ./Modules/Common/Virtualisation/Docker/default.nix                                              # Docker 引擎
+        # ./Modules/Common/Virtualisation/Selfhosted/Dify/default.nix                                     # Dify
+
+        # 用户成员
+        ./Users/Common/0x0CFF/default.nix                                                               # 0x0CFF
+        ./Users/Studio/0x0CFF/default.nix                                                               # 0x0CFF
+        ./Users/Studio/ADMINISTRATION/default.nix                                                       # 行政部门
+        ./Users/Studio/ANIMATION/default.nix                                                            # 动画部门
+        ./Users/Studio/BOARD/default.nix                                                                # 董事部门
+        ./Users/Studio/BUSINESS/default.nix                                                             # 商务部门
+        ./Users/Studio/DESIGN/default.nix                                                               # 设计部门
+        ./Users/Studio/DEVELOPMENT/default.nix                                                          # 开发部门
+        ./Users/Studio/EFFECTS/default.nix                                                              # 特效部门
+        ./Users/Studio/FINANCE/default.nix                                                              # 财务部门
+        ./Users/Studio/MODELING/default.nix                                                             # 建模部门
+        ./Users/Studio/OPERATION/default.nix                                                            # 运维部门
+        ./Users/Studio/PHOTOGRAPHY/default.nix                                                          # 摄影部门
+        ./Users/Studio/VIDEO/default.nix                                                                # 视频部门
+
+        # 用户 home-manager（执行 nixos-rebuild switch 时，home-manager 配置会被自动部署）
+        home-manager.nixosModules.home-manager {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users."0x0CFF" = {
+            imports = [
+              # 基础配置
+              ./Hosts/Common/homemanager.nix
+              ./Modules/Common/Crates/Terminal/Explorer/Dotfiles/dotfiles.nix
+              ./Modules/Common/Crates/Terminal/Operations/Dotfiles/dotfiles.nix
+            ];
+          };
+          # 将所有 inputs 输入函数中所有的变量设为 home-manager 模块的特殊参数，这样 home-manager 子模块中可进行调用
+          home-manager.extraSpecialArgs = { inherit inputs; };
+        }
+      ];
+    };
+
+    # 定义 DATAGC01 系统配置
+    nixosConfigurations."DATAGC01" = nixpkgs.lib.nixosSystem {
+      # 系统架构类型
+      system = "x86_64-linux";
+      # 传递非默认参数到子模块系统
+      specialArgs = { inherit inputs; };
+      # 引用子模块
+      modules = [
+        agenix.nixosModules.default                                                                     # 信息加解密工具
+        # 设备底层
+        ./Hosts/Common/configuration.nix                                                                # 基础配置 [ 通用 ]
+        ./Hosts/Common/environment.nix                                                                  # 环境变量 [ 通用 ]
+        ./Hosts/Studio/DATAGC/DATAGC01/Device/configuration.nix                                         # 基础配置
+        ./Hosts/Studio/DATAGC/DATAGC01/Device/environment.nix                                           # 环境变量
+        ./Hosts/Studio/DATAGC/DATAGC01/Device/hardware-configuration.nix                                # 硬件信息
+        # 服务专项配置
+        # ./Hosts/Studio/DATAGC/DATAGC01/Services/beszel.nix                                              # Beszel 专项配置
+        # 定时服务
+        ./Hosts/Studio/DATAGC/DATAGC01/Timers/backup-local-syncthing-folder.nix                         # Syncthing 文件夹备份
+        ./Hosts/Studio/DATAGC/DATAGC01/Timers/panel-studio.nix                                            # 导航面板
+        # ./Hosts/Studio/DATAGC/DATAGC01/Timers/web-toolbox-backend.nix                                   # 工具箱面板-后端
+        # ./Hosts/Studio/DATAGC/DATAGC01/Timers/web-toolbox-frontend.nix                                  # 工具箱面板-前端
 
         # 程序集合
         ./Modules/Common/Crates/Development/Python/default.nix                                          # Python 开发工具集合
@@ -99,7 +186,7 @@
         # 后台服务
         # ./Modules/Common/Services/Automation/HomeAssistant/default.nix                                  # 智能家居平台
         # ./Modules/Common/Services/Automation/Restic/default.nix                                         # 数据备份服务
-        ./Modules/Common/Services/Network/AdguardHome/default.nix                                       # 网络拦截平台
+        # ./Modules/Common/Services/Network/AdguardHome/default.nix                                       # 网络拦截平台
         ./Modules/Common/Services/Network/OpenSSH/default.nix                                           # 远程通信服务
         # ./Modules/Common/Services/Network/Samba/default.nix                                             # 文件共享服务
         ./Modules/Common/Services/Network/Syncthing/default.nix                                         # 文件同步服务
@@ -146,7 +233,7 @@
         }
       ];
     };
-
+    
     # DATABC 系列 （Data Buffer Center，数据缓冲中心）#########################################################
 
     # 定义 DATABC00 系统配置
