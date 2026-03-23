@@ -9,6 +9,8 @@
     smartmontools            # [CLI][C++] 硬盘健康监测工具
     kbt                      # [TUI][RUST] 键盘按键测试工具
     bluetui                  # [TUI][RUST] 蓝牙管理器
+    impala                   # [TUI][RUST] WIFI 管理器
     # amdgpu_top               # [TUI][RUST] AMD 显卡监视器
+    # nvitop                   # [TUI][PYTHON] Nvidia 显卡监视器
   ];
 }

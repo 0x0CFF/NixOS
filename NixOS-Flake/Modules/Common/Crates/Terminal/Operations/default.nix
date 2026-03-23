@@ -7,6 +7,7 @@
     starship                 # [AUX][RUST] 命令行提示符
     eza                      # [AUX][RUST] 文件列表命令行
     wl-clipboard             # [AUX][C] 剪贴板
+    git                      # [CLI][C] 版本控制系统
     curl                     # [CLI][C] URL 传输数据
     fastfetch                # [CLI][C] 系统信息查看工具
     openssl                  # [CLI][C] SSL/TLS 协议加密库
@@ -20,6 +21,10 @@
     pik                      # [TUI][RUST] 进程交互式 Kill 工具
     navi                     # [TUI][RUST] 命令行交互式备忘单工具
     systemctl-tui            # [TUI][RUST] Systemd 服务管理工具
+    gitui                    # [TUI][RUST] Git 版本管理
+    gitlogue                 # [TUI][RUST] Git 代码演进
+    gitnr                    # [TUI][RUST] .gitignore 文件模板
+    serie                    # [TUI][RUST] Git 分支提交图
   ];
 
   programs.bash = {
@@ -34,11 +39,14 @@
       bind '"\en": "fastfetch\n"'
       bind '"\em": "btm\n"'
       bind '"\ek": "pik\n"'
-      bind '"\es": "systemctl-tui\n"'
+      bind '"\es": "sudo systemctl-tui\n"'
+      bind '"\eg": "gitui\n"'
     '';
     # 设置命令别名
     shellAliases = {
       NAVI = "navi --path '~/.config/navi'";
+      GIT = "git clone https://github.com/0x0CFF/NixOS.git /home/0x0CFF/Solution/Blueprints/NixOS";
+      FLAKE-STUDIO = "sudo sh /home/0x0CFF/Solution/Blueprints/NixOS/Script/Studio/nixos-install.sh";
     };
   };
 }
