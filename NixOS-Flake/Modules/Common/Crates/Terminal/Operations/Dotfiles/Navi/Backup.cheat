@@ -6,7 +6,7 @@ echo "挂载设备 2E2D-0C03"
 udisksctl mount -b /dev/disk/by-uuid/2E2D-0C03
 echo
 echo "镜像备份 /home/0x0CFF/Solution/"
-rsync -avp --delete --exclude='/home/0x0CFF/Solution/.config' /home/0x0CFF/Solution/ /run/media/0x0CFF/2E2D-0C03/
+rsync -avp --delete --exclude '.env' --exclude '/home/0x0CFF/Solution/.config' /home/0x0CFF/Solution/ /run/media/0x0CFF/2E2D-0C03/
 echo
 echo "--------------- 是否移除设备 ---------------"
 echo "1. YES"
