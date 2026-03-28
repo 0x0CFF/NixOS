@@ -7,3 +7,7 @@ hardware-configuration.nix
 
 # Navi
 navi.log
+
+# Restic + Rclone
+restic-password
+rclone.conf
