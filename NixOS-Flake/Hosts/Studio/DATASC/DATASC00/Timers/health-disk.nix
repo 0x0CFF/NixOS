@@ -5,8 +5,8 @@
   systemd.timers."health-disk" = {
     wantedBy = [ "timers.target" ];
     timerConfig = {
-      # 在系统运行时，每年 1 月 1 日开始，每 2 个月循环，在 05：00：00 运行任务
-      OnCalendar = "*-*-* 06:00:00";
+      # 每天 00:00 执行
+      OnCalendar = "*-*-* 00:00:00";
       # 如果服务在执行时间内由于意外没有触发，则立即补执行
       Persistent = true;
       # 随机延迟执行，避免多个任务同时启动

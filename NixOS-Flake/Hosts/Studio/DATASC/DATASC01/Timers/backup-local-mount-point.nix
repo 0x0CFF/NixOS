@@ -5,8 +5,8 @@
   systemd.timers."backup-local-mount-point" = {
     wantedBy = [ "timers.target" ];
     timerConfig = {
-      # 在系统运行时，每月 1 日开始，每 3 天循环，在 05:00:00 运行任务
-      OnCalendar = "*-*-01/3 05:00:00";
+      # 每周六 00:00 执行
+      OnCalendar = "Sat *-*-* 00:00:00";
       # 如果服务在执行时间内由于意外没有触发，则立即补执行
       Persistent = true;
     };
@@ -30,6 +30,8 @@
       ${pkgs.rsync}/bin/rsync -avpX --delete -e "/run/current-system/sw/bin/ssh" /mnt/Archive#04 0x0CFF@192.168.31.123:/mnt/Archive#04
       ${pkgs.rsync}/bin/rsync -avpX --delete -e "/run/current-system/sw/bin/ssh" /mnt/Archive#05 0x0CFF@192.168.31.123:/mnt/Archive#05
       ${pkgs.rsync}/bin/rsync -avpX --delete -e "/run/current-system/sw/bin/ssh" /mnt/Archive#06 0x0CFF@192.168.31.123:/mnt/Archive#06
+      ${pkgs.rsync}/bin/rsync -avpX --delete -e "/run/current-system/sw/bin/ssh" /mnt/Archive#07 0x0CFF@192.168.31.123:/mnt/Archive#07
+      ${pkgs.rsync}/bin/rsync -avpX --delete -e "/run/current-system/sw/bin/ssh" /mnt/Archive#08 0x0CFF@192.168.31.123:/mnt/Archive#08
     '';
     # 单元配置
     serviceConfig = {

@@ -5,8 +5,8 @@
   systemd.timers."backup-local-mount-point" = {
     wantedBy = [ "timers.target" ];
     timerConfig = {
-      # 每天 08:00 到 20:00 之间，每 2 个小时运行一次
-      OnCalendar = "*-*-* 08..20:00:00/2";
+      # 每天 12:00、20:00 各执行一次
+      OnCalendar = "*-*-* 12:00:00,20:00:00";
       # 如果服务在执行时间内由于意外没有触发，则立即补执行
       Persistent = true;
     };
