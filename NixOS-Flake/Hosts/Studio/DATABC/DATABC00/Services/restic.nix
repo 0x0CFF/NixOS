@@ -6,12 +6,17 @@
     rclone                   # [CLI][GO] 云存储文件管理工具
   ];
 
+  # 明确指定 agenix 使用的 root 身份文件
+  age.identityPaths = [
+    "/etc/ssh/ssh_host_ed25519_key"
+    "/etc/ssh/ssh_host_rsa_key"
+  ];
   age.secrets = {
-    rclone-config = {
+    "rclone-config" = {
       # 指向加密后的 .age 文件路径
       file = ./Secrets/rclone-config.age;
     };
-    restic-password = {
+    "restic-password" = {
       # 指向加密后的 .age 文件路径
       file = ./Secrets/restic-password.age;
     }; 
