@@ -1,10 +1,5 @@
 { config, pkgs, inputs, ... }:
 
-let
-  # 读取 agenix 解密后的密码文件，并去除换行符
-  resticPassword = builtins.readFile config.age.secrets.restic-password.path;
-  resticPasswordSafe = pkgs.writeText "restic-password-clean" (builtins.replaceStrings ["\n"] [""] resticPassword);
-in
 {
   environment.systemPackages = with pkgs; [
     restic                   # [CLI][GO] 数据备份工具
@@ -31,7 +26,7 @@ in
       group = "root";
       mode = "0400";
     }; 
-  }
+  };
 
   services.restic.backups = {
     # 备份任务名，可自定义
@@ -64,7 +59,7 @@ in
 
       # 仓库密码文件（用于加密备份数据，非 WebDAV 密码，注意妥善保管，一旦忘记数据将无法恢复！）
       # 通过 .path 引用解密后的 .age 文件（实际路径位于 /run/agenix/restic-password）
-      passwordFile = resticPasswordSafe;
+      passwordFile = config.age.secrets.restic-password.path;
       # 传递给 restic 备份的额外参数
       extraBackupArgs = [
         "--pack-size=64M"               # 设置加密文件大小
