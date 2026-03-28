@@ -8,7 +8,7 @@
 
   age.secrets.restic-password = {
     # 指向加密后的 .age 文件路径
-    file = /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake/Hosts/Studio/DATABC/DATABC00/Services/Dotfiles/rclone-config.age;
+    file = /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake/Hosts/Studio/DATABC/DATABC00/Services/Dotfiles/restic-password.age;
     # 解密后文件的属主和权限（可选）
     owner = "root";
     mode = "0400";

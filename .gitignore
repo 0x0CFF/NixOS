@@ -1,13 +1,13 @@
 # NixOS
 flake.lock
-hardware-configuration.nix
+**/hardware-configuration.nix
 
 # Zed
-.ropeproject
+**/.ropeproject
 
 # Navi
-navi.log
+**/navi.log
 
 # Restic + Rclone
-restic-password
-rclone.conf
+**/restic-password
+**/rclone.conf
