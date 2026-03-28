@@ -16,6 +16,7 @@
     quickshell               # [GUI][C++] 桌面组件开发工具
     xdg-desktop-portal-gtk   # [GUI][GTK+] 桌面门户
     xdg-desktop-portal-gnome # [GUI][GTK+] 桌面门户
+    # xdg-desktop-portal-wlr   # [GUI][C] Wayland 原生门户
     grim                     # [GUI][RUST] Wayland 合成器截图工具
     satty                    # [GUI][RUST] 截图标注工具
     alacritty                # [GUI][RUST] 终端

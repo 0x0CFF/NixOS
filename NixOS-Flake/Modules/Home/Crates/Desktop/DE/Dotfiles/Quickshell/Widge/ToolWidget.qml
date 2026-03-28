@@ -121,7 +121,7 @@ Item {
                 }
             }
         }
-        
+
         Rectangle {
             // 宽度和高度由内部的 Row 决定
             width: 22
@@ -153,7 +153,7 @@ Item {
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
-                    // TODO
+
                 }
             }
         }
