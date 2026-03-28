@@ -6,21 +6,17 @@
     rclone                   # [CLI][GO] 云存储文件管理工具
   ];
 
-  age.secrets.restic-password = {
-    # 指向加密后的 .age 文件路径
-    file = /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake/Hosts/Studio/DATABC/DATABC00/Services/Dotfiles/restic-password.age;
-    # 解密后文件的属主和权限（可选）
-    owner = "root";
-    mode = "0400";
-  };
-  age.secrets.rclone-config = {
-    # 指向加密后的 .age 文件路径
-    file = /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake/Hosts/Studio/DATABC/DATABC00/Services/Dotfiles/rclone-config.age;
-    # 解密后文件的属主和权限（可选）
-    owner = "root";
-    mode = "0400";
-  };
-  
+  age.secrets = {
+    rclone-config = {
+      # 指向加密后的 .age 文件路径
+      file = ./Secrets/rclone-config.age;
+    };
+    restic-password = {
+      # 指向加密后的 .age 文件路径
+      file = ./Secrets/restic-password.age;
+    }; 
+  }
+
   services.restic.backups = {
     # 备份任务名，可自定义
     DATABC00-Mnt-Document = {
@@ -38,7 +34,7 @@
 
       # 仓库地址：格式为 rclone:配置名:仓库路径
       repository = "rclone:123pan-webdav:/Mnt/Document";
-      # 初始化仓库（第一次运行时创建，创建位置：rclone:123pan-webdav:/Document）
+      # 初始化仓库（第一次运行时创建，创建位置：rclone:123pan-webdav:/Mnt/Document）
       initialize = true;
 
       # 指定 rclone 配置文件路径
@@ -66,26 +62,27 @@
       pruneOpts = [
         "--keep-daily 7"
       ];
-      # 备份定时器
-      timerConfig = {
-        # 每天 08:00 到 20:00 之间，每 3 个小时运行一次
-        OnCalendar = "*-*-* 08..20:00:00/3";
-        # 如果错过备份时间，开机后立即执行
-        Persistent = true;
-      };
-
+      # 包含访问仓库凭证的文件
+      # environmentFile = "/etc/nixos/secrets/restic-environment";
+      # 传递给 restic –option 标志的额外扩展选项
+      extraOptions = [
+        #
+      ];
+      
       # 启动备份进程前运行的脚本
       # backupPrepareCommand = "<PATH>"
       # 备份进程完成后运行的脚本
       # backupCleanupCommand = "<PATH>"
 
-      # 包含访问仓库凭证的文件
-      # environmentFile = "/etc/nixos/secrets/restic-environment";
-      #
-      # 传递给 restic –option 标志的额外扩展选项
-      extraOptions = [
-        #
-      ];
+      # 定时器
+      timerConfig = {
+        # 每天 08:00 到 20:00 之间，每 3 个小时运行一次
+        OnCalendar = "*-*-* 08..20:00:00/3";
+        # 如果错过备份时间，开机后立即执行
+        Persistent = true;
+        # 随机延迟执行，避免多个任务同时启动
+        RandomizedDelaySec = "5min";
+      };
     };
   };
 }

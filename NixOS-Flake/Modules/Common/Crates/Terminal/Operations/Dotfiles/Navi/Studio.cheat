@@ -202,7 +202,7 @@ esac
 
 case $choice1 in
     1)
-        sudo nixos-rebuild test --flake /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake#$HOSTNAME --show-trace -L -v --option substituters "$MIRROR" || {
+        sudo nixos-rebuild test --flake /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake#$HOSTNAME --show-trace --impure -L -v --option substituters "$MIRROR" || {
             echo "命令执行失败，正在恢复 Git 仓库配置文件..."
             mv -f /home/0x0CFF/Solution/Blueprints/NixOS-Gitfile/.gitignore /home/0x0CFF/Solution/Blueprints/NixOS/
             mv -f /home/0x0CFF/Solution/Blueprints/NixOS-Gitfile/.git/ /home/0x0CFF/Solution/Blueprints/NixOS/
@@ -212,7 +212,7 @@ case $choice1 in
         }
         ;;
     2)
-        sudo nixos-rebuild switch --flake /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake#$HOSTNAME --show-trace -L -v --option substituters "$MIRROR" || {
+        sudo nixos-rebuild switch --flake /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake#$HOSTNAME --show-trace --impure -L -v --option substituters "$MIRROR" || {
             echo "命令执行失败，正在恢复 Git 仓库配置文件..."
             mv -f /home/0x0CFF/Solution/Blueprints/NixOS-Gitfile/.gitignore /home/0x0CFF/Solution/Blueprints/NixOS/
             mv -f /home/0x0CFF/Solution/Blueprints/NixOS-Gitfile/.git/ /home/0x0CFF/Solution/Blueprints/NixOS/
