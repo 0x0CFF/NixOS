@@ -8,22 +8,22 @@
 
   age.secrets.restic-password = {
     # 指向加密后的 .age 文件路径
-    file = ./Dotfiles/restic-password.age;
+    file = /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake/Hosts/Studio/DATABC/DATABC00/Services/Dotfiles/rclone-config.age;
     # 解密后文件的属主和权限（可选）
-    owner = "0x0CFF";
+    owner = "root";
     mode = "0400";
   };
   age.secrets.rclone-config = {
     # 指向加密后的 .age 文件路径
-    file = ./Dotfiles/rclone-config.age;
+    file = /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake/Hosts/Studio/DATABC/DATABC00/Services/Dotfiles/rclone-config.age;
     # 解密后文件的属主和权限（可选）
-    owner = "0x0CFF";
+    owner = "root";
     mode = "0400";
   };
   
   services.restic.backups = {
     # 备份任务名，可自定义
-    DATABC00-Document = {
+    DATABC00-Mnt-Document = {
       # 备份路径
       paths = [
         "/mnt/Document"
@@ -37,9 +37,9 @@
       ];
 
       # 仓库地址：格式为 rclone:配置名:仓库路径
-      repository = "rclone:123pan-webdav:/Document";
+      repository = "rclone:123pan-webdav:/Mnt/Document";
       # 初始化仓库（第一次运行时创建，创建位置：rclone:123pan-webdav:/Document）
-      initialize = true
+      initialize = true;
 
       # 指定 rclone 配置文件路径
       # 通过 .path 引用解密后的 .age 文件（实际路径位于 /run/agenix/rclone-config）

@@ -73,6 +73,7 @@
         ./Hosts/Studio/DATAGC/DATAGC00/Device/hardware-configuration.nix                                # 硬件信息
         # 服务专项配置
         # ./Hosts/Studio/DATAGC/DATAGC00/Services/beszel.nix                                              # Beszel 专项配置
+        # ./Hosts/Studio/DATAGC/DATAGC00/Services/restic.nix                                              # Restic 专项配置
         # 定时服务
 
         # 程序集合
@@ -160,6 +161,7 @@
         ./Hosts/Studio/DATAGC/DATAGC01/Device/hardware-configuration.nix                                # 硬件信息
         # 服务专项配置
         # ./Hosts/Studio/DATAGC/DATAGC01/Services/beszel.nix                                              # Beszel 专项配置
+        # ./Hosts/Studio/DATAGC/DATAGC01/Services/restic.nix                                              # Restic 专项配置
         # 定时服务
         ./Hosts/Studio/DATAGC/DATAGC01/Timers/backup-local-syncthing-folder.nix                         # Syncthing 文件夹备份
         ./Hosts/Studio/DATAGC/DATAGC01/Timers/panel-studio.nix                                            # 导航面板
@@ -233,7 +235,7 @@
         }
       ];
     };
-    
+
     # DATABC 系列 （Data Buffer Center，数据缓冲中心）#########################################################
 
     # 定义 DATABC00 系统配置
@@ -253,7 +255,7 @@
         ./Hosts/Studio/DATABC/DATABC00/Device/hardware-configuration.nix                                # 硬件信息
         # 服务专项配置
         # ./Hosts/Studio/DATABC/DATABC00/Services/beszel.nix                                              # Beszel 专项配置
-        # ./Hosts/Studio/DATABC/DATABC00/Services/restic.nix                                              # Restic 专项配置
+        ./Hosts/Studio/DATABC/DATABC00/Services/restic.nix                                              # Restic 专项配置
         ./Hosts/Studio/DATABC/DATABC00/Services/samba.nix                                               # Samba 专项配置
         # 定时服务
         ./Hosts/Studio/DATABC/DATABC00/Timers/backup-local-mount-point.nix                              # 挂载点数据备份
@@ -805,6 +807,7 @@
         ./Hosts/Studio/DATAHC/DATAHC00/Device/hardware-configuration.nix                                # 硬件信息
         # 服务专项配置
         # ./Hosts/Studio/DATAHC/DATAHC00/Services/beszel.nix                                              # Beszel 专项配置
+        # ./Hosts/Studio/DATAHC/DATAHC00/Services/restic.nix                                              # Restic 专项配置
         # 定时服务
 
         # 程序集合
@@ -892,6 +895,7 @@
         ./Hosts/Studio/DATAHC/DATAHC01/Device/hardware-configuration.nix                                # 硬件信息
         # 服务专项配置
         # ./Hosts/Studio/DATAHC/DATAHC01/Services/beszel.nix                                              # Beszel 专项配置
+        # ./Hosts/Studio/DATAHC/DATAHC01/Services/restic.nix                                              # Restic 专项配置
         # 定时服务
 
         # 程序集合
