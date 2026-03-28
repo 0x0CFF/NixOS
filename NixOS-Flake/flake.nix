@@ -531,6 +531,7 @@
         ./Hosts/Studio/DATASC/DATASC00-BACKUP/Device/hardware-configuration.nix                         # 硬件信息
         # 服务专项配置
         # ./Hosts/Studio/DATASC/DATASC00-BACKUP/Services/beszel.nix                                       # Beszel 专项配置
+        ./Hosts/Studio/DATASC/DATASC00-BACKUP/Services/restic.nix                                       # Restic 专项配置
         ./Hosts/Studio/DATASC/DATASC00-BACKUP/Services/samba.nix                                        # Samba 专项配置
         # 定时服务
         ./Hosts/Studio/DATASC/DATASC00-BACKUP/Timers/gc-mount-point.nix                                 # 挂载点垃圾回收

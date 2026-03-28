@@ -82,17 +82,17 @@
       # backupCleanupCommand = "<PATH>"
       # 定时器
       timerConfig = {
-        # 每天 08:00 到 20:00 之间，每 3 个小时运行一次
-        OnCalendar = "*-*-* 08..20:00:00/3";
+        # 每周日 00:00 执行
+        OnCalendar = "Sun *-*-* 00:00:00";
         # 如果错过备份时间，开机后立即执行
         Persistent = true;
         # 随机延迟执行，避免多个任务同时启动
         RandomizedDelaySec = "5min";
       };
     };
-    # /mnt/Material#ANIMATION
-    # /mnt/Material#BUSINESS
-    # /mnt/Material#DESIGN
+    # 备份 /mnt/Material#ANIMATION
+    # 备份 /mnt/Material#BUSINESS
+    # 备份 /mnt/Material#DESIGN
     Mnt-Material-DESIGN = {
       # 备份路径
       paths = [
@@ -145,17 +145,17 @@
       # backupCleanupCommand = "<PATH>"
       # 定时器
       timerConfig = {
-        # 每天 08:00 到 20:00 之间，每 3 个小时运行一次
-        OnCalendar = "*-*-* 08..20:00:00/3";
+        # 每周日 04:00 执行
+        OnCalendar = "Sun *-*-* 04:00:00";
         # 如果错过备份时间，开机后立即执行
         Persistent = true;
         # 随机延迟执行，避免多个任务同时启动
         RandomizedDelaySec = "5min";
       };
     };
-    # /mnt/Material#EFFECTS
-    # /mnt/Material#MODELING
-    # /mnt/Material#PUBLIC
+    # 备份 /mnt/Material#EFFECTS
+    # 备份 /mnt/Material#MODELING
+    # 备份 /mnt/Material#PUBLIC
     Mnt-Material-PUBLIC = {
       # 备份路径
       paths = [
@@ -208,14 +208,14 @@
       # backupCleanupCommand = "<PATH>"
       # 定时器
       timerConfig = {
-        # 每天 08:00 到 20:00 之间，每 3 个小时运行一次
-        OnCalendar = "*-*-* 08..20:00:00/3";
+        # 每周日 03:30 执行
+        OnCalendar = "Sun *-*-* 07:00:00";
         # 如果错过备份时间，开机后立即执行
         Persistent = true;
         # 随机延迟执行，避免多个任务同时启动
         RandomizedDelaySec = "5min";
       };
     };
-    # /mnt/Material#VIDEO
+    # 备份 /mnt/Material#VIDEO
   };
 }
