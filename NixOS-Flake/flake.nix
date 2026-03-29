@@ -25,13 +25,15 @@
   # github:owner/name/<tag>
   inputs = {
     # NixOS 官方硬件信息
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    # NixOS 官方软件源，nixos-25.11 分支
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
-    # NixOS 官方软件源，非稳定版本
+    # nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    # NixOS 官方源 Nixpkgs 快照 (tarball)，nixos-25.11 分支
+    # nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    # NixOS 国内源 Nixpkgs 快照(tarball)，nixos-25.11 分支，使用 git 浅克隆的方式可以精确锁定版本
+    nixpkgs.url = "git+https://mirrors.tuna.tsinghua.edu.cn/git/nixpkgs.git?ref=nixos-25.11&shallow=1";
+    # nixpkgs.url = "git+https://mirrors.nju.edu.cn/git/nixpkgs.git?ref=nixos-25.11&shallow=1";
+
+    # NixOS 官方源 Nixpkgs 快照 (tarball)，Unstable 分支
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
-    # Agenix 信息加解密工具
-    agenix.url = "github:ryantm/agenix";
 
     # home-manager，用于管理用户配置
     home-manager = {
@@ -42,7 +44,8 @@
     };
 
     # 软件源
-    # helix.url = "github:helix-editor/helix/master";
+    agenix.url = "github:ryantm/agenix";                        # Agenix 信息加解密工具
+    # helix.url = "github:helix-editor/helix/master";           # Helix 文本编辑器
   };
 
   # 输出
@@ -164,7 +167,7 @@
         # ./Hosts/Studio/DATAGC/DATAGC01/Services/restic.nix                                              # Restic 专项配置
         # 定时服务
         ./Hosts/Studio/DATAGC/DATAGC01/Timers/backup-local-syncthing-folder.nix                         # Syncthing 文件夹备份
-        ./Hosts/Studio/DATAGC/DATAGC01/Timers/panel-studio.nix                                            # 导航面板
+        ./Hosts/Studio/DATAGC/DATAGC01/Timers/panel-studio.nix                                          # 导航面板
         # ./Hosts/Studio/DATAGC/DATAGC01/Timers/web-toolbox-backend.nix                                   # 工具箱面板-后端
         # ./Hosts/Studio/DATAGC/DATAGC01/Timers/web-toolbox-frontend.nix                                  # 工具箱面板-前端
 
