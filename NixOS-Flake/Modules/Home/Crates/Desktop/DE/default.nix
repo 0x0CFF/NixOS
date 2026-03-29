@@ -9,14 +9,14 @@
     libnotify                # [GUI][C] 通知守护进程
     mako                     # [GUI][C] 通知管理器
     swaybg                   # [GUI][C] 壁纸管理器
-    hyprpaper                # [GUI][C++] 壁纸管理器
+    # xdg-desktop-portal-wlr   # [GUI][C] Wayland 原生门户
     slurp                    # [GUI][C] Wayland 合成器屏幕区域选择工具
     hyprpicker               # [GUI][C++] 取色器
     hypridle                 # [GUI][C++] 空闲守护进程
+    hyprpaper                # [GUI][C++] 壁纸管理器
     quickshell               # [GUI][C++] 桌面组件开发工具
     xdg-desktop-portal-gtk   # [GUI][GTK+] 桌面门户
     xdg-desktop-portal-gnome # [GUI][GTK+] 桌面门户
-    # xdg-desktop-portal-wlr   # [GUI][C] Wayland 原生门户
     grim                     # [GUI][RUST] Wayland 合成器截图工具
     satty                    # [GUI][RUST] 截图标注工具
     alacritty                # [GUI][RUST] 终端
@@ -49,11 +49,23 @@
         --time \
         --asterisks \
         --user-menu \
-        --cmd niri
+        --cmd niri-session
     '';
     };
   };
 
+  # 确保 D-Bus 和 Portal 服务开机启动，以便能够正确捕获屏幕
+  services.dbus.enable = true;
+  xdg.portal = {
+    enable = true;
+    # 这里配置 GNOME 后端为默认，并确保其在 Niri 之前启动
+    config.common = {
+      default = [ "gnome" "gtk" ];
+      "org.freedesktop.impl.portal.ScreenCast" = "gnome";
+      "org.freedesktop.impl.portal.Screenshot" = "gnome";
+    };
+  };
+  
   environment.etc."greetd/environments".text = ''
     niri
   '';

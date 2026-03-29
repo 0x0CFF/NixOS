@@ -1,2 +1,9 @@
 default-timeout=8000
+
+max-history=5
+padding=8
 border-radius=8
+
+background-color=#24283b
+border-color=#bb9af7
+text-color=#a9b1d6
