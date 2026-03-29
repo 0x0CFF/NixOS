@@ -1003,6 +1003,7 @@
         ./Modules/Home/Crates/Desktop/Security/default.nix                                              # 安全管理程序集合
         ./Modules/Home/Crates/Desktop/Tool/default.nix                                                  # 工具程序集合
         ./Modules/Home/Crates/Desktop/Viewer/default.nix                                                # 文件预览程序集合
+        ./Modules/Home/Crates/Terminal/Operations/default.nix                                           # 终端运维程序集合
 
         # 硬件驱动
         ./Modules/Common/Driver/Audio/default.nix                                                       # 声音驱动
@@ -1043,6 +1044,7 @@
               ./Modules/Common/Crates/Terminal/Explorer/Dotfiles/dotfiles.nix
               ./Modules/Common/Crates/Terminal/Operations/Dotfiles/dotfiles.nix
               ./Modules/Home/Crates/Desktop/DE/Dotfiles/dotfiles.nix
+              # ./Modules/Home/Crates/Terminal/Operations/Dotfiles/dotfiles.nix
             ];
           };
           # 将所有 inputs 输入函数中所有的变量设为 home-manager 模块的特殊参数，这样 home-manager 子模块中可进行调用
