@@ -28,6 +28,10 @@
     }; 
   };
 
+  # 备份服务的执行顺序为：
+  # 1. 执行备份 (restic backup)
+  # 2. 执行清理 (restic forget --prune，如果配置了 pruneOpts)
+  # 3. 执行检查 (restic check，自动添加 --cache-dir 参数)
   services.restic.backups = {
     # 备份 /mnt/Inspiration#PUBLIC
     Mnt-Inspiration-PUBLIC = {
@@ -69,6 +73,13 @@
       # 注意： `forget` 命令在 `backup` 命令之后运行，因此构建 –keep-* 选项时请记住这一点
       pruneOpts = [
         "--keep-daily 7"
+      ];
+      # 启用自动检查
+      checkOpts = [
+        "--with-cache"             # 可选：使用本地缓存加速检查（默认 check 命令不使用缓存）
+        # "--read-data"              # 可选：完整读取并验证所有数据包（最彻底，但耗时最长）
+        "--read-data-subset=5%"    # 可选：只验证部分数据（适合大型仓库）
+        # "--check-unused"           # 可选：检查未使用的数据
       ];
       # 包含访问仓库凭证的文件
       # environmentFile = "/etc/nixos/secrets/restic-environment";
@@ -133,6 +144,13 @@
       pruneOpts = [
         "--keep-daily 7"
       ];
+      # 启用自动检查
+      checkOpts = [
+        "--with-cache"             # 可选：使用本地缓存加速检查（默认 check 命令不使用缓存）
+        # "--read-data"              # 可选：完整读取并验证所有数据包（最彻底，但耗时最长）
+        "--read-data-subset=5%"    # 可选：只验证部分数据（适合大型仓库）
+        # "--check-unused"           # 可选：检查未使用的数据
+      ];
       # 包含访问仓库凭证的文件
       # environmentFile = "/etc/nixos/secrets/restic-environment";
       # 传递给 restic –option 标志的额外扩展选项
@@ -195,6 +213,13 @@
       # 注意： `forget` 命令在 `backup` 命令之后运行，因此构建 –keep-* 选项时请记住这一点
       pruneOpts = [
         "--keep-daily 7"
+      ];
+      # 启用自动检查
+      checkOpts = [
+        "--with-cache"             # 可选：使用本地缓存加速检查（默认 check 命令不使用缓存）
+        # "--read-data"              # 可选：完整读取并验证所有数据包（最彻底，但耗时最长）
+        "--read-data-subset=5%"    # 可选：只验证部分数据（适合大型仓库）
+        # "--check-unused"           # 可选：检查未使用的数据
       ];
       # 包含访问仓库凭证的文件
       # environmentFile = "/etc/nixos/secrets/restic-environment";
