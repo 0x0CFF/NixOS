@@ -260,8 +260,8 @@ layout {
         // top 64
         // bottom 64
     }
-    
-    
+
+
     // 标签指示器
     tab-indicator {
         width 4
@@ -432,9 +432,9 @@ layer-rule {
     shadow {
         on
         // 可选的阴影样式调整，你可以根据自己的喜好修改这些数值
-        softness 40      // 阴影的模糊程度，数值越大越模糊
-        spread 5         // 阴影的扩散大小
-        offset x=0 y=5   // 阴影的偏移量 (x偏移, y偏移)
+        softness 40       // 阴影模糊程度，值越大越模糊
+        spread 5          // 阴影扩散范围，值越大阴影面积越大
+        offset x=0 y=5    // 阴影偏移量 (x偏移, y偏移)
         color "#00000070" // 阴影颜色和透明度 (这里是带透明度的黑色)
     }
 
@@ -486,7 +486,7 @@ binds {
     // 打开/关闭 Overview：工作区和窗口的缩小视图，您还可以将鼠标移动到左上角的热角，或者在触摸板上用四个手指向上滑动
     Mod+Tab repeat=false { toggle-overview; }
 
-    Mod+Q repeat=false { close-window; }
+    Mod+X repeat=false { close-window; }
 
     Mod+Left  { focus-column-left; }
     Mod+Down  { focus-window-down; }

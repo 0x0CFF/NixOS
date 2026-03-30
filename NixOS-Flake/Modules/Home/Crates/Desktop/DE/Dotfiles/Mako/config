@@ -1,9 +1,13 @@
-default-timeout=8000
-
+default-timeout=30000
 max-history=5
-padding=8
-border-radius=8
 
-background-color=#24283b
-border-color=#bb9af7
-text-color=#a9b1d6
+background-color=#17181A
+anchor=top-right
+padding=12
+margin=8
+
+border-size=1
+border-radius=8
+border-color=#475054B3
+
+text-color=#ffffff
