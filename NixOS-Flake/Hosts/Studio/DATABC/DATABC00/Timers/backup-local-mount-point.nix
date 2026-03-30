@@ -6,7 +6,7 @@
     wantedBy = [ "timers.target" ];
     timerConfig = {
       # 每天 12:00、20:00 各执行一次
-      OnCalendar = "*-*-* 12:00:00,20:00:00";
+      OnCalendar = "*-*-* 08,20:00:00";
       # 如果服务在执行时间内由于意外没有触发，则立即补执行
       Persistent = true;
     };
