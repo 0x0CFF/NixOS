@@ -33,11 +33,11 @@
   # 2. 执行清理 (restic forget --prune，如果配置了 pruneOpts)
   # 3. 执行检查 (restic check，自动添加 --cache-dir 参数)
   services.restic.backups = {
-    # 备份 /mnt/Document
-    Mnt-Document = {
+    # 备份 /home/0x0CFF/Selfhosted/Dify
+    Selfhosted-Dify = {
       # 备份路径
       paths = [
-        "/mnt/Document"
+        "/home/0x0CFF/Selfhosted/Dify"
         # 可填写多个路径
       ];
       # 备份时排除文件/文件夹
@@ -47,8 +47,8 @@
         # ".git"
       ];
       # 仓库地址：格式为 rclone:配置名:仓库路径
-      repository = "rclone:123pan-WebDAV:/Mnt/Document";
-      # 初始化仓库（第一次运行时创建，创建位置：rclone:123pan-WebDAV:/Mnt/Document）
+      repository = "rclone:123pan-WebDAV:/Selfhosted/Dify";
+      # 初始化仓库（第一次运行时创建，创建位置：rclone:123pan-WebDAV:/Selfhosted/Dify）
       initialize = true;
       # 指定 rclone 配置文件路径
       # 通过 .path 引用解密后的 .age 文件（实际路径位于 /run/agenix/rclone-config）
@@ -88,9 +88,9 @@
         #
       ];
       # 备份进程启动前运行的脚本
-      # backupPrepareCommand = ""
+      backupPrepareCommand = "cd /home/0x0CFF/Selfhosted/Dify && docker compose down"
       # 备份进程完成后运行的脚本
-      # backupCleanupCommand = ""
+      backupCleanupCommand = "cd /home/0x0CFF/Selfhosted/Dify && docker compose up -d"
       # 定时器
       timerConfig = {
         # 每天 12:00、20:00 各执行一次
@@ -101,11 +101,11 @@
         RandomizedDelaySec = "5min";
       };
     };
-    # 备份 /mnt/Workspace
-    Mnt-Workspace = {
+    # 备份 /home/0x0CFF/Selfhosted/Nocobase
+    Selfhosted-Nocobase = {
       # 备份路径
       paths = [
-        "/mnt/Workspace"
+        "/home/0x0CFF/Selfhosted/Nocobase"
         # 可填写多个路径
       ];
       # 备份时排除文件/文件夹
@@ -115,8 +115,8 @@
         # ".git"
       ];
       # 仓库地址：格式为 rclone:配置名:仓库路径
-      repository = "rclone:123pan-WebDAV:/Mnt/Workspace";
-      # 初始化仓库（第一次运行时创建，创建位置：rclone:123pan-WebDAV:/Mnt/Workspace）
+      repository = "rclone:123pan-WebDAV:/Selfhosted/Nocobase";
+      # 初始化仓库（第一次运行时创建，创建位置：rclone:123pan-WebDAV:/Selfhosted/Nocobase）
       initialize = true;
       # 指定 rclone 配置文件路径
       # 通过 .path 引用解密后的 .age 文件（实际路径位于 /run/agenix/rclone-config）
@@ -145,8 +145,8 @@
       # 启用自动检查
       checkOpts = [
         "--with-cache"                  # 可选：使用本地缓存加速检查（默认 check 命令不使用缓存）
-        # "--read-data"                   # 可选：完整读取并验证所有数据包（最彻底，但耗时最长）
-        "--read-data-subset=5%"         # 可选：只验证部分数据（适合大型仓库）
+        "--read-data"                   # 可选：完整读取并验证所有数据包（最彻底，但耗时最长）
+        # "--read-data-subset=5%"         # 可选：只验证部分数据（适合大型仓库）
         # "--check-unused"                # 可选：检查未使用的数据
       ];
       # 包含访问仓库凭证的文件
@@ -156,9 +156,9 @@
         #
       ];
       # 备份进程启动前运行的脚本
-      # backupPrepareCommand = ""
+      backupPrepareCommand = "cd /home/0x0CFF/Selfhosted/Nocobase && docker compose down"
       # 备份进程完成后运行的脚本
-      # backupCleanupCommand = ""
+      backupCleanupCommand = "cd /home/0x0CFF/Selfhosted/Nocobase && docker compose up -d"
       # 定时器
       timerConfig = {
         # 每天 12:00、20:00 各执行一次

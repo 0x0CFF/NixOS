@@ -63,10 +63,10 @@
       passwordFile = config.age.secrets.restic-password.path;
       # 传递给 restic 备份的额外参数
       extraBackupArgs = [
-        "--pack-size=64"                 # 设置加密文件大小
+        "--pack-size=64"                # 设置加密文件大小
         "--cleanup-cache"               # 清除缓存
-        # "--compression=max"           # 可选：最大压缩
-        # "--verbose"                   # 可选：详细输出
+        # "--compression=max"             # 可选：最大压缩
+        # "--verbose"                     # 可选：详细输出
       ];
       # 备份优化和清理策略
       # 选项列表，格式为 –keep-*，用于 `restic forget –prune` 命令，以自动修剪旧快照
@@ -76,10 +76,10 @@
       ];
       # 启用自动检查
       checkOpts = [
-        "--with-cache"             # 可选：使用本地缓存加速检查（默认 check 命令不使用缓存）
-        # "--read-data"              # 可选：完整读取并验证所有数据包（最彻底，但耗时最长）
-        "--read-data-subset=5%"    # 可选：只验证部分数据（适合大型仓库）
-        # "--check-unused"           # 可选：检查未使用的数据
+        "--with-cache"                  # 可选：使用本地缓存加速检查（默认 check 命令不使用缓存）
+        # "--read-data"                   # 可选：完整读取并验证所有数据包（最彻底，但耗时最长）
+        "--read-data-subset=5%"         # 可选：只验证部分数据（适合大型仓库）
+        # "--check-unused"                # 可选：检查未使用的数据
       ];
       # 包含访问仓库凭证的文件
       # environmentFile = "/etc/nixos/secrets/restic-environment";
@@ -87,10 +87,10 @@
       extraOptions = [
         #
       ];
-      # 启动备份进程前运行的脚本
-      # backupPrepareCommand = "<PATH>"
+      # 备份进程启动前运行的脚本
+      # backupPrepareCommand = ""
       # 备份进程完成后运行的脚本
-      # backupCleanupCommand = "<PATH>"
+      # backupCleanupCommand = ""
       # 定时器
       timerConfig = {
         # 每周日 00:00 执行
@@ -133,10 +133,10 @@
       passwordFile = config.age.secrets.restic-password.path;
       # 传递给 restic 备份的额外参数
       extraBackupArgs = [
-        "--pack-size=64"                 # 设置加密文件大小
+        "--pack-size=64"                # 设置加密文件大小
         "--cleanup-cache"               # 清除缓存
-        # "--compression=max"           # 可选：最大压缩
-        # "--verbose"                   # 可选：详细输出
+        # "--compression=max"             # 可选：最大压缩
+        # "--verbose"                     # 可选：详细输出
       ];
       # 备份优化和清理策略
       # 选项列表，格式为 –keep-*，用于 `restic forget –prune` 命令，以自动修剪旧快照
@@ -146,10 +146,10 @@
       ];
       # 启用自动检查
       checkOpts = [
-        "--with-cache"             # 可选：使用本地缓存加速检查（默认 check 命令不使用缓存）
-        # "--read-data"              # 可选：完整读取并验证所有数据包（最彻底，但耗时最长）
-        "--read-data-subset=5%"    # 可选：只验证部分数据（适合大型仓库）
-        # "--check-unused"           # 可选：检查未使用的数据
+        "--with-cache"                  # 可选：使用本地缓存加速检查（默认 check 命令不使用缓存）
+        # "--read-data"                   # 可选：完整读取并验证所有数据包（最彻底，但耗时最长）
+        "--read-data-subset=5%"         # 可选：只验证部分数据（适合大型仓库）
+        # "--check-unused"                # 可选：检查未使用的数据
       ];
       # 包含访问仓库凭证的文件
       # environmentFile = "/etc/nixos/secrets/restic-environment";
@@ -157,10 +157,10 @@
       extraOptions = [
         #
       ];
-      # 启动备份进程前运行的脚本
-      # backupPrepareCommand = "<PATH>"
+      # 备份进程启动前运行的脚本
+      # backupPrepareCommand = ""
       # 备份进程完成后运行的脚本
-      # backupCleanupCommand = "<PATH>"
+      # backupCleanupCommand = ""
       # 定时器
       timerConfig = {
         # 每周日 04:00 执行
@@ -203,10 +203,10 @@
       passwordFile = config.age.secrets.restic-password.path;
       # 传递给 restic 备份的额外参数
       extraBackupArgs = [
-        "--pack-size=64"                 # 设置加密文件大小
+        "--pack-size=64"                # 设置加密文件大小
         "--cleanup-cache"               # 清除缓存
-        # "--compression=max"           # 可选：最大压缩
-        # "--verbose"                   # 可选：详细输出
+        # "--compression=max"             # 可选：最大压缩
+        # "--verbose"                     # 可选：详细输出
       ];
       # 备份优化和清理策略
       # 选项列表，格式为 –keep-*，用于 `restic forget –prune` 命令，以自动修剪旧快照
@@ -216,10 +216,10 @@
       ];
       # 启用自动检查
       checkOpts = [
-        "--with-cache"             # 可选：使用本地缓存加速检查（默认 check 命令不使用缓存）
-        # "--read-data"              # 可选：完整读取并验证所有数据包（最彻底，但耗时最长）
-        "--read-data-subset=5%"    # 可选：只验证部分数据（适合大型仓库）
-        # "--check-unused"           # 可选：检查未使用的数据
+        "--with-cache"                  # 可选：使用本地缓存加速检查（默认 check 命令不使用缓存）
+        # "--read-data"                   # 可选：完整读取并验证所有数据包（最彻底，但耗时最长）
+        "--read-data-subset=5%"         # 可选：只验证部分数据（适合大型仓库）
+        # "--check-unused"                # 可选：检查未使用的数据
       ];
       # 包含访问仓库凭证的文件
       # environmentFile = "/etc/nixos/secrets/restic-environment";
@@ -227,10 +227,10 @@
       extraOptions = [
         #
       ];
-      # 启动备份进程前运行的脚本
-      # backupPrepareCommand = "<PATH>"
+      # 备份进程启动前运行的脚本
+      # backupPrepareCommand = ""
       # 备份进程完成后运行的脚本
-      # backupCleanupCommand = "<PATH>"
+      # backupCleanupCommand = ""
       # 定时器
       timerConfig = {
         # 每周日 03:30 执行
