@@ -7,6 +7,7 @@
     starship                 # [AUX][RUST] 命令行提示符
     eza                      # [AUX][RUST] 文件列表命令行
     wl-clipboard             # [AUX][C] 剪贴板
+    jq                       # [CLI][C] 解析和操作 JSON
     git                      # [CLI][C] 版本控制系统
     curl                     # [CLI][C] URL 传输数据
     fastfetch                # [CLI][C] 系统信息查看工具
