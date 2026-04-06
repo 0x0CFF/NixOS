@@ -2,10 +2,12 @@
 
 {
   services.beszel = {
-    agent = {
+    hub = {
       enable = true
-      openFirewall = true
-      environment = {   # 传递给 systemd 服务的环境变量
+      host = "0.0.0.0"
+      port = 8090
+      dataDir = "/var/lib/beszel-hub"
+      environment = {
         #
       };
     };

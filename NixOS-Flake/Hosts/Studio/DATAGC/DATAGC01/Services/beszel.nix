@@ -2,12 +2,17 @@
 
 {
   services.beszel = {
-    hub = {
+    agent = {
       enable = true
-      host = "0.0.0.0"
-      port = 8090
-      environment = {   # 传递给 systemd 服务的环境变量
+      openFirewall = true   # 是否打开防火墙端口（默认端口 45876）
+      environment = {
         #
+      };
+      smartmon = {
+        enable = true
+        deviceAllow = [
+          "/dev/sda"
+        ]
       };
     };
   };
