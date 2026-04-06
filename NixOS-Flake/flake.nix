@@ -1004,6 +1004,7 @@
         ./Modules/Home/Crates/Desktop/Produce/default.nix                                               # 生产应用程序集合
         ./Modules/Home/Crates/Desktop/Recreation/default.nix                                            # 娱乐程序集合
         ./Modules/Home/Crates/Desktop/Security/default.nix                                              # 安全管理程序集合
+        # ./Modules/Home/Crates/Desktop/Social/default.nix                                                # 社交程序集合
         ./Modules/Home/Crates/Desktop/Tool/default.nix                                                  # 工具程序集合
         ./Modules/Home/Crates/Desktop/Viewer/default.nix                                                # 文件预览程序集合
         ./Modules/Home/Crates/Terminal/Operations/default.nix                                           # 终端运维程序集合
@@ -1083,7 +1084,16 @@
         ./Modules/Common/Crates/Terminal/Network/default.nix                                            # 终端网络程序集合
         ./Modules/Common/Crates/Terminal/Nix-Ecosystem/default.nix                                      # 终端 Nix 生态程序集合
         ./Modules/Common/Crates/Terminal/Operations/default.nix                                         # 终端运维程序集合
-
+        # ./Modules/Home/Crates/Desktop/DE/default.nix                                                    # 桌面程序集合
+        # ./Modules/Home/Crates/Desktop/Hardware/default.nix                                              # 硬件管理程序集合
+        # ./Modules/Home/Crates/Desktop/Produce/default.nix                                               # 生产应用程序集合
+        # ./Modules/Home/Crates/Desktop/Recreation/default.nix                                            # 娱乐程序集合
+        # ./Modules/Home/Crates/Desktop/Security/default.nix                                              # 安全管理程序集合
+        # ./Modules/Home/Crates/Desktop/Social/default.nix                                                # 社交程序集合
+        # ./Modules/Home/Crates/Desktop/Tool/default.nix                                                  # 工具程序集合
+        # ./Modules/Home/Crates/Desktop/Viewer/default.nix                                                # 文件预览程序集合
+        # ./Modules/Home/Crates/Terminal/Operations/default.nix                                           # 终端运维程序集合
+        
         # 硬件驱动
         ./Modules/Common/Driver/Audio/default.nix                                                       # 声音驱动
         # ./Modules/Common/Driver/Bluetooth/default.nix                                                   # 蓝牙驱动
@@ -1158,6 +1168,15 @@
         ./Modules/Common/Crates/Terminal/Network/default.nix                                            # 终端网络程序集合
         ./Modules/Common/Crates/Terminal/Nix-Ecosystem/default.nix                                      # 终端 Nix 生态程序集合
         ./Modules/Common/Crates/Terminal/Operations/default.nix                                         # 终端运维程序集合
+        # ./Modules/Home/Crates/Desktop/DE/default.nix                                                    # 桌面程序集合
+        # ./Modules/Home/Crates/Desktop/Hardware/default.nix                                              # 硬件管理程序集合
+        # ./Modules/Home/Crates/Desktop/Produce/default.nix                                               # 生产应用程序集合
+        # ./Modules/Home/Crates/Desktop/Recreation/default.nix                                            # 娱乐程序集合
+        # ./Modules/Home/Crates/Desktop/Security/default.nix                                              # 安全管理程序集合
+        # ./Modules/Home/Crates/Desktop/Social/default.nix                                                # 社交程序集合
+        # ./Modules/Home/Crates/Desktop/Tool/default.nix                                                  # 工具程序集合
+        # ./Modules/Home/Crates/Desktop/Viewer/default.nix                                                # 文件预览程序集合
+        # ./Modules/Home/Crates/Terminal/Operations/default.nix                                           # 终端运维程序集合
 
         # 硬件驱动
         ./Modules/Common/Driver/Audio/default.nix                                                       # 声音驱动

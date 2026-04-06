@@ -14,6 +14,7 @@
     hyprpicker               # [GUI][C++] 取色器
     hypridle                 # [GUI][C++] 空闲守护进程
     hyprpaper                # [GUI][C++] 壁纸管理器
+    # hyprshot                 # [GUI][C++] 截屏工具
     quickshell               # [GUI][C++] 桌面组件开发工具
     xdg-desktop-portal-gtk   # [GUI][GTK+] 桌面门户
     xdg-desktop-portal-gnome # [GUI][GTK+] 桌面门户
