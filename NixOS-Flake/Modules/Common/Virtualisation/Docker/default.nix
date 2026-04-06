@@ -14,7 +14,7 @@
     # Docker 相关开发工具
     environment.systemPackages = with pkgs; [
       docker-compose             # [CLI][GO] Docker 容器编排工具
-      lazydocker                 # [TUI][GO] Docker 可视化管理
+      oxker                      # [TUI][RUST] Docker 可视化管理
     ];
 
     users.users."0x0CFF" = {
