@@ -12,6 +12,15 @@ cargo update -p <CrateName>
 # 检查代码能否编译通过（无需生成二进制文件）
 cargo check
 
+# 为 Rust 项目添加或修改依赖
+cargo add <Crate>
+
+# 为 Rust 项目添加或修改依赖（Git 仓库）
+cargo add <Crate> --git <URL>
+
+# 为 Rust 项目删除依赖
+cargo remove <Crate>
+
 # 代码单元测试
 cargo test
 
