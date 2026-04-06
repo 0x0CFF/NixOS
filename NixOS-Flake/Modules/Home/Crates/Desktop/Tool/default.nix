@@ -3,6 +3,8 @@
 {
   environment.systemPackages = with pkgs; [
     # gnome-calculator         # [GUI][GTK+] 计算器
+    # gnome-calendar           # [GUI][GTK+] 日历
+    # furtherance              # [GUI][RUST] 计时器
     localsend                # [GUI][DART] 文件传输助手
     # pot                      # [GUI][RUST] 翻译助手
   ];
