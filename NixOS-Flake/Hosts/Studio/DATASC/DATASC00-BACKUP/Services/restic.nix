@@ -88,9 +88,9 @@
         #
       ];
       # 备份进程启动前运行的脚本
-      # backupPrepareCommand = ""
+      # backupPrepareCommand = "";
       # 备份进程完成后运行的脚本
-      # backupCleanupCommand = ""
+      # backupCleanupCommand = "";
       # 定时器
       timerConfig = {
         # 每周日 00:00 执行
@@ -158,9 +158,9 @@
         #
       ];
       # 备份进程启动前运行的脚本
-      # backupPrepareCommand = ""
+      # backupPrepareCommand = "";
       # 备份进程完成后运行的脚本
-      # backupCleanupCommand = ""
+      # backupCleanupCommand = "";
       # 定时器
       timerConfig = {
         # 每周日 04:00 执行
@@ -228,9 +228,9 @@
         #
       ];
       # 备份进程启动前运行的脚本
-      # backupPrepareCommand = ""
+      # backupPrepareCommand = "";
       # 备份进程完成后运行的脚本
-      # backupCleanupCommand = ""
+      # backupCleanupCommand = "";
       # 定时器
       timerConfig = {
         # 每周日 03:30 执行
