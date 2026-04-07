@@ -43,7 +43,7 @@ case $HOSTNAME in
 esac
 ```
 
-# [Flake][Github][Clone] 克隆 NixOS 远程配置
+# [Flake][Auto][Clone] 克隆 NixOS 远程配置
 ```sh
 echo "------------------------ 更新 NixOS 配置 ------------------------"
 echo
@@ -365,3 +365,13 @@ sudo chattr -i /mnt/Material#<Library><Path>
 sudo chattr -R -i /mnt/Material#<Library><Path>
 
 $ Library: echo "ANIMATION/动画素材库.library BUSINESS/商务素材库.library DESIGN/设计素材库.library EFFECTS/特效素材库.library MODELING/建模素材库.library PUBLIC/公共素材库.library VIDEO/视频素材库.library" | tr ' ' '\n'
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+% Studio, Tar
+
+# 压缩加密目录
+tar czf - <Path> | gpg -c -o <Name>.tar.gz.gpg
+
+# 压缩加密 SSH 目录
+tar czf - ~/.ssh | gpg -c -o ~/ssh_backup.tar.gz.gpg
