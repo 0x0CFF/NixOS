@@ -9,6 +9,7 @@
     nh                       # [AUX][RUST] NixOS 生态辅助工具
     wl-clipboard             # [AUX][C] 剪贴板
     jq                       # [CLI][C] 解析和操作 JSON
+    zip                      # [CLI][C] 压缩工具
     git                      # [CLI][C] 版本控制系统
     curl                     # [CLI][C] URL 传输数据
     fastfetch                # [CLI][C] 系统信息查看工具
