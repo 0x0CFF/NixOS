@@ -368,10 +368,23 @@ $ Library: echo "ANIMATION/动画素材库.library BUSINESS/商务素材库.libr
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-% Studio, Tar
+% Studio, SSH
 
-# 压缩加密目录
-tar czf - <Path> | gpg -c -o <Name>.tar.gz.gpg
+# 加密打包 SSH 目录
+zip -er "ssh_backup_$(date +%Y-%m-%d).zip" ~/.ssh
 
-# 压缩加密 SSH 目录
-tar czf - ~/.ssh | gpg -c -o ~/ssh_backup.tar.gz.gpg
+# 恢复 SSH 目录
+```sh
+echo "解密解包"
+unzip ssh_backup.zip
+echo
+echo "恢复文件"
+cp -r ~/.ssh_backup/* ~/.ssh/
+echo
+echo "设置正确权限"
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/id_*
+chmod 644 ~/.ssh/id_*.pub
+chmod 600 ~/.ssh/authorized_keys
+chmod 600 ~/.ssh/config
+```
