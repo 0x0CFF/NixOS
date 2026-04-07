@@ -88,9 +88,9 @@
         #
       ];
       # 备份进程启动前运行的脚本
-      backupPrepareCommand = "cd /home/0x0CFF/Selfhosted/Dify && docker compose down";
+      backupPrepareCommand = "/run/current-system/sw/bin/docker compose -f /home/0x0CFF/Selfhosted/Dify/docker/docker-compose.yaml down";
       # 备份进程完成后运行的脚本
-      backupCleanupCommand = "cd /home/0x0CFF/Selfhosted/Dify && docker compose up -d";
+      backupCleanupCommand = "/run/current-system/sw/bin/docker compose -f /home/0x0CFF/Selfhosted/Dify/docker/docker-compose.yaml up -d";
       # 定时器
       timerConfig = {
         # 每天 12:00、20:00 各执行一次
@@ -156,9 +156,9 @@
         #
       ];
       # 备份进程启动前运行的脚本
-      backupPrepareCommand = "cd /home/0x0CFF/Selfhosted/Nocobase && docker compose down";
+      backupPrepareCommand = "/run/current-system/sw/bin/docker compose -f /home/0x0CFF/Selfhosted/Nocobase/docker-compose.yml down";
       # 备份进程完成后运行的脚本
-      backupCleanupCommand = "cd /home/0x0CFF/Selfhosted/Nocobase && docker compose up -d";
+      backupCleanupCommand = "/run/current-system/sw/bin/docker compose -f /home/0x0CFF/Selfhosted/Nocobase/docker-compose.yml up -d";
       # 定时器
       timerConfig = {
         # 每天 12:00、20:00 各执行一次
