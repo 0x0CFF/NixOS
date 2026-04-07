@@ -84,11 +84,12 @@
         # ./Modules/Common/Crates/Terminal/Automation/default.nix                                         # 终端自动化程序集合
         ./Modules/Common/Crates/Terminal/Explorer/default.nix                                           # 终端文件管理器程序集合
         ./Modules/Common/Crates/Terminal/Hardware/default.nix                                           # 终端硬件管理程序集合
-        ./Modules/Common/Crates/Terminal/IT/default.nix                                                 # IT 工具集合
+        ./Modules/Common/Crates/Terminal/IT/default.nix                                                 # 终端 IT 工具集合
+        ./Modules/Common/Crates/Terminal/Life/default.nix                                               # 终端日用工具集合
         # ./Modules/Common/Crates/Terminal/Multimedia/default.nix                                         # 终端多媒体处理程序集合
         ./Modules/Common/Crates/Terminal/Network/default.nix                                            # 终端网络程序集合
-        ./Modules/Common/Crates/Terminal/Nix-Ecosystem/default.nix                                      # 终端 Nix 生态程序集合
         ./Modules/Common/Crates/Terminal/Operations/default.nix                                         # 终端运维程序集合
+        ./Modules/Common/Crates/Terminal/Security/default.nix                                           # 终端安全程序集合
 
         # 硬件驱动
         ./Modules/Common/Driver/Audio/default.nix                                                       # 声音驱动
@@ -177,11 +178,12 @@
         # ./Modules/Common/Crates/Terminal/Automation/default.nix                                         # 终端自动化程序集合
         ./Modules/Common/Crates/Terminal/Explorer/default.nix                                           # 终端文件管理器程序集合
         ./Modules/Common/Crates/Terminal/Hardware/default.nix                                           # 终端硬件管理程序集合
-        # ./Modules/Common/Crates/Terminal/IT/default.nix                                                 # IT 工具集合
+        # ./Modules/Common/Crates/Terminal/IT/default.nix                                                 # 终端 IT 工具集合
+        # ./Modules/Common/Crates/Terminal/Life/default.nix                                               # 终端日用工具集合
         # ./Modules/Common/Crates/Terminal/Multimedia/default.nix                                         # 终端多媒体处理程序集合
         ./Modules/Common/Crates/Terminal/Network/default.nix                                            # 终端网络程序集合
-        ./Modules/Common/Crates/Terminal/Nix-Ecosystem/default.nix                                      # 终端 Nix 生态程序集合
         ./Modules/Common/Crates/Terminal/Operations/default.nix                                         # 终端运维程序集合
+        ./Modules/Common/Crates/Terminal/Security/default.nix                                           # 终端安全程序集合
 
         # 硬件驱动
         ./Modules/Common/Driver/Audio/default.nix                                                       # 声音驱动
@@ -272,11 +274,12 @@
         # ./Modules/Common/Crates/Terminal/Automation/default.nix                                         # 终端自动化程序集合
         ./Modules/Common/Crates/Terminal/Explorer/default.nix                                           # 终端文件管理器程序集合
         ./Modules/Common/Crates/Terminal/Hardware/default.nix                                           # 终端硬件管理程序集合
-        # ./Modules/Common/Crates/Terminal/IT/default.nix                                                 # IT 工具集合
+        # ./Modules/Common/Crates/Terminal/IT/default.nix                                                 # 终端 IT 工具集合
+        # ./Modules/Common/Crates/Terminal/Life/default.nix                                               # 终端日用工具集合
         # ./Modules/Common/Crates/Terminal/Multimedia/default.nix                                         # 终端多媒体处理程序集合
         ./Modules/Common/Crates/Terminal/Network/default.nix                                            # 终端网络程序集合
-        ./Modules/Common/Crates/Terminal/Nix-Ecosystem/default.nix                                      # 终端 Nix 生态程序集合
         ./Modules/Common/Crates/Terminal/Operations/default.nix                                         # 终端运维程序集合
+        ./Modules/Common/Crates/Terminal/Security/default.nix                                           # 终端安全程序集合
 
         # 硬件驱动
         ./Modules/Common/Driver/Audio/default.nix                                                       # 声音驱动
@@ -363,11 +366,12 @@
         # ./Modules/Common/Crates/Terminal/Automation/default.nix                                         # 终端自动化程序集合
         ./Modules/Common/Crates/Terminal/Explorer/default.nix                                           # 终端文件管理器程序集合
         ./Modules/Common/Crates/Terminal/Hardware/default.nix                                           # 终端硬件管理程序集合
-        # ./Modules/Common/Crates/Terminal/IT/default.nix                                                 # IT 工具集合
+        # ./Modules/Common/Crates/Terminal/IT/default.nix                                                 # 终端 IT 工具集合
+        # ./Modules/Common/Crates/Terminal/Life/default.nix                                               # 终端日用工具集合
         # ./Modules/Common/Crates/Terminal/Multimedia/default.nix                                         # 终端多媒体处理程序集合
         ./Modules/Common/Crates/Terminal/Network/default.nix                                            # 终端网络程序集合
-        ./Modules/Common/Crates/Terminal/Nix-Ecosystem/default.nix                                      # 终端 Nix 生态程序集合
         ./Modules/Common/Crates/Terminal/Operations/default.nix                                         # 终端运维程序集合
+        ./Modules/Common/Crates/Terminal/Security/default.nix                                           # 终端安全程序集合
 
         # 硬件驱动
         ./Modules/Common/Driver/Audio/default.nix                                                       # 声音驱动
@@ -458,11 +462,12 @@
         # ./Modules/Common/Crates/Terminal/Automation/default.nix                                         # 终端自动化程序集合
         ./Modules/Common/Crates/Terminal/Explorer/default.nix                                           # 终端文件管理器程序集合
         ./Modules/Common/Crates/Terminal/Hardware/default.nix                                           # 终端硬件管理程序集合
-        # ./Modules/Common/Crates/Terminal/IT/default.nix                                                 # IT 工具集合
+        # ./Modules/Common/Crates/Terminal/IT/default.nix                                                 # 终端 IT 工具集合
+        # ./Modules/Common/Crates/Terminal/Life/default.nix                                               # 终端日用工具集合
         # ./Modules/Common/Crates/Terminal/Multimedia/default.nix                                         # 终端多媒体处理程序集合
         ./Modules/Common/Crates/Terminal/Network/default.nix                                            # 终端网络程序集合
-        ./Modules/Common/Crates/Terminal/Nix-Ecosystem/default.nix                                      # 终端 Nix 生态程序集合
         ./Modules/Common/Crates/Terminal/Operations/default.nix                                         # 终端运维程序集合
+        ./Modules/Common/Crates/Terminal/Security/default.nix                                           # 终端安全程序集合
 
         # 硬件驱动
         ./Modules/Common/Driver/Audio/default.nix                                                       # 声音驱动
@@ -550,11 +555,12 @@
         # ./Modules/Common/Crates/Terminal/Automation/default.nix                                         # 终端自动化程序集合
         ./Modules/Common/Crates/Terminal/Explorer/default.nix                                           # 终端文件管理器程序集合
         ./Modules/Common/Crates/Terminal/Hardware/default.nix                                           # 终端硬件管理程序集合
-        # ./Modules/Common/Crates/Terminal/IT/default.nix                                                 # IT 工具集合
+        # ./Modules/Common/Crates/Terminal/IT/default.nix                                                 # 终端 IT 工具集合
+        # ./Modules/Common/Crates/Terminal/Life/default.nix                                               # 终端日用工具集合
         # ./Modules/Common/Crates/Terminal/Multimedia/default.nix                                         # 终端多媒体处理程序集合
         ./Modules/Common/Crates/Terminal/Network/default.nix                                            # 终端网络程序集合
-        ./Modules/Common/Crates/Terminal/Nix-Ecosystem/default.nix                                      # 终端 Nix 生态程序集合
         ./Modules/Common/Crates/Terminal/Operations/default.nix                                         # 终端运维程序集合
+        ./Modules/Common/Crates/Terminal/Security/default.nix                                           # 终端安全程序集合
 
         # 硬件驱动
         ./Modules/Common/Driver/Audio/default.nix                                                       # 声音驱动
@@ -644,11 +650,12 @@
         # ./Modules/Common/Crates/Terminal/Automation/default.nix                                         # 终端自动化程序集合
         ./Modules/Common/Crates/Terminal/Explorer/default.nix                                           # 终端文件管理器程序集合
         ./Modules/Common/Crates/Terminal/Hardware/default.nix                                           # 终端硬件管理程序集合
-        # ./Modules/Common/Crates/Terminal/IT/default.nix                                                 # IT 工具集合
+        # ./Modules/Common/Crates/Terminal/IT/default.nix                                                 # 终端 IT 工具集合
+        # ./Modules/Common/Crates/Terminal/Life/default.nix                                               # 终端日用工具集合
         # ./Modules/Common/Crates/Terminal/Multimedia/default.nix                                         # 终端多媒体处理程序集合
         ./Modules/Common/Crates/Terminal/Network/default.nix                                            # 终端网络程序集合
-        ./Modules/Common/Crates/Terminal/Nix-Ecosystem/default.nix                                      # 终端 Nix 生态程序集合
         ./Modules/Common/Crates/Terminal/Operations/default.nix                                         # 终端运维程序集合
+        ./Modules/Common/Crates/Terminal/Security/default.nix                                           # 终端安全程序集合
 
         # 硬件驱动
         ./Modules/Common/Driver/Audio/default.nix                                                       # 声音驱动
@@ -736,11 +743,12 @@
         # ./Modules/Common/Crates/Terminal/Automation/default.nix                                         # 终端自动化程序集合
         ./Modules/Common/Crates/Terminal/Explorer/default.nix                                           # 终端文件管理器程序集合
         ./Modules/Common/Crates/Terminal/Hardware/default.nix                                           # 终端硬件管理程序集合
-        # ./Modules/Common/Crates/Terminal/IT/default.nix                                                 # IT 工具集合
+        # ./Modules/Common/Crates/Terminal/IT/default.nix                                                 # 终端 IT 工具集合
+        # ./Modules/Common/Crates/Terminal/Life/default.nix                                               # 终端日用工具集合
         # ./Modules/Common/Crates/Terminal/Multimedia/default.nix                                         # 终端多媒体处理程序集合
         ./Modules/Common/Crates/Terminal/Network/default.nix                                            # 终端网络程序集合
-        ./Modules/Common/Crates/Terminal/Nix-Ecosystem/default.nix                                      # 终端 Nix 生态程序集合
         ./Modules/Common/Crates/Terminal/Operations/default.nix                                         # 终端运维程序集合
+        ./Modules/Common/Crates/Terminal/Security/default.nix                                           # 终端安全程序集合
 
         # 硬件驱动
         ./Modules/Common/Driver/Audio/default.nix                                                       # 声音驱动
@@ -827,11 +835,12 @@
         # ./Modules/Common/Crates/Terminal/Automation/default.nix                                         # 终端自动化程序集合
         ./Modules/Common/Crates/Terminal/Explorer/default.nix                                           # 终端文件管理器程序集合
         ./Modules/Common/Crates/Terminal/Hardware/default.nix                                           # 终端硬件管理程序集合
-        # ./Modules/Common/Crates/Terminal/IT/default.nix                                                 # IT 工具集合
+        # ./Modules/Common/Crates/Terminal/IT/default.nix                                                 # 终端 IT 工具集合
+        # ./Modules/Common/Crates/Terminal/Life/default.nix                                               # 终端日用工具集合
         ./Modules/Common/Crates/Terminal/Multimedia/default.nix                                         # 终端多媒体处理程序集合
         ./Modules/Common/Crates/Terminal/Network/default.nix                                            # 终端网络程序集合
-        ./Modules/Common/Crates/Terminal/Nix-Ecosystem/default.nix                                      # 终端 Nix 生态程序集合
         ./Modules/Common/Crates/Terminal/Operations/default.nix                                         # 终端运维程序集合
+        ./Modules/Common/Crates/Terminal/Security/default.nix                                           # 终端安全程序集合
 
         # 硬件驱动
         ./Modules/Common/Driver/Audio/default.nix                                                       # 声音驱动
@@ -916,11 +925,12 @@
         # ./Modules/Common/Crates/Terminal/Automation/default.nix                                         # 终端自动化程序集合
         ./Modules/Common/Crates/Terminal/Explorer/default.nix                                           # 终端文件管理器程序集合
         ./Modules/Common/Crates/Terminal/Hardware/default.nix                                           # 终端硬件管理程序集合
-        # ./Modules/Common/Crates/Terminal/IT/default.nix                                                 # IT 工具集合
+        # ./Modules/Common/Crates/Terminal/IT/default.nix                                                 # 终端 IT 工具集合
+        # ./Modules/Common/Crates/Terminal/Life/default.nix                                               # 终端日用工具集合
         ./Modules/Common/Crates/Terminal/Multimedia/default.nix                                         # 终端多媒体处理程序集合
         ./Modules/Common/Crates/Terminal/Network/default.nix                                            # 终端网络程序集合
-        ./Modules/Common/Crates/Terminal/Nix-Ecosystem/default.nix                                      # 终端 Nix 生态程序集合
         ./Modules/Common/Crates/Terminal/Operations/default.nix                                         # 终端运维程序集合
+        ./Modules/Common/Crates/Terminal/Security/default.nix                                           # 终端安全程序集合
 
         # 硬件驱动
         ./Modules/Common/Driver/Audio/default.nix                                                       # 声音驱动
@@ -1005,11 +1015,12 @@
         # ./Modules/Common/Crates/Terminal/Automation/default.nix                                         # 终端自动化程序集合
         ./Modules/Common/Crates/Terminal/Explorer/default.nix                                           # 终端文件管理器程序集合
         ./Modules/Common/Crates/Terminal/Hardware/default.nix                                           # 终端硬件管理程序集合
-        # ./Modules/Common/Crates/Terminal/IT/default.nix                                                 # IT 工具集合
+        # ./Modules/Common/Crates/Terminal/IT/default.nix                                                 # 终端 IT 工具集合
+        # ./Modules/Common/Crates/Terminal/Life/default.nix                                               # 终端日用工具集合
         ./Modules/Common/Crates/Terminal/Multimedia/default.nix                                         # 终端多媒体处理程序集合
         ./Modules/Common/Crates/Terminal/Network/default.nix                                            # 终端网络程序集合
-        ./Modules/Common/Crates/Terminal/Nix-Ecosystem/default.nix                                      # 终端 Nix 生态程序集合
         ./Modules/Common/Crates/Terminal/Operations/default.nix                                         # 终端运维程序集合
+        ./Modules/Common/Crates/Terminal/Security/default.nix                                           # 终端安全程序集合
         ./Modules/Home/Crates/Desktop/DE/default.nix                                                    # 桌面程序集合
         ./Modules/Home/Crates/Desktop/Hardware/default.nix                                              # 硬件管理程序集合
         ./Modules/Home/Crates/Desktop/Produce/default.nix                                               # 生产应用程序集合
@@ -1091,11 +1102,12 @@
         # ./Modules/Common/Crates/Terminal/Automation/default.nix                                         # 终端自动化程序集合
         ./Modules/Common/Crates/Terminal/Explorer/default.nix                                           # 终端文件管理器程序集合
         ./Modules/Common/Crates/Terminal/Hardware/default.nix                                           # 终端硬件管理程序集合
-        # ./Modules/Common/Crates/Terminal/IT/default.nix                                                 # IT 工具集合
+        # ./Modules/Common/Crates/Terminal/IT/default.nix                                                 # 终端 IT 工具集合
+        # ./Modules/Common/Crates/Terminal/Life/default.nix                                               # 终端日用工具集合
         ./Modules/Common/Crates/Terminal/Multimedia/default.nix                                         # 终端多媒体处理程序集合
         ./Modules/Common/Crates/Terminal/Network/default.nix                                            # 终端网络程序集合
-        ./Modules/Common/Crates/Terminal/Nix-Ecosystem/default.nix                                      # 终端 Nix 生态程序集合
         ./Modules/Common/Crates/Terminal/Operations/default.nix                                         # 终端运维程序集合
+        ./Modules/Common/Crates/Terminal/Security/default.nix                                           # 终端安全程序集合
         # ./Modules/Home/Crates/Desktop/DE/default.nix                                                    # 桌面程序集合
         # ./Modules/Home/Crates/Desktop/Hardware/default.nix                                              # 硬件管理程序集合
         # ./Modules/Home/Crates/Desktop/Produce/default.nix                                               # 生产应用程序集合
@@ -1176,11 +1188,12 @@
         # ./Modules/Common/Crates/Terminal/Automation/default.nix                                         # 终端自动化程序集合
         ./Modules/Common/Crates/Terminal/Explorer/default.nix                                           # 终端文件管理器程序集合
         ./Modules/Common/Crates/Terminal/Hardware/default.nix                                           # 终端硬件管理程序集合
-        # ./Modules/Common/Crates/Terminal/IT/default.nix                                                 # IT 工具集合
+        # ./Modules/Common/Crates/Terminal/IT/default.nix                                                 # 终端 IT 工具集合
+        # ./Modules/Common/Crates/Terminal/Life/default.nix                                               # 终端日用工具集合
         ./Modules/Common/Crates/Terminal/Multimedia/default.nix                                         # 终端多媒体处理程序集合
         ./Modules/Common/Crates/Terminal/Network/default.nix                                            # 终端网络程序集合
-        ./Modules/Common/Crates/Terminal/Nix-Ecosystem/default.nix                                      # 终端 Nix 生态程序集合
         ./Modules/Common/Crates/Terminal/Operations/default.nix                                         # 终端运维程序集合
+        ./Modules/Common/Crates/Terminal/Security/default.nix                                           # 终端安全程序集合
         # ./Modules/Home/Crates/Desktop/DE/default.nix                                                    # 桌面程序集合
         # ./Modules/Home/Crates/Desktop/Hardware/default.nix                                              # 硬件管理程序集合
         # ./Modules/Home/Crates/Desktop/Produce/default.nix                                               # 生产应用程序集合

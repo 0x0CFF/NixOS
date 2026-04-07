@@ -6,6 +6,7 @@
     tailspin                 # [AUX][RUST] 日志文件高亮工具
     starship                 # [AUX][RUST] 命令行提示符
     eza                      # [AUX][RUST] 文件列表命令行
+    nh                       # [AUX][RUST] NixOS 生态辅助工具
     wl-clipboard             # [AUX][C] 剪贴板
     jq                       # [CLI][C] 解析和操作 JSON
     git                      # [CLI][C] 版本控制系统
