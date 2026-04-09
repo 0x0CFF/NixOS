@@ -47,8 +47,8 @@
         # ".git"
       ];
       # 仓库地址：格式为 rclone:配置名:仓库路径
-      repository = "rclone:123pan-WebDAV:/Selfhosted/Dify";
-      # 初始化仓库（第一次运行时创建，创建位置：rclone:123pan-WebDAV:/Selfhosted/Dify）
+      repository = "rclone:123pan-WebDAV:/Home/Selfhosted/Dify";
+      # 初始化仓库（第一次运行时创建，创建位置：rclone:123pan-WebDAV:/Home/Selfhosted/Dify）
       initialize = true;
       # 指定 rclone 配置文件路径
       # 通过 .path 引用解密后的 .age 文件（实际路径位于 /run/agenix/rclone-config）
@@ -115,8 +115,8 @@
         # ".git"
       ];
       # 仓库地址：格式为 rclone:配置名:仓库路径
-      repository = "rclone:123pan-WebDAV:/Selfhosted/Nocobase";
-      # 初始化仓库（第一次运行时创建，创建位置：rclone:123pan-WebDAV:/Selfhosted/Nocobase）
+      repository = "rclone:123pan-WebDAV:/Home/Selfhosted/Nocobase";
+      # 初始化仓库（第一次运行时创建，创建位置：rclone:123pan-WebDAV:/Home/Selfhosted/Nocobase）
       initialize = true;
       # 指定 rclone 配置文件路径
       # 通过 .path 引用解密后的 .age 文件（实际路径位于 /run/agenix/rclone-config）
