@@ -268,6 +268,7 @@
         ./Hosts/Studio/DATABC/DATABC00/Timers/backup-local-mount-point.nix                              # 挂载点数据备份
         ./Hosts/Studio/DATABC/DATABC00/Timers/gc-mount-point.nix                                        # 挂载点垃圾回收
         ./Hosts/Studio/DATABC/DATABC00/Timers/gc-samba.nix                                              # Samba 垃圾回收
+        ./Hosts/Studio/DATABC/DATABC00/Timers/nocobase-studio.nix                                       # Nocobase 工作流
 
         # 程序集合
         ./Modules/Common/Crates/Development/Python/default.nix                                          # Python 开发工具集合

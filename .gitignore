@@ -11,3 +11,6 @@ flake.lock
 # Restic + Rclone
 **/restic-password
 **/rclone.conf
+
+# Python
+**/nocobase-studio-env
