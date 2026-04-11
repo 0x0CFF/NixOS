@@ -18,13 +18,14 @@
     # 查找程序所在位置 echo $(which ssh)
     script = ''
       set -eu
-      cd /home/0x0CFF/Solution/Blueprints/UV/Studio/Panel-Studio/
+      cd /home/0x0CFF/Solution/Blueprints/UV/Studio/Panel-Studio
       ${pkgs.uv}/bin/uv run ./main.py
     '';
     # 单元配置
     serviceConfig = {
       Type = "oneshot";
       User = "root";
+      WorkingDirectory = "/home/0x0CFF/Solution/Blueprints/UV/Studio/Panel-Studio";
     };
   };
 
