@@ -237,6 +237,13 @@ cp -rf /home/0x0CFF/Solution/Blueprints/UV/Studio/Panel-Studio-New/. /home/0x0CF
 rm -rf /home/0x0CFF/Solution/Blueprints/UV/Studio/Panel-Studio-New
 ```
 
+# 更新 Nocobase-Studio 配置
+```sh
+git clone https://github.com/0x0CFF/Nocobase-Studio.git /home/0x0CFF/Solution/Blueprints/UV/Studio/Nocobase-Studio-New
+cp -rf /home/0x0CFF/Solution/Blueprints/UV/Studio/Nocobase-Studio-New/. /home/0x0CFF/Solution/Blueprints/UV/Studio/Nocobase-Studio/
+rm -rf /home/0x0CFF/Solution/Blueprints/UV/Studio/Nocobase-Studio-New
+```
+
 $ Commands: echo "test switch boot" | tr ' ' '\n'
 $ Channels: echo "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store https://mirrors.ustc.edu.cn/nix-channels/store https://mirrors.nju.edu.cn/nix-channels/store https://mirror.sjtu.edu.cn/nix-channels/store https://mirrors.cqupt.edu.cn/nix-channels/store https://mirror.nyist.edu.cn/nix-channels/store https://mirror.iscas.ac.cn/nix-channels/store" | tr ' ' '\n'
 
