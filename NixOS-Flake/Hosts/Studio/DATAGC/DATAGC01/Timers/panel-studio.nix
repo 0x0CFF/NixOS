@@ -19,6 +19,7 @@
     script = ''
       set -eu
       cd /home/0x0CFF/Solution/Blueprints/UV/Studio/Panel-Studio
+      ${pkgs.uv}/bin/uv sync
       ${pkgs.uv}/bin/uv run ./main.py
     '';
     # 单元配置
