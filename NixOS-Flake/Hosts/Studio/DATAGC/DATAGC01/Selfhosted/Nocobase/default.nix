@@ -4,9 +4,7 @@
   # 防火墙端口配置
   networking.firewall = {
     allowedTCPPorts = [
-      443                      # Nginx 端口
-      5003                     # Plugin 端口
-      10080                    # Web 界面
+      10180                    # Web 界面
     ];
     allowedUDPPorts = [
       #

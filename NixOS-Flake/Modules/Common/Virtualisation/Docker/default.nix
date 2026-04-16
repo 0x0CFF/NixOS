@@ -7,7 +7,13 @@
     virtualisation = {
       docker = {
         enable = true;
-        autoPrune.enable = true; # 自动清理无用镜像
+        # 自动清理无用镜像
+        autoPrune.enable = true;
+        # 禁用 Docker 自动添加 iptables 规则，避免与系统防火墙冲突
+        # 开启该选项后，需要手动通过 NixOS 的 networking.firewall.allowedTCPPorts 选项来开放容器所需的开放端口
+        daemon.settings = {
+          iptables = false;
+        };
       };
     };
 

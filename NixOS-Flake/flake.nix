@@ -167,6 +167,7 @@
         ./Hosts/Studio/DATAGC/DATAGC01/Device/hardware-configuration.nix                                # 硬件信息
         # 自托管服务
         ./Hosts/Studio/DATAGC/DATAGC01/Selfhosted/Dify/default.nix                                      # Dify
+        ./Hosts/Studio/DATAGC/DATAGC01/Selfhosted/Nocobase/default.nix                                  # Nocobase
         # 服务专项配置
         # ./Hosts/Studio/DATAGC/DATAGC01/Services/beszel.nix                                              # Beszel 专项配置
         ./Hosts/Studio/DATAGC/DATAGC01/Services/restic.nix                                              # Restic 专项配置
