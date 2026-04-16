@@ -5,6 +5,7 @@
   networking.firewall = {
     allowedTCPPorts = [
       10080                    # Web 界面
+      5001                     # API 端口
     ];
     allowedUDPPorts = [
       #

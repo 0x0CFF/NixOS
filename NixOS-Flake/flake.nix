@@ -74,11 +74,13 @@
         ./Hosts/Studio/DATAGC/DATAGC00/Device/configuration.nix                                         # 基础配置
         ./Hosts/Studio/DATAGC/DATAGC00/Device/environment.nix                                           # 环境变量
         ./Hosts/Studio/DATAGC/DATAGC00/Device/hardware-configuration.nix                                # 硬件信息
+        # 自托管服务
+        # 
         # 服务专项配置
         # ./Hosts/Studio/DATAGC/DATAGC00/Services/beszel.nix                                              # Beszel 专项配置
         # ./Hosts/Studio/DATAGC/DATAGC00/Services/restic.nix                                              # Restic 专项配置
         # 定时服务
-
+        #
         # 程序集合
         ./Modules/Common/Crates/Development/Python/default.nix                                          # Python 开发工具集合
         # ./Modules/Common/Crates/Terminal/Automation/default.nix                                         # 终端自动化程序集合
@@ -113,7 +115,6 @@
 
         # 容器引擎
         ./Modules/Common/Virtualisation/Docker/default.nix                                              # Docker 引擎
-        # ./Modules/Common/Virtualisation/Selfhosted/Dify/default.nix                                     # Dify
 
         # 用户成员
         ./Users/Common/0x0CFF/default.nix                                                               # 0x0CFF
@@ -164,6 +165,8 @@
         ./Hosts/Studio/DATAGC/DATAGC01/Device/configuration.nix                                         # 基础配置
         ./Hosts/Studio/DATAGC/DATAGC01/Device/environment.nix                                           # 环境变量
         ./Hosts/Studio/DATAGC/DATAGC01/Device/hardware-configuration.nix                                # 硬件信息
+        # 自托管服务
+        ./Hosts/Studio/DATAGC/DATAGC01/Selfhosted/Dify/default.nix                                      # Dify
         # 服务专项配置
         # ./Hosts/Studio/DATAGC/DATAGC01/Services/beszel.nix                                              # Beszel 专项配置
         ./Hosts/Studio/DATAGC/DATAGC01/Services/restic.nix                                              # Restic 专项配置
@@ -207,7 +210,6 @@
 
         # 容器引擎
         ./Modules/Common/Virtualisation/Docker/default.nix                                              # Docker 引擎
-        ./Modules/Common/Virtualisation/Selfhosted/Dify/default.nix                                     # Dify
 
         # 用户成员
         ./Users/Common/0x0CFF/default.nix                                                               # 0x0CFF
@@ -260,6 +262,8 @@
         ./Hosts/Studio/DATABC/DATABC00/Device/configuration.nix                                         # 基础配置
         ./Hosts/Studio/DATABC/DATABC00/Device/environment.nix                                           # 环境变量
         ./Hosts/Studio/DATABC/DATABC00/Device/hardware-configuration.nix                                # 硬件信息
+        # 自托管服务
+        # 
         # 服务专项配置
         # ./Hosts/Studio/DATABC/DATABC00/Services/beszel.nix                                              # Beszel 专项配置
         ./Hosts/Studio/DATABC/DATABC00/Services/restic.nix                                              # Restic 专项配置
@@ -304,7 +308,6 @@
 
         # 容器引擎
         ./Modules/Common/Virtualisation/Docker/default.nix                                              # Docker 引擎
-        # ./Modules/Common/Virtualisation/Selfhosted/Dify/default.nix                                     # Dify
 
         # 用户成员
         ./Users/Common/0x0CFF/default.nix                                                               # 0x0CFF
@@ -355,6 +358,8 @@
         ./Hosts/Studio/DATABC/DATABC00-BACKUP/Device/configuration.nix                                  # 基础配置
         ./Hosts/Studio/DATABC/DATABC00-BACKUP/Device/environment.nix                                    # 环境变量
         ./Hosts/Studio/DATABC/DATABC00-BACKUP/Device/hardware-configuration.nix                         # 硬件信息
+        # 自托管服务
+        # 
         # 服务专项配置
         # ./Hosts/Studio/DATABC/DATABC00-BACKUP/Services/beszel.nix                                       # Beszel 专项配置
         ./Hosts/Studio/DATABC/DATABC00-BACKUP/Services/samba.nix                                        # Samba 专项配置
@@ -396,7 +401,6 @@
 
         # 容器引擎
         ./Modules/Common/Virtualisation/Docker/default.nix                                              # Docker 引擎
-        # ./Modules/Common/Virtualisation/Selfhosted/Dify/default.nix                                     # Dify
 
         # 用户成员
         ./Users/Common/0x0CFF/default.nix                                                               # 0x0CFF
@@ -449,6 +453,8 @@
         ./Hosts/Studio/DATASC/DATASC00/Device/configuration.nix                                         # 基础配置
         ./Hosts/Studio/DATASC/DATASC00/Device/environment.nix                                           # 环境变量
         ./Hosts/Studio/DATASC/DATASC00/Device/hardware-configuration.nix                                # 硬件信息
+        # 自托管服务
+        # 
         # 服务专项配置
         # ./Hosts/Studio/DATASC/DATASC00/Services/beszel.nix                                              # Beszel 专项配置
         # ./Hosts/Studio/DATASC/DATASC00/Services/restic.nix                                              # Restic 专项配置
@@ -492,7 +498,6 @@
 
         # 容器引擎
         ./Modules/Common/Virtualisation/Docker/default.nix                                              # Docker 引擎
-        # ./Modules/Common/Virtualisation/Selfhosted/Dify/default.nix                                     # Dify
 
         # 用户成员
         ./Users/Common/0x0CFF/default.nix                                                               # 0x0CFF
@@ -543,6 +548,8 @@
         ./Hosts/Studio/DATASC/DATASC00-BACKUP/Device/configuration.nix                                  # 基础配置
         ./Hosts/Studio/DATASC/DATASC00-BACKUP/Device/environment.nix                                    # 环境变量
         ./Hosts/Studio/DATASC/DATASC00-BACKUP/Device/hardware-configuration.nix                         # 硬件信息
+        # 自托管服务
+        # 
         # 服务专项配置
         # ./Hosts/Studio/DATASC/DATASC00-BACKUP/Services/beszel.nix                                       # Beszel 专项配置
         ./Hosts/Studio/DATASC/DATASC00-BACKUP/Services/restic.nix                                       # Restic 专项配置
@@ -585,7 +592,6 @@
 
         # 容器引擎
         ./Modules/Common/Virtualisation/Docker/default.nix                                              # Docker 引擎
-        # ./Modules/Common/Virtualisation/Selfhosted/Dify/default.nix                                     # Dify
 
         # 用户成员
         ./Users/Common/0x0CFF/default.nix                                                               # 0x0CFF
@@ -636,6 +642,8 @@
         ./Hosts/Studio/DATASC/DATASC01/Device/configuration.nix                                         # 基础配置
         ./Hosts/Studio/DATASC/DATASC01/Device/environment.nix                                           # 环境变量
         ./Hosts/Studio/DATASC/DATASC01/Device/hardware-configuration.nix                                # 硬件信息
+        # 自托管服务
+        # 
         # 服务专项配置
         # ./Hosts/Studio/DATASC/DATASC01/Services/beszel.nix                                              # Beszel 专项配置
         # ./Hosts/Studio/DATASC/DATASC01/Services/restic.nix                                              # Restic 专项配置
@@ -680,7 +688,6 @@
 
         # 容器引擎
         ./Modules/Common/Virtualisation/Docker/default.nix                                              # Docker 引擎
-        # ./Modules/Common/Virtualisation/Selfhosted/Dify/default.nix                                     # Dify
 
         # 用户成员
         ./Users/Common/0x0CFF/default.nix                                                               # 0x0CFF
@@ -731,6 +738,8 @@
         ./Hosts/Studio/DATASC/DATASC01-BACKUP/Device/configuration.nix                                  # 基础配置
         ./Hosts/Studio/DATASC/DATASC01-BACKUP/Device/environment.nix                                    # 环境变量
         ./Hosts/Studio/DATASC/DATASC01-BACKUP/Device/hardware-configuration.nix                         # 硬件信息
+        # 自托管服务
+        # 
         # 服务专项配置
         # ./Hosts/Studio/DATASC/DATASC01-BACKUP/Services/beszel.nix                                       # Beszel 专项配置
         # ./Hosts/Studio/DATASC/DATASC01-BACKUP/Services/samba.nix                                        # Samba 专项配置
@@ -773,7 +782,6 @@
 
         # 容器引擎
         ./Modules/Common/Virtualisation/Docker/default.nix                                              # Docker 引擎
-        # ./Modules/Common/Virtualisation/Selfhosted/Dify/default.nix                                     # Dify
 
         # 用户成员
         ./Users/Common/0x0CFF/default.nix                                                               # 0x0CFF
@@ -826,11 +834,13 @@
         ./Hosts/Studio/DATAHC/DATAHC00/Device/configuration.nix                                         # 基础配置
         ./Hosts/Studio/DATAHC/DATAHC00/Device/environment.nix                                           # 环境变量
         ./Hosts/Studio/DATAHC/DATAHC00/Device/hardware-configuration.nix                                # 硬件信息
+        # 自托管服务
+        # 
         # 服务专项配置
         # ./Hosts/Studio/DATAHC/DATAHC00/Services/beszel.nix                                              # Beszel 专项配置
         # ./Hosts/Studio/DATAHC/DATAHC00/Services/restic.nix                                              # Restic 专项配置
         # 定时服务
-
+        # 
         # 程序集合
         ./Modules/Common/Crates/Development/Python/default.nix                                          # Python 开发工具集合
         # ./Modules/Common/Crates/Terminal/Automation/default.nix                                         # 终端自动化程序集合
@@ -865,7 +875,6 @@
 
         # 容器引擎
         ./Modules/Common/Virtualisation/Docker/default.nix                                              # Docker 引擎
-        # ./Modules/Common/Virtualisation/Selfhosted/Dify/default.nix                                     # Dify
 
         # 用户成员
         ./Users/Common/0x0CFF/default.nix                                                               # 0x0CFF
@@ -916,11 +925,13 @@
         ./Hosts/Studio/DATAHC/DATAHC01/Device/configuration.nix                                         # 基础配置
         ./Hosts/Studio/DATAHC/DATAHC01/Device/environment.nix                                           # 环境变量
         ./Hosts/Studio/DATAHC/DATAHC01/Device/hardware-configuration.nix                                # 硬件信息
+        # 自托管服务
+        # 
         # 服务专项配置
         # ./Hosts/Studio/DATAHC/DATAHC01/Services/beszel.nix                                              # Beszel 专项配置
         # ./Hosts/Studio/DATAHC/DATAHC01/Services/restic.nix                                              # Restic 专项配置
         # 定时服务
-
+        # 
         # 程序集合
         ./Modules/Common/Crates/Development/Python/default.nix                                          # Python 开发工具集合
         # ./Modules/Common/Crates/Terminal/Automation/default.nix                                         # 终端自动化程序集合
@@ -955,7 +966,6 @@
 
         # 容器引擎
         ./Modules/Common/Virtualisation/Docker/default.nix                                              # Docker 引擎
-        # ./Modules/Common/Virtualisation/Selfhosted/Dify/default.nix                                     # Dify
 
         # 用户成员
         ./Users/Common/0x0CFF/default.nix                                                               # 0x0CFF
@@ -1007,10 +1017,12 @@
         ./Hosts/Home/WORKSTATION/Device/configuration.nix                                               # 基础配置
         ./Hosts/Home/WORKSTATION/Device/environment.nix                                                 # 环境变量
         ./Hosts/Home/WORKSTATION/Device/hardware-configuration.nix                                      # 硬件信息
+        # 自托管服务
+        # 
         # 服务专项配置
         ./Hosts/Home/WORKSTATION/Services/cifs.nix                                                      # CIFS 专项配置
         # 定时服务
-
+        # 
         # 程序集合
         ./Modules/Common/Crates/Development/Python/default.nix                                          # Python 开发工具集合
         # ./Modules/Common/Crates/Terminal/Automation/default.nix                                         # 终端自动化程序集合
@@ -1054,7 +1066,6 @@
 
         # 容器引擎
         # ./Modules/Common/Virtualisation/Docker/default.nix                                              # Docker 引擎
-        # ./Modules/Common/Virtualisation/Selfhosted/Dify/default.nix                                     # Dify
 
         # 用户成员
         ./Users/Common/0x0CFF/default.nix                                                               # 0x0CFF
@@ -1094,10 +1105,11 @@
         ./Hosts/Home/GATEWAY/Device/configuration.nix                                                     # 基础配置
         ./Hosts/Home/GATEWAY/Device/environment.nix                                                       # 环境变量
         ./Hosts/Home/GATEWAY/Device/hardware-configuration.nix                                            # 硬件信息
+        # 自托管服务
+        # 
         # 服务专项配置
         # 定时服务
         ./Hosts/Home/GATEWAY/Timers/backup-local-syncthing-folder.nix                                   # Syncthing 文件夹备份
-
         # 程序集合
         ./Modules/Common/Crates/Development/Python/default.nix                                          # Python 开发工具集合
         # ./Modules/Common/Crates/Terminal/Automation/default.nix                                         # 终端自动化程序集合
@@ -1141,7 +1153,6 @@
 
         # 容器引擎
         # ./Modules/Common/Virtualisation/Docker/default.nix                                              # Docker 引擎
-        # ./Modules/Common/Virtualisation/Selfhosted/Dify/default.nix                                     # Dify
 
         # 用户成员
         ./Users/Common/0x0CFF/default.nix                                                               # 0x0CFF
@@ -1179,11 +1190,12 @@
         ./Hosts/Home/NAS/Device/configuration.nix                                                       # 基础配置
         ./Hosts/Home/NAS/Device/environment.nix                                                         # 环境变量
         ./Hosts/Home/NAS/Device/hardware-configuration.nix                                              # 硬件信息
+        # 自托管服务
+        # 
         # 服务专项配置
         ./Hosts/Home/NAS/Services/samba.nix                                                             # Samba 专项配置
         # 定时服务
         ./Hosts/Home/NAS/Timers/gc-mount-point.nix                                                      # 挂载点垃圾回收
-
         # 程序集合
         # ./Modules/Common/Crates/Development/Python/default.nix                                          # Python 开发工具集合
         # ./Modules/Common/Crates/Terminal/Automation/default.nix                                         # 终端自动化程序集合
@@ -1229,7 +1241,6 @@
 
         # 容器引擎
         # ./Modules/Common/Virtualisation/Docker/default.nix                                              # Docker 引擎
-        # ./Modules/Common/Virtualisation/Selfhosted/Dify/default.nix                                     # Dify
 
         # 用户成员
         ./Users/Common/0x0CFF/default.nix                                                               # 0x0CFF
