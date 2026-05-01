@@ -16,12 +16,12 @@
         # 用户登录黑名单
         "invalid users" = [
           "root"
-          "0x0CFF"
+          # "0x0CFF"
         ];
       };
     };
   };
-  
+
   services.samba-wsdd = {
     # Web 服务动态发现主机守护程序，使共享对 Windows 10 客户端可见
     # 这使 Samba 主机（如本地 NAS 设备）能够被 Windows 等 Web 服务发现客户端找到

@@ -1231,7 +1231,7 @@
         # ./Modules/Common/Services/Automation/Restic/default.nix                                         # 数据备份服务
         # ./Modules/Common/Services/Network/AdguardHome/default.nix                                       # 网络拦截平台
         ./Modules/Common/Services/Network/OpenSSH/default.nix                                           # 远程通信服务
-        # ./Modules/Common/Services/Network/Samba/default.nix                                             # 文件共享服务
+        ./Modules/Common/Services/Network/Samba/default.nix                                             # 文件共享服务
         ./Modules/Common/Services/Network/Syncthing/default.nix                                         # 文件同步服务
         # ./Modules/Common/Services/Network/V2raya/default.nix                                            # 网络代理服务
         # ./Modules/Common/Services/Produce/Ollama/default.nix                                            # 本地 LLM 运行框架

@@ -95,7 +95,7 @@
         # 用户登录黑名单
         "invalid users" = [
           "root"
-          "0x0CFF"
+          # "0x0CFF"
         ];
       };
     };
