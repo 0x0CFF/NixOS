@@ -1194,6 +1194,7 @@
         # 自托管服务
         # 
         # 服务专项配置
+        ./Hosts/Home/NAS/Services/restic.nix                                                            # Restic 专项配置
         ./Hosts/Home/NAS/Services/samba.nix                                                             # Samba 专项配置
         # 定时服务
         ./Hosts/Home/NAS/Timers/gc-mount-point.nix                                                      # 挂载点垃圾回收
