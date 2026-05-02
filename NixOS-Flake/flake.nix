@@ -1064,6 +1064,9 @@
         # ./Modules/Common/Services/Produce/OpenWebUI/default.nix                                         # AI 应用平台
         # ./Modules/Common/Services/Security/Frigate/default.nix                                          # 网络录像服务
         # ./Modules/Common/Services/Security/VaultWarden/default.nix                                      # 密码管理服务
+        # ./Modules/Home/Services/Produce/Immich/default.nix                                              # 相册服务
+        # ./Modules/Home/Services/Produce/Jellyfin/default.nix                                            # 影视服务
+        # ./Modules/Home/Services/Produce/Navidrome/default.nix                                           # 音乐服务
 
         # 容器引擎
         # ./Modules/Common/Virtualisation/Docker/default.nix                                              # Docker 引擎
@@ -1151,7 +1154,10 @@
         # ./Modules/Common/Services/Produce/OpenWebUI/default.nix                                         # AI 应用平台
         # ./Modules/Common/Services/Security/Frigate/default.nix                                          # 网络录像服务
         # ./Modules/Common/Services/Security/VaultWarden/default.nix                                      # 密码管理服务
-
+        # ./Modules/Home/Services/Produce/Immich/default.nix                                              # 相册服务
+        # ./Modules/Home/Services/Produce/Jellyfin/default.nix                                            # 影视服务
+        # ./Modules/Home/Services/Produce/Navidrome/default.nix                                           # 音乐服务
+        
         # 容器引擎
         # ./Modules/Common/Virtualisation/Docker/default.nix                                              # Docker 引擎
 
@@ -1239,6 +1245,7 @@
         # ./Modules/Common/Services/Security/Frigate/default.nix                                          # 网络录像服务
         # ./Modules/Common/Services/Security/VaultWarden/default.nix                                      # 密码管理服务
         ./Modules/Home/Services/Produce/Immich/default.nix                                              # 相册服务
+        ./Modules/Home/Services/Produce/Jellyfin/default.nix                                            # 影视服务
         ./Modules/Home/Services/Produce/Navidrome/default.nix                                           # 音乐服务
 
         # 容器引擎
