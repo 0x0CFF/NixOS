@@ -1,6 +1,6 @@
 import QtQuick
 import QtQuick.VectorImage
-
+import Quickshell.Services.Mpris
 import qs.Theme         // 导入 Theme 目录
 
 Item {
@@ -17,7 +17,7 @@ Item {
         color: Theme.wrapper
         radius: 6
     }
-        
+
     Row {
         id:row
         spacing: 4      // 子项之间的间距
@@ -126,7 +126,6 @@ Item {
             // 将项目的垂直中心对齐到父项的垂直中心
             anchors.verticalCenter: parent.verticalCenter
 
-
             // 背景矩形
             Rectangle {
                 anchors.fill: parent
@@ -153,8 +152,10 @@ Item {
                     anchors.verticalCenter: parent.verticalCenter
                 }
                 
+                property var player: MprisPlayer.instances.length > 0 ? MprisPlayer.instances[0] : null
+                
                 Text {
-                    text: "五月天 - 知足"
+                    text: player?.identity ?? "No player"
                     font.pixelSize: 11
                     color: Theme.text
                     height: parent.height                 // 填充整个 Row 的高度
