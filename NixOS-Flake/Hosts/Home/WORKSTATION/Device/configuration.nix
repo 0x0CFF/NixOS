@@ -50,6 +50,7 @@
 
   environment.systemPackages = with pkgs; [
     rocmPackages.clr         # [AUX][C++] AMD 通用语言运行时，用于 hipamd、opencl 和 rocclr
+    rocmPackages.rocm-smi    # [AUX][C++] AMD GPU 系统管理接口
   ];
   
   # 配置 X 桌面驱动模式
