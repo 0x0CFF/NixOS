@@ -110,9 +110,8 @@
       ];
       # 备份时排除文件/文件夹
       exclude = [
-        # "/var/cache"
-        # "/home/*/.cache"
-        # ".git"
+        "**/node_modules"
+        "**/__pycache__"
       ];
       # 仓库地址：格式为 rclone:配置名:仓库路径
       repository = "rclone:123pan-WebDAV:/Mnt/Workspace";
