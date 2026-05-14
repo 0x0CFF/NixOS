@@ -2,6 +2,7 @@ import QtQuick
 import Quickshell
 import Quickshell.Io
 import QtQuick.VectorImage
+import QtQuick.Controls
 
 import qs.Theme         // 导入 Theme 目录
 
@@ -150,8 +151,8 @@ Item {
                 radius: 6
             }
 
-            // CPU 数据获取逻辑
-            property string cpuLoad: "00%"  // 存储 CPU 负载的属性
+            // 定义存储 CPU 使用率的变量
+            property real cpuLoad: 0
 
             Row {
                 id: child0
@@ -171,13 +172,38 @@ Item {
                     verticalAlignment: Text.AlignVCenter  // 文字内容垂直居中
                 }
 
-                Text {
-                    id: cpuValueLabel
-                    text: cpuWidget.cpuLoad               // 绑定到根对象的属性
-                    font.pixelSize: 10
-                    color: Theme.text
-                    height: parent.height                 // 填充整个 Row 的高度
-                    verticalAlignment: Text.AlignVCenter  // 文字内容垂直居中
+                Canvas {
+                    id: cpuValueCanvas
+                    width: parent.height - 6
+                    height: parent.height - 6
+                    anchors.verticalCenter: parent.verticalCenter
+                    
+                    property real progress: cpuWidget.cpuLoad  // 绑定 CPU 数据，范围 0-1
+                
+                    onProgressChanged: requestPaint()
+                
+                    onPaint: {
+                        var ctx = getContext("2d")
+                        ctx.clearRect(0, 0, width, height)
+                        
+                        var centerX = width / 2
+                        var centerY = height / 2
+                        var radius = Math.min(width, height) / 2 - 2
+                        var startAngle = -Math.PI / 2
+                        var endAngle = startAngle + (progress * 2 * Math.PI)
+                
+                        ctx.lineWidth = 3
+                        ctx.strokeStyle = Theme.background
+                        ctx.beginPath()
+                        ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI)
+                        ctx.stroke()
+                        
+                        ctx.lineWidth = 2.6
+                        ctx.strokeStyle = Theme.text
+                        ctx.beginPath()
+                        ctx.arc(centerX, centerY, radius, startAngle, endAngle)
+                        ctx.stroke()
+                    }
                 }
             }
             
@@ -196,12 +222,8 @@ Item {
                         if (cpuWidget.lastIdle !== 0) {
                             var idleDelta = idle - cpuWidget.lastIdle;
                             var totalDelta = total - cpuWidget.lastTotal;
-                            var usage = 100 * (1 - idleDelta / totalDelta);
-                             
-                            // 格式化为两位数字，不足两位前面补零
-                            var rounded = Math.round(usage);
-                            var formatted = (rounded < 10 ? "0" + rounded : rounded) + "%";
-                            cpuWidget.cpuLoad = formatted;
+                            var usage = (1 - idleDelta / totalDelta);
+                            cpuWidget.cpuLoad = parseFloat(usage.toFixed(4));
                          }
                          
                          cpuWidget.lastIdle = idle;
@@ -259,14 +281,39 @@ Item {
                     height: parent.height                 // 填充整个 Row 的高度
                     verticalAlignment: Text.AlignVCenter  // 文字内容垂直居中
                 }
-
-                Text {
-                    id: gpuValueLabel
-                    text: gpuWidget.gpuLoad               // 绑定到根对象的属性
-                    font.pixelSize: 10
-                    color: Theme.text
-                    height: parent.height                 // 填充整个 Row 的高度
-                    verticalAlignment: Text.AlignVCenter  // 文字内容垂直居中
+                
+                Canvas {
+                    id: gpuValueCanvas
+                    width: parent.height - 6
+                    height: parent.height - 6
+                    anchors.verticalCenter: parent.verticalCenter
+                    
+                    property real progress: gpuWidget.gpuLoad  // 绑定 GPU 数据，范围 0-1
+                
+                    onProgressChanged: requestPaint()
+                
+                    onPaint: {
+                        var ctx = getContext("2d")
+                        ctx.clearRect(0, 0, width, height)
+                        
+                        var centerX = width / 2
+                        var centerY = height / 2
+                        var radius = Math.min(width, height) / 2 - 2
+                        var startAngle = -Math.PI / 2
+                        var endAngle = startAngle + (progress * 2 * Math.PI)
+                
+                        ctx.lineWidth = 3
+                        ctx.strokeStyle = Theme.background
+                        ctx.beginPath()
+                        ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI)
+                        ctx.stroke()
+                        
+                        ctx.lineWidth = 2.6
+                        ctx.strokeStyle = Theme.text
+                        ctx.beginPath()
+                        ctx.arc(centerX, centerY, radius, startAngle, endAngle)
+                        ctx.stroke()
+                    }
                 }
             }
             
@@ -312,8 +359,8 @@ Item {
                 radius: 6
             }
 
-            // RAM 数据获取逻辑
-            property string ramLoad: "00%"  // 存储 RAM 负载的属性
+            // 定义存储 RAM 使用率的变量
+            property real ramLoad: 0
             
             Row {
                 id: child2
@@ -333,30 +380,52 @@ Item {
                     verticalAlignment: Text.AlignVCenter  // 文字内容垂直居中
                 }
 
-                Text {
-                    id: ramValueLabel
-                    text: ramWidget.ramLoad               // 绑定到根对象的属性
-                    font.pixelSize: 10
-                    color: Theme.text
-                    height: parent.height                 // 填充整个 Row 的高度
-                    verticalAlignment: Text.AlignVCenter  // 文字内容垂直居中
+                Canvas {
+                    id: ramValueCanvas
+                    width: parent.height - 6
+                    height: parent.height - 6
+                    anchors.verticalCenter: parent.verticalCenter
+                    
+                    property real progress: ramWidget.ramLoad  // 绑定 RAM 数据，范围 0-1
+                
+                    onProgressChanged: requestPaint()
+                
+                    onPaint: {
+                        var ctx = getContext("2d")
+                        ctx.clearRect(0, 0, width, height)
+                        
+                        var centerX = width / 2
+                        var centerY = height / 2
+                        var radius = Math.min(width, height) / 2 - 2
+                        var startAngle = -Math.PI / 2
+                        var endAngle = startAngle + (progress * 2 * Math.PI)
+                
+                        ctx.lineWidth = 3
+                        ctx.strokeStyle = Theme.background
+                        ctx.beginPath()
+                        ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI)
+                        ctx.stroke()
+                        
+                        ctx.lineWidth = 2.6
+                        ctx.strokeStyle = Theme.text
+                        ctx.beginPath()
+                        ctx.arc(centerX, centerY, radius, startAngle, endAngle)
+                        ctx.stroke()
+                    }
                 }
             }
             
             // RAM 数据获取逻辑
             Process {
                 id: ramProcess
-                command: ["sh", "-c", "top -bn1 | grep 'MiB Mem' | awk '{print ($8/$4)*100}'"]
+                command: ["sh", "-c", "top -bn1 | grep 'MiB Mem' | awk '{print ($8/$4)}'"]
                 running: true
             
                 stdout: StdioCollector {
                     onStreamFinished: {
-                        var usage = parseFloat(this.text.trim());
+                        var usage = parseFloat(text.trim())
                         if (!isNaN(usage)) {
-                            // 格式化为两位数字，不足两位前面补零
-                            var rounded = Math.round(usage);
-                            var formatted = (rounded < 10 ? "0" + rounded : rounded) + "%";
-                            ramWidget.ramLoad = formatted;
+                            ramWidget.ramLoad = parseFloat(usage.toFixed(4));
                         }
                     }
                 }
