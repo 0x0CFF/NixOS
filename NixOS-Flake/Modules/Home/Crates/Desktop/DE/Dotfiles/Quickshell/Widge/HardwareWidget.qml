@@ -192,6 +192,9 @@ Item {
                         var startAngle = -Math.PI / 2
                         var endAngle = startAngle + (progress * 2 * Math.PI)
                 
+                        // 设置线条端点样式为圆形
+                        ctx.lineCap = "round"
+                        
                         ctx.lineWidth = 3
                         ctx.strokeStyle = Theme.background
                         ctx.beginPath()
@@ -302,6 +305,9 @@ Item {
                         var startAngle = -Math.PI / 2
                         var endAngle = startAngle + (progress * 2 * Math.PI)
                 
+                        // 设置线条端点样式为圆形
+                        ctx.lineCap = "round"
+                        
                         ctx.lineWidth = 3
                         ctx.strokeStyle = Theme.background
                         ctx.beginPath()
@@ -400,6 +406,9 @@ Item {
                         var startAngle = -Math.PI / 2
                         var endAngle = startAngle + (progress * 2 * Math.PI)
                 
+                        // 设置线条端点样式为圆形
+                        ctx.lineCap = "round"
+                        
                         ctx.lineWidth = 3
                         ctx.strokeStyle = Theme.background
                         ctx.beginPath()

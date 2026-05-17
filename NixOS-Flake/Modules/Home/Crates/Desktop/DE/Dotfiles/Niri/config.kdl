@@ -282,7 +282,7 @@ spawn-at-startup "hyprpaper"
 spawn-at-startup "quickshell"
 spawn-at-startup "mako"
 spawn-at-startup "fcitx5"
-spawn-sh-at-startup "swaybg -i /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake/Modules/Home/Crates/Desktop/DE/Dotfiles/Swaybg/Assets/Wallpaper-01-Blurred.jpg -m fit"
+spawn-sh-at-startup "swaybg -i /home/0x0CFF/Solution/Blueprints/NixOS/NixOS-Flake/Modules/Home/Crates/Desktop/DE/Dotfiles/Swaybg/Assets/GuangZhou-Blueprint-Blurred.png -m fit"
 spawn-sh-at-startup "wl-paste --type text --watch cliphist store"           // 监听文本复制
 spawn-sh-at-startup "wl-paste --type image --watch cliphist store"          // 监听图片复制
 
