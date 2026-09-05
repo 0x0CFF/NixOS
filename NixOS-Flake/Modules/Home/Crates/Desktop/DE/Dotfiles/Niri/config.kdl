@@ -205,7 +205,7 @@ layout {
         // off
 
         width 1
-        active-color "#9CBC81"
+        active-color "#78ABCC"
         inactive-color "#505050"
 
         // 需要您注意的窗口周围边框的颜色

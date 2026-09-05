@@ -26,19 +26,19 @@
   inputs = {
     # NixOS 官方硬件信息
     # nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    # NixOS 官方源 Nixpkgs 快照 (tarball)，nixos-25.11 分支
-    # nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
-    # NixOS 国内源 Nixpkgs 快照(tarball)，nixos-25.11 分支，使用 git 浅克隆的方式可以精确锁定版本
-    nixpkgs.url = "git+https://mirrors.tuna.tsinghua.edu.cn/git/nixpkgs.git?ref=nixos-25.11&shallow=1";
-    # nixpkgs.url = "git+https://mirrors.nju.edu.cn/git/nixpkgs.git?ref=nixos-25.11&shallow=1";
+    # NixOS 官方源 Nixpkgs 快照 (tarball)，nixos-26.05 分支
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
+    # NixOS 国内源 Nixpkgs 快照(tarball)，nixos-26.05 分支，使用 git 浅克隆的方式可以精确锁定版本
+    # nixpkgs.url = "git+https://mirrors.tuna.tsinghua.edu.cn/git/nixpkgs.git?ref=nixos-26.05&shallow=1";
+    # nixpkgs.url = "git+https://mirrors.nju.edu.cn/git/nixpkgs.git?ref=nixos-26.05&shallow=1";
 
     # NixOS 官方源 Nixpkgs 快照 (tarball)，Unstable 分支
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     # home-manager，用于管理用户配置
     home-manager = {
-      # home-manager 官方源，home-manager-25.11 分支
-      url = "github:nix-community/home-manager/release-25.11";
+      # home-manager 官方源，home-manager-26.05 分支
+      url = "github:nix-community/home-manager/release-26.05";
       # 强制 home-manager 和该 flake 使用相同版本的 nixpkgs，避免依赖的 nixpkgs 版本不一致导致问题
       inputs.nixpkgs.follows = "nixpkgs";
     };

@@ -8,7 +8,7 @@
   home = {
     username = "0x0CFF";
     homeDirectory = "/home/0x0CFF";
-    stateVersion = "25.11";
+    stateVersion = "26.05";
   };
 
   # 用户环境变量
